@@ -5,7 +5,7 @@
       style="z-index: 301"
       data-scroll=""
     >
-      <div class="header-container ">
+      <div class="header-container">
         <div class="logo">
           <a href="/" class="logo-link"
             >Buy<span>Social</span>Media Marketing</a
@@ -148,14 +148,16 @@
             </li>
           </ul>
         </div>
+        
       </div>
+  
     </header>
+  
   </body>
  
 </template>
 
 <script>
-import "../assets/header.css";
 export default {
   name: 'HeaderPage',
 }

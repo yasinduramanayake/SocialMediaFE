@@ -1,0 +1,50 @@
+.banner_body {
+  background-color: var(--primary-color);
+}
+
+.color-secondary {
+  color: var(--yellow);
+}
+
+.break_banner {
+  padding-top: 150px;
+}
+.small_break {
+    padding-top: 15px;
+}
+.extra_small_break {
+    padding-top: 4px;
+}
+.banner_image_allignment {
+  padding-left: 270px;
+  @media (max-width: 768px) {
+    padding-left: 50px;
+  }
+  .banner_text {
+    font-size: 45px;
+    line-height: 1.3;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    @media (max-width: 768px) {
+      font-size: 22px;
+      padding-right: 50x;
+      color: white;
+    }
+  }
+  .banner_para {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+  }
+}
+.card_social_media {
+  width: 95%;
+  border-radius: 10px;
+}
+.selection-fontsize {
+  font-size: 14px;
+}
+.username_label {
+  border: 0;
+}

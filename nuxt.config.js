@@ -15,10 +15,16 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '@/assets/scss/header.scss',
+    '@/assets/scss/banner.scss',
+    '@/assets/css/header_color.css',
+    'vue-select/dist/vue-select.css',
+    '@/assets/scss/slickcarusel.scss',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/vue-select', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

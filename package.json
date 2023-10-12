@@ -18,10 +18,15 @@
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
+    "jquery": "^3.7.1",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
+    "vue-select": "^3.20.2",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-slick-carousel": "^1.0.6",
+    "vue-star-rating": "^1.7.0",
+    "vue-template-compiler": "^2.7.10",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
@@ -31,6 +36,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.5.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "sass": "^1.69.2",
+    "sass-loader": "^10.4.1"
   }
 }
