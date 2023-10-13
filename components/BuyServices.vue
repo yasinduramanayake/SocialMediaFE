@@ -1,4 +1,5 @@
 <template>
+  
 <div>
   <b-card-group deck>
       <b-card
@@ -40,6 +41,7 @@
   </b-card-group>
 </div>
 </template>
+
 
 <script>
 export default {
