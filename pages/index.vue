@@ -4,6 +4,11 @@
 
     <Banner />
     <br /><br /><br />
+    <Services/>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
     <SilkCarousel />
     <br /><br /><br />
     <BuyServices/>
@@ -21,6 +26,4 @@ export default {
     components: { BuyServices, Advantages }
 }
 </script>
-<style>
-@import 'vue-select/dist/vue-select.css';
-</style>
+
