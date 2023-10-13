@@ -4,6 +4,11 @@
 
     <Banner />
     <br /><br /><br />
+    <Services/>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
     <SilkCarousel />
     <br /><br /><br />
     
@@ -15,6 +20,4 @@ export default {
   name: 'IndexPage',
 }
 </script>
-<style>
-@import 'vue-select/dist/vue-select.css';
-</style>
+
