@@ -124,7 +124,7 @@
               </a>
             </li>
             <li>
-              <a href="/contact">
+              <a href="/contactus">
                 <span>Contact us</span>
               </a>
             </li>
