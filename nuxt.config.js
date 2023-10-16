@@ -22,6 +22,11 @@ export default {
     'vue-select/dist/vue-select.css',
     '@/assets/scss/slickcarusel.scss',
     '@/assets/scss/services.scss',
+    '@/assets/scss/buyservices.scss',
+    '@/assets/scss/freetrail.scss',
+    '@/assets/scss/advantages.scss',
+    
+    
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

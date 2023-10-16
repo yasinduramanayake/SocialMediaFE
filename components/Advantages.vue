@@ -1,41 +1,45 @@
 <template>
-<div>
+<div class="advantages">
   <b-card-group deck>
     <b-card
       header=""
       header-tag="header"
-      title="Safe and security service"
+      title=""
+      
      >
-      <b-card-text><ul>
-<li>We do NOT require and will never ask for your password or account access.</li>
-<li>Our website is PCI DSS Compliant</li>
-<li>We offer Money Back Guarantee.</li>
-</ul>
+      <b-card-text>
+        <h2 class="ad_h1">Safe and security service</h2>
+        •We do NOT require and will never ask for your password or account access<br>
+        •Our website is PCI DSS Compliant<br>
+        •We offer Money Back Guarantee.
+
 </b-card-text>
 </b-card>
 
 <b-card
       header=""
       header-tag="header"
-      title="Great customer support"
+      title=""
      >
-      <b-card-text><ul>
-<li>Each and every client possesses the entire of our attention</li>
-<li>Support service 24 hours daily and 7 days per week</li>
-</ul>
+      <b-card-text>
+        <h2 class="ad_h1">Great customer support</h2>
+        •Each and every client possesses the entire of our attention
+        •Support service 24 hours daily and 7 days per week
+
 </b-card-text>
 </b-card>
 
 <b-card
       header=""
       header-tag="header"
-      title="Fastest delivery online"
+      title=""
      >
-      <b-card-text><ul>
-<li>Most of the services will be delivered within minutes after your payment.</li>
-<li>Guaranteed results within 24 hours for every service.</li>
-</ul>
-</b-card-text>
+      <b-card-text>
+        <h2 class="ad_h1">Fastest delivery online</h2>
+        •Most of the services will be delivered within minutes after your payment.
+        •Guaranteed results within 24 hours for every service.
+
+      </b-card-text>
 </b-card>
 
 

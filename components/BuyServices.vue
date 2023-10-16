@@ -1,6 +1,9 @@
 <template>
   
-<div>
+<div class="buyservices">
+  <div class="main_text">
+  <h2>How <span class="title-border title-border--primary">to buy</span> a service</h2></div>
+  <p class="service_p">It's easy in 3 simple steps:</p>
   <b-card-group deck>
       <b-card
     no-body
@@ -10,7 +13,7 @@
     img-top
   >
       <center>
-      <b-card-title>Choose<br>a package</b-card-title>
+      <b-card-title class="bcard_text">Choose<br>a package</b-card-title>
      </center>
       </b-card>
 
@@ -22,7 +25,7 @@
     img-top
   >
       <center>
-      <b-card-title>Enter<br> order details</b-card-title>
+      <b-card-title class="bcard_text">Enter<br> order details</b-card-title>
      </center>
     </b-card>
 
@@ -34,7 +37,7 @@
     img-top
   >
       <center>
-      <b-card-title>Checkout with<br> card or crypto</b-card-title>
+      <b-card-title class="bcard_text">Checkout with<br> card or crypto</b-card-title>
      </center>
     </b-card>
 
