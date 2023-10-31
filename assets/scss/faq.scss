@@ -1,0 +1,93 @@
+// For collapse-title
+.tabpane_allign {
+  float: right;
+
+}
+.faq_background {
+  background-color:#f0f7f9
+}
+.card_faq_styles {
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+}
+.faq-h3-color {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: rgb(94, 185, 235);
+}
+.acordian-border {
+  border: none;
+}
+.faq_answer  {
+text-align: left;
+}
+.categories_faq {
+padding-top: 92px;
+@media only screen and (max-width: 768px) {
+display: none;
+}
+}
+.card_categories_styles {
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+}
+.width_content_category {
+  width: 600px;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 250px;
+    font-size: 20px;
+   
+  }
+}
+.acormendationpaddingbutton {
+  padding-left: 280px;
+
+  @media only screen and (max-width: 768px) {
+  position: relative;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    padding-left: 70px;
+   
+  }
+  @media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    padding-left: 150px;
+   
+  }
+}
+.faq_header {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+}
+.tab_iew_faq {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    padding-left: 130px;
+   
+  }
+}
+.bold_categories {
+  font-weight: 700;
+}
+.break_categories {
+  padding-top: 10px;
+}
+.dropicons-faq {
+  @media only screen and (max-width: 768px) {
+    float: right;
+ 
+  }
+}
+.icon-faq-styles {
+  @media only screen and (max-width: 768px) {
+    
+  }
+}

@@ -14,7 +14,7 @@
         <a
           href="#"
           class="btn btn--md-less btn--outline show_on_mob sign-in-btn"
-          data-modal="#modal-signup"
+         
           >Sign Up</a
         >
         <div class="header_group_btns">
@@ -129,12 +129,12 @@
               </a>
             </li>
             <li class="header-auth-btn">
-              <a href="#" data-modal="#modal-login">
+              <a href="#" >
                 <span>Log In</span>
               </a>
             </li>
             <li class="header-auth-btn">
-              <a href="#" data-modal="#modal-signup" class="btn-transparent">
+              <a href="#"  class="btn-transparent">
                 <span>Sign Up</span>
               </a>
             </li>

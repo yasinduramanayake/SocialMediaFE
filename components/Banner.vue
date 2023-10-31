@@ -4,9 +4,11 @@
     <b-row>
       <b-col md="6">
         <div class="banner_image_allignment">
+          <div class="star_banner">
           <div class="rating-info">
-            <span class="rating-info__title">4.89</span>
+            <span class="rating-info__title ">4.89</span>
             <div style="padding-left: 10px"></div>
+            
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -335,19 +337,21 @@
                 </filter>
               </defs>
             </svg>
+       
           </div>
+        </div>
           <br />
-          <h1 class="banner_text">
-            We provide premium social<br />
-            media engagement services<br />
+          <h1 class="h1 banner_text">
+            We provide <span class="color-secondary">premium</span> social<br />
+            media engagement <span class="color-secondary">services</span><br />
             with guaranteed results!
           </h1>
-          <br />
+       
           <p class="banner_para">
             Start getting followers, likes, comments & views <br />
             or anything else you need within minutes!
           </p>
-          <br />
+          <br /><br />
           <SocailMediaComponent />
         </div>
       </b-col>

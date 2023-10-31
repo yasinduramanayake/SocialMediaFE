@@ -25,8 +25,10 @@ export default {
     '@/assets/scss/buyservices.scss',
     '@/assets/scss/freetrail.scss',
     '@/assets/scss/advantages.scss',
-    
-    
+    '@/assets/scss/faq.scss',
+    '@/assets/scss/reviews.scss',
+  
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
