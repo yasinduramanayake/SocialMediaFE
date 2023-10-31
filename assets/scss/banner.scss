@@ -16,35 +16,91 @@
     padding-top: 4px;
 }
 .banner_image_allignment {
-  padding-left: 270px;
+  padding-left: 340px;
+  width: 1025px;
   @media (max-width: 768px) {
-    padding-left: 50px;
+    padding-left: 40px;
+   text-align: center;
+    width: 300px;
   }
-  .banner_text {
-    font-size: 45px;
-    line-height: 1.3;
+  @media (min-width: 768px) and (max-width: 1024px){
+    padding-left: 40px;
+   text-align: center;
+    width: 700px;
+  }
+  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+    padding-left: 40px;
+   text-align: center;
+    width: 1000px;
+  } 
+}
+
+.banner_text {
+  font-size: 55px;
+  line-height: 1.3;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  
     color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    @media (max-width: 768px) {
-      font-size: 22px;
-      padding-right: 50x;
-      color: white;
-    }
   }
-  .banner_para {
-    font-size: 18px;
+ 
+}
+.banner_para {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  @media (max-width: 768px) {
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
+    text-align: center;
+  }
+  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+    font-size: 25px;
+    line-height: 1.5;
+    text-align: center;
   }
 }
 .card_social_media {
   width: 95%;
   border-radius: 10px;
+  @media (max-width: 768px) {
+    width:240px;
+
+  }
+  @media  (min-width: 768px) and (max-width: 1024px) {
+    width:650px;
+
+  }
+  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+    width:910px;
+
+  }
+
 }
 .selection-fontsize {
   font-size: 14px;
+  border-color: rgb(232, 233, 234);
+  border-radius: 2px;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 }
 .username_label {
   border: 0;
+}
+.star_banner {
+  @media (max-width:768px) {
+ padding-left: 50px;
+  }
+  @media  (min-width: 768px) and (max-width: 1024px) {
+    padding-left: 260px;
+  }
+  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+    padding-left: 400px;
+  }
 }
