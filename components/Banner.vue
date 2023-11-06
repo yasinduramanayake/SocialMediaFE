@@ -4,6 +4,7 @@
     <b-row>
       <b-col md="6">
         <div class="banner_image_allignment">
+          
           <div class="star_banner">
           <div class="rating-info">
             <span class="rating-info__title ">4.89</span>

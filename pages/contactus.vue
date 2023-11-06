@@ -2,7 +2,8 @@
     <div class="contact-form">
       <h1>Contact Us</h1>
       <p>Please fill the form and we will get back to you in 24 hours.</p>
-      <form @submit.prevent="onSubmit">
+      <b-container>
+      <b-form @submit.prevent="onSubmit">
         <b-row>
           <b-col md="6">
         <div class="form-group">
@@ -42,7 +43,8 @@
         </div>
         </b-col>
         </b-row>
-      </form>
+      </b-form>
+    </b-container>
     </div>
   </template>
   

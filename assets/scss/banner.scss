@@ -10,29 +10,31 @@
   padding-top: 150px;
 }
 .small_break {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 .extra_small_break {
-    padding-top: 4px;
+  padding-top: 4px;
 }
+
 .banner_image_allignment {
   padding-left: 340px;
   width: 1025px;
-  @media (max-width: 768px) {
-    padding-left: 40px;
-   text-align: center;
-    width: 300px;
+  @media (max-width: 600px) {
+    padding-left: 50px;
+    text-align: center;
+    width: 340px;
+
   }
-  @media (min-width: 768px) and (max-width: 1024px){
+  @media (min-width: 768px) and (max-width: 1024px) {
     padding-left: 40px;
-   text-align: center;
+    text-align: center;
     width: 700px;
   }
-  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+  @media (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px) and (max-width: 1368px) {
     padding-left: 40px;
-   text-align: center;
+    text-align: center;
     width: 1000px;
-  } 
+  }
 }
 
 .banner_text {
@@ -40,12 +42,11 @@
   line-height: 1.3;
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  @media (max-width: 768px) {
-    font-size: 25px;
-  
+  @media (max-width: 600px) {
+    font-size: 23px;
+
     color: white;
   }
- 
 }
 .banner_para {
   font-size: 20px;
@@ -59,28 +60,24 @@
     line-height: 1.5;
     text-align: center;
   }
-  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+  @media (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px) and (max-width: 1368px) {
     font-size: 25px;
     line-height: 1.5;
     text-align: center;
   }
 }
 .card_social_media {
-  width: 95%;
+  width: 100%;
   border-radius: 10px;
-  @media (max-width: 768px) {
-    width:240px;
-
+  @media (max-width: 991px) {
+    width: 290px;
   }
-  @media  (min-width: 768px) and (max-width: 1024px) {
-    width:650px;
-
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 650px;
   }
-  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
-    width:910px;
-
+  @media (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px) and (max-width: 1368px) {
+    width: 910px;
   }
-
 }
 .selection-fontsize {
   font-size: 14px;
@@ -94,13 +91,15 @@
   border: 0;
 }
 .star_banner {
-  @media (max-width:768px) {
- padding-left: 50px;
+  @media (max-width: 600px) {
+    padding-left: 65px;
+    
   }
-  @media  (min-width: 768px) and (max-width: 1024px) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
     padding-left: 260px;
   }
-  @media  (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px)and  (max-width: 1368px) {
+  @media (min-width: 1024px) and (min-width: 912px) and (max-width: 1366px) and (max-width: 1368px) {
     padding-left: 400px;
   }
 }

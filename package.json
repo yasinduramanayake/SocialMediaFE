@@ -31,6 +31,8 @@
     "vue-slick-carousel": "^1.0.6",
     "vue-star-rating": "^1.7.0",
     "vue-template-compiler": "^2.7.10",
+    "vue-toastification": "^1.7.14",
+    "vuesax": "^3.12.2",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
