@@ -22,3 +22,21 @@
     padding-right: 0px;
   }
 }
+.order_description_vertical_border1 {
+  border-left: 1px solid rgb(220, 220, 220);
+
+  height: 70px;
+  float: right;
+}
+.order_description_vertical_border2 {
+  border-left: 1px solid rgb(220, 220, 220);
+
+  height: 30px;
+  float: right;
+}
+.bold-text-orders {
+  font-weight: 500;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}

@@ -33,6 +33,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-select', mode: 'client' },
     '@/plugins/vuesax.js',
+    '@/plugins/mixins.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -68,5 +69,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['lodash']
+  },
 }

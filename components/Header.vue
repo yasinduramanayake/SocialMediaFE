@@ -14,7 +14,6 @@
         <a
           href="#"
           class="btn btn--md-less btn--outline show_on_mob sign-in-btn"
-         
           >Sign Up</a
         >
         <div class="header_group_btns">
@@ -89,21 +88,19 @@
           </a>
         </div>
         <div class="dropdown">
-         
-            <button
-              type="button"
-              data-select-btn=""
-              class="dropdown-btn btn btn--md btn--secondary ico-left btn-candlelight header_burger_btn"
-            >
-              <span class="ico">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-              <span>Our services</span>
-            </button>
-        
-        
+          <button
+            type="button"
+            @click="openModal()"
+            data-select-btn=""
+            class="dropdown-btn btn btn--md btn--secondary ico-left btn-candlelight header_burger_btn"
+          >
+            <span class="ico">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>Our services</span>
+          </button>
         </div>
         <div class="menu">
           <ul class="menu-list">
@@ -129,12 +126,12 @@
               </a>
             </li>
             <li class="header-auth-btn">
-              <a href="#" >
+              <a href="#">
                 <span>Log In</span>
               </a>
             </li>
             <li class="header-auth-btn">
-              <a href="#"  class="btn-transparent">
+              <a href="#" class="btn-transparent">
                 <span>Sign Up</span>
               </a>
             </li>
@@ -148,17 +145,39 @@
             </li>
           </ul>
         </div>
-        
       </div>
-  
     </header>
-  
+
+    <b-modal
+      body-bg-variant="light"
+      ref="modalservices"
+      scrollable
+      hide-backdrop
+      size="xl"
+      hide-footer
+      header-bg-variant="dark"
+      title="Our Services"
+      header-text-variant="light"
+      title-class="h4"
+    >
+      <OurServices :show="show" />
+    </b-modal>
   </body>
- 
 </template>
 
 <script>
 export default {
   name: 'HeaderPage',
+  data() {
+    return {
+      show: false,
+    }
+  },
+  methods: {
+    openModal() {
+      this.$refs.modalservices.show()
+      this.show = true
+    },
+  },
 }
 </script>

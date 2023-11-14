@@ -12,4 +12,12 @@ export default {
   async serrvicesById(payload) {
     return await api.post('/showservices', payload)
   },
+
+  async showMainCategoryServices() {
+    return await api.get('/allmainservicecategories')
+  },
+
+  async getScrapData(payload) {
+    return await api.post('/getscrapedata' , payload)
+  },
 }
