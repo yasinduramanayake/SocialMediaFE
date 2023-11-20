@@ -5,7 +5,7 @@
         <b-col md="12" cols="12" sm="12" lg="4">
           <div>
             <b-card
-              class="services_card_styles shadow-md p-3 mb-5 bg-white text-left  border-0"
+              class="services_card_styles shadow-md p-3 mb-5 bg-white text-left border-0"
             >
               <div class="card-icon">
                 <img
@@ -42,9 +42,9 @@
           </div>
         </b-col>
 
-        <b-col md="12" cols="12" sm="12"  lg="4">
+        <b-col md="12" cols="12" sm="12" lg="4">
           <b-card
-            class="services_card_styles shadow-md p-3 mb-5 bg-white text-left  border-0"
+            class="services_card_styles shadow-md p-3 mb-5 bg-white text-left border-0"
           >
             <div class="card-icon">
               <img
@@ -73,7 +73,7 @@
           </b-card>
         </b-col>
 
-        <b-col md="12" cols="12" sm="12"  lg="4">
+        <b-col md="12" cols="12" sm="12" lg="4">
           <b-card
             class="services_card_styles shadow-md p-3 mb-5 bg-white text-left border-0"
           >

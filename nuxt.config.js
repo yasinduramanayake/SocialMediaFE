@@ -27,6 +27,7 @@ export default {
     '@/assets/scss/advantages.scss',
     '@/assets/scss/faq.scss',
     '@/assets/scss/reviews.scss',
+    '@/assets/scss/buyinstagramlikes.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

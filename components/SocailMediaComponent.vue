@@ -63,6 +63,7 @@
           <b-form-select
             v-model="quality"
             :options="qualities"
+            @input="loadQualities()"
             size="lg"
             class="mt-1 selection-fontsize flowers_button"
           />
@@ -87,26 +88,77 @@
       size="lg"
       title-class="h3 "
       hide-backdrop
-      title="Your Order"
-      hide-footer
+      :title="modalTitle"
+      ok-disabled
       header-bg-variant="dark"
       header-text-variant="light"
+      ok-variant="none"
+      ok-only
     >
-      <OrderDescription :subcategory="getSelectedSubCategory" :Quality="quality" :Icon="getSelectedSubCategoryImage" :UserName="username"  />
+      <template slot="modal-ok" v-if="!checkoutStatus">
+        <b-row class="row">
+          <b-col lg="3" cols="4">
+            Total: <br />
+            <span class="h4"> $12.99</span>
+          </b-col>
+
+          <b-col lg="9" cols="8">
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="addOrder()"
+              variant="primary"
+              class="text-white"
+              >Add Item To Cart</b-button
+            >
+          </b-col>
+        </b-row>
+      </template>
+      <template slot="modal-ok" v-if="checkoutStatus">
+        <b-row class="row">
+          <b-col lg="3" cols="4">
+            Total: <br />
+            <span class="h4"> $12.99</span>
+          </b-col>
+
+          <b-col lg="9" cols="8">
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="checkout()"
+              variant="primary"
+              class="text-white"
+              >Checkout</b-button
+            >
+          </b-col>
+        </b-row>
+      </template>
+
+      <OrderDescription
+        :subcategory="getSelectedSubCategory"
+        :Quality="quality"
+        :checkout_status="checkoutStatus"
+        :Icon="getSelectedSubCategoryImage"
+        :UserName="username"
+      />
     </b-modal>
   </div>
 </template>
 
 <script>
+/* eslint-disable camelcase */
+/* eslint-disable no-lonely-if */
 import serviceApi from '@/Api/Modules/services'
 export default {
   name: 'SocailMedia',
   data() {
     return {
+      modalTitle: '',
+      checkoutStatus: false,
       selected: null,
       options: [],
       selected1: null,
-      username:'',
+      username: '',
       options1: [],
       selected2: null,
       options2: [],
@@ -144,7 +196,6 @@ export default {
       return ''
     },
 
-
     getSelectedCategory() {
       const selectedOption = this.options.find(
         (option) => option.id === this.selected
@@ -170,9 +221,13 @@ export default {
   },
 
   methods: {
+    addOrder() {
+      this.checkoutStatus = true
+      this.modalTitle = 'Items added to cart'
+    },
     openModal() {
-      this.$refs.orderDescriptionModal.show();
-   
+      this.checkoutStatus = false
+      this.$refs.orderDescriptionModal.show()
     },
 
     async allCategories() {
@@ -186,6 +241,8 @@ export default {
       await this.loadSubcategories()
       this.$vs.loading.close()
     },
+
+
     async loadSubcategories() {
       this.options2 = []
       if (this.selected) {
@@ -204,26 +261,84 @@ export default {
         this.$vs.loading.close()
       }
     },
-    async loadServices() {
-      if (this.selected1) {
-        const payload = {
-          subcategory_id: this.selected1,
-        }
-        const res = await serviceApi.serrvicesById(payload)
-        const arrayData = res.data.data
-        this.options2 = []
 
-        if (arrayData.length !== 0) {
-          arrayData.forEach((element) => {
-            this.options2.push({
-              text: `${element.price} | ${element.quantity}`,
-              value: element.id,
+
+    async loadServices(high_quality, real_quality) {
+      if (high_quality === true) {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+                value: element.id,
+              })
             })
-          })
 
-          this.selected2 = this.options2[0].value
+            this.selected2 = this.options2[0].value
+          }
+        }
+      } else if (real_quality === true) {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
+                value: element.id,
+              })
+            })
+
+            this.selected2 = this.options2[0].value
+          }
+        }
+      } else {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+                value: element.id,
+              })
+            })
+
+            this.selected2 = this.options2[0].value
+          }
         }
       }
+    },
+
+
+
+    async loadQualities() {
+      await this.$vs.loading({
+        scale: 0.8,
+      })
+      if (this.quality === 'High Quality') {
+        await this.loadServices(true, false)
+      } else if (this.quality === 'Real') {
+        await this.loadServices(false, true)
+      }
+      this.$vs.loading.close()
     },
   },
 }

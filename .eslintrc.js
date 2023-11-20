@@ -17,6 +17,6 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-  camelcase: ["error", {properties: "never"}]
+    'camelcase': 'off',
   },
 }
