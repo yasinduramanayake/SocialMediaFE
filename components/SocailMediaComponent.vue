@@ -6,78 +6,35 @@
           <b-form-group>
             <b-input-group>
               <b-input-group-prepend>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  height="45"
-                  width="60"
-                  viewBox="-19.5036 -32.49725 169.0312 194.9835"
-                >
-                  <defs>
-                    <radialGradient
-                      fy="578.088"
-                      fx="158.429"
-                      gradientTransform="matrix(0 -1.98198 1.8439 0 -1031.399 454.004)"
-                      gradientUnits="userSpaceOnUse"
-                      xlink:href="#a"
-                      r="65"
-                      cy="578.088"
-                      cx="158.429"
-                      id="c"
-                    />
-                    <radialGradient
-                      fy="473.455"
-                      fx="147.694"
-                      gradientTransform="matrix(.17394 .86872 -3.5818 .71718 1648.351 -458.493)"
-                      gradientUnits="userSpaceOnUse"
-                      xlink:href="#b"
-                      r="65"
-                      cy="473.455"
-                      cx="147.694"
-                      id="d"
-                    />
-                    <linearGradient id="b">
-                      <stop stop-color="#3771c8" offset="0" />
-                      <stop offset=".128" stop-color="#3771c8" />
-                      <stop stop-opacity="0" stop-color="#60f" offset="1" />
-                    </linearGradient>
-                    <linearGradient id="a">
-                      <stop stop-color="#fd5" offset="0" />
-                      <stop stop-color="#fd5" offset=".1" />
-                      <stop stop-color="#ff543e" offset=".5" />
-                      <stop stop-color="#c837ab" offset="1" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
-                    fill="url(#c)"
-                  />
-                  <path
-                    d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
-                    fill="url(#d)"
-                  />
-                  <path
-                    d="M65.003 17c-13.036 0-14.672.057-19.792.29-5.11.234-8.598 1.043-11.65 2.23-3.157 1.226-5.835 2.866-8.503 5.535-2.67 2.668-4.31 5.346-5.54 8.502-1.19 3.053-2 6.542-2.23 11.65C17.06 50.327 17 51.964 17 65s.058 14.667.29 19.787c.235 5.11 1.044 8.598 2.23 11.65 1.227 3.157 2.867 5.835 5.536 8.503 2.667 2.67 5.345 4.314 8.5 5.54 3.054 1.187 6.543 1.996 11.652 2.23 5.12.233 6.755.29 19.79.29 13.037 0 14.668-.057 19.788-.29 5.11-.234 8.602-1.043 11.656-2.23 3.156-1.226 5.83-2.87 8.497-5.54 2.67-2.668 4.31-5.346 5.54-8.502 1.18-3.053 1.99-6.542 2.23-11.65.23-5.12.29-6.752.29-19.788 0-13.036-.06-14.672-.29-19.792-.24-5.11-1.05-8.598-2.23-11.65-1.23-3.157-2.87-5.835-5.54-8.503-2.67-2.67-5.34-4.31-8.5-5.535-3.06-1.187-6.55-1.996-11.66-2.23-5.12-.233-6.75-.29-19.79-.29zm-4.306 8.65c1.278-.002 2.704 0 4.306 0 12.816 0 14.335.046 19.396.276 4.68.214 7.22.996 8.912 1.653 2.24.87 3.837 1.91 5.516 3.59 1.68 1.68 2.72 3.28 3.592 5.52.657 1.69 1.44 4.23 1.653 8.91.23 5.06.28 6.58.28 19.39s-.05 14.33-.28 19.39c-.214 4.68-.996 7.22-1.653 8.91-.87 2.24-1.912 3.835-3.592 5.514-1.68 1.68-3.275 2.72-5.516 3.59-1.69.66-4.232 1.44-8.912 1.654-5.06.23-6.58.28-19.396.28-12.817 0-14.336-.05-19.396-.28-4.68-.216-7.22-.998-8.913-1.655-2.24-.87-3.84-1.91-5.52-3.59-1.68-1.68-2.72-3.276-3.592-5.517-.657-1.69-1.44-4.23-1.653-8.91-.23-5.06-.276-6.58-.276-19.398s.046-14.33.276-19.39c.214-4.68.996-7.22 1.653-8.912.87-2.24 1.912-3.84 3.592-5.52 1.68-1.68 3.28-2.72 5.52-3.592 1.692-.66 4.233-1.44 8.913-1.655 4.428-.2 6.144-.26 15.09-.27zm29.928 7.97a5.76 5.76 0 105.76 5.758c0-3.18-2.58-5.76-5.76-5.76zm-25.622 6.73c-13.613 0-24.65 11.037-24.65 24.65 0 13.613 11.037 24.645 24.65 24.645C78.616 89.645 89.65 78.613 89.65 65S78.615 40.35 65.002 40.35zm0 8.65c8.836 0 16 7.163 16 16 0 8.836-7.164 16-16 16-8.837 0-16-7.164-16-16 0-8.837 7.163-16 16-16z"
-                    fill="#fff"
-                  />
-                </svg>
+                <b-img
+                  width="50px"
+                  :src="`http://localhost/SocialMediaBE/storage/app/public/${getSelectedCategoryIcon}`"
+                ></b-img>
               </b-input-group-prepend>
+
               <b-form-select
                 v-model="selected"
                 :options="options"
+                @input="loadSubcategories()"
+                text-field="name"
+                value-field="id"
                 size="lg"
-                class="mt-1 selection-fontsize"
+                class="mt-1 selection-fontsize flowers_button"
               />
             </b-input-group>
           </b-form-group>
         </b-col>
+
         <b-col md="3">
           <b-form-group>
             <b-form-select
               v-model="selected1"
               :options="options1"
+              @input="loadServices()"
+              text-field="name"
+              value-field="id"
               size="lg"
-              class="mt-1 selection-fontsize"
+              class="mt-1 selection-fontsize flowers_button"
             />
           </b-form-group>
         </b-col>
@@ -87,48 +44,302 @@
               v-model="selected2"
               :options="options2"
               size="lg"
-              class="mt-1 selection-fontsize"
-            />
+              class="mt-1 selection-fontsize flowers_button"
+            >
+            </b-form-select>
           </b-form-group>
         </b-col>
       </b-row>
 
       <b-row>
-        <b-col md="5">
+        <b-col md="5" class="mt-2">
           <b-input
             class="selection-fontsize username_label"
-            placeholder="Your Instergram name"
+            v-model="username"
+            :placeholder="`Your ${getSelectedCategory} name`"
           ></b-input
         ></b-col>
-        <b-col md="3">
-          <b-input
-            class="selection-fontsize"
-            placeholder="High Quality"
-          ></b-input></b-col>
+        <b-col md="3" class="mt-1">
+          <b-form-select
+            v-model="quality"
+            :options="qualities"
+            @input="loadQualities()"
+            size="lg"
+            class="mt-1 selection-fontsize flowers_button"
+          />
+        </b-col>
         <div class="small_break"></div>
         <b-col md="4">
-            <div class="extra_small_break"></div>
-          <b-button class="selection-fontsize" size="lg" variant="danger"
-            >Buy Folowers</b-button
+          <div class="extra_small_break"></div>
+          <b-button
+            class="selection-fontsize flowers_button"
+            size="lg"
+            variant="danger"
+            @click="openModal()"
+            block
+            >Buy {{ getSelectedSubCategory }}</b-button
           ></b-col
         >
       </b-row>
     </b-card>
+
+    <b-modal
+      ref="orderDescriptionModal"
+      size="lg"
+      title-class="h3 "
+      hide-backdrop
+      :title="modalTitle"
+      ok-disabled
+      header-bg-variant="dark"
+      header-text-variant="light"
+      ok-variant="none"
+      ok-only
+    >
+      <template slot="modal-ok" v-if="!checkoutStatus">
+        <b-row class="row">
+          <b-col lg="3" cols="4">
+            Total: <br />
+            <span class="h4"> $12.99</span>
+          </b-col>
+
+          <b-col lg="9" cols="8">
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="addOrder()"
+              variant="primary"
+              class="text-white"
+              >Add Item To Cart</b-button
+            >
+          </b-col>
+        </b-row>
+      </template>
+      <template slot="modal-ok" v-if="checkoutStatus">
+        <b-row class="row">
+          <b-col lg="3" cols="4">
+            Total: <br />
+            <span class="h4"> $12.99</span>
+          </b-col>
+
+          <b-col lg="9" cols="8">
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="checkout()"
+              variant="primary"
+              class="text-white"
+              >Checkout</b-button
+            >
+          </b-col>
+        </b-row>
+      </template>
+
+      <OrderDescription
+        :subcategory="getSelectedSubCategory"
+        :Quality="quality"
+        :checkout_status="checkoutStatus"
+        :Icon="getSelectedSubCategoryImage"
+        :UserName="username"
+      />
+    </b-modal>
   </div>
 </template>
 
 <script>
+/* eslint-disable camelcase */
+/* eslint-disable no-lonely-if */
+import serviceApi from '@/Api/Modules/services'
 export default {
   name: 'SocailMedia',
   data() {
     return {
+      modalTitle: '',
+      checkoutStatus: false,
       selected: null,
-      options: [{ value: null, text: 'Instergram' }],
+      options: [],
       selected1: null,
-      options1: [{ value: null, text: 'Folowers' }],
+      username: '',
+      options1: [],
       selected2: null,
-      options2: [{ value: null, text: '1000 | $12.99' }],
+      options2: [],
+      quality: 'High Quality',
+      qualities: [
+        {
+          text: 'High Quality',
+          value: 'High Quality',
+        },
+        {
+          text: 'Real',
+          value: 'Real',
+        },
+      ],
     }
+  },
+  computed: {
+    getSelectedSubCategory() {
+      const selectedOption = this.options1.find(
+        (option) => option.id === this.selected1
+      )
+      if (selectedOption) {
+        return selectedOption.name
+      }
+      return 'Folowers'
+    },
+
+    getSelectedSubCategoryImage() {
+      const selectedOption = this.options1.find(
+        (option) => option.id === this.selected1
+      )
+      if (selectedOption) {
+        return selectedOption.image
+      }
+      return ''
+    },
+
+    getSelectedCategory() {
+      const selectedOption = this.options.find(
+        (option) => option.id === this.selected
+      )
+      if (selectedOption) {
+        return selectedOption.name
+      }
+      return 'Instagram'
+    },
+
+    getSelectedCategoryIcon() {
+      const selectedOption = this.options.find(
+        (option) => option.id === this.selected
+      )
+      if (selectedOption) {
+        return selectedOption.icon
+      }
+      return ''
+    },
+  },
+  async created() {
+    await this.allCategories()
+  },
+
+  methods: {
+    addOrder() {
+      this.checkoutStatus = true
+      this.modalTitle = 'Items added to cart'
+    },
+    openModal() {
+      this.checkoutStatus = false
+      this.$refs.orderDescriptionModal.show()
+    },
+
+    async allCategories() {
+      await this.$vs.loading({
+        scale: 0.8,
+      })
+      const res = await serviceApi.AllCategories()
+      this.options = res.data.data
+      this.selected = this.options[0].id
+
+      await this.loadSubcategories()
+      this.$vs.loading.close()
+    },
+
+
+    async loadSubcategories() {
+      this.options2 = []
+      if (this.selected) {
+        await this.$vs.loading({
+          scale: 0.8,
+        })
+        const payload = {
+          category_id: this.selected,
+        }
+        const res = await serviceApi.subCategoriesById(payload)
+        this.options1 = res.data.data
+        if (this.options1.length !== 0) {
+          this.selected1 = this.options1[0].id
+          await this.loadServices()
+        }
+        this.$vs.loading.close()
+      }
+    },
+
+
+    async loadServices(high_quality, real_quality) {
+      if (high_quality === true) {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+                value: element.id,
+              })
+            })
+
+            this.selected2 = this.options2[0].value
+          }
+        }
+      } else if (real_quality === true) {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
+                value: element.id,
+              })
+            })
+
+            this.selected2 = this.options2[0].value
+          }
+        }
+      } else {
+        if (this.selected1) {
+          const payload = {
+            subcategory_id: this.selected1,
+          }
+          const res = await serviceApi.serrvicesById(payload)
+          const arrayData = res.data.data
+          this.options2 = []
+
+          if (arrayData.length !== 0) {
+            arrayData.forEach((element) => {
+              this.options2.push({
+                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+                value: element.id,
+              })
+            })
+
+            this.selected2 = this.options2[0].value
+          }
+        }
+      }
+    },
+
+
+
+    async loadQualities() {
+      await this.$vs.loading({
+        scale: 0.8,
+      })
+      if (this.quality === 'High Quality') {
+        await this.loadServices(true, false)
+      } else if (this.quality === 'Real') {
+        await this.loadServices(false, true)
+      }
+      this.$vs.loading.close()
+    },
   },
 }
 </script>

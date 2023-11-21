@@ -19,7 +19,10 @@
     "bootstrap-icons": "^1.11.1",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
+    "eslint-plugin-lodash": "^7.4.0",
     "jquery": "^3.7.1",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.43",
     "nuxt": "^2.15.8",
     "uuid": "^9.0.1",
     "vue": "^2.7.10",
@@ -31,6 +34,8 @@
     "vue-slick-carousel": "^1.0.6",
     "vue-star-rating": "^1.7.0",
     "vue-template-compiler": "^2.7.10",
+    "vue-toastification": "^1.7.14",
+    "vuesax": "^3.12.2",
     "webpack": "^4.46.0"
   },
   "devDependencies": {

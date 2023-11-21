@@ -1,13 +1,42 @@
-.buyservices{
-   padding-left: 25%;
-   padding-right: 25%;
-   
+.buyservices {
+  padding-left: 25%;
+  padding-right: 25%;
 }
-.service_p{
-   margin-bottom: 0.7cm;
+.service_p {
+  margin-bottom: 0.7cm;
+}
+.bcard_text {
+  font-size: 0.6cm;
+  font-weight: bold;
+}
+.flowers_button {
+  border-radius: 8px;
+  height: 50px;
+}
+.order_services_paddings {
+  padding-left: 10px;
+  padding-right: 500px;
 
+  @media (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
-.bcard_text{
-   font-size: 0.6cm;
-   font-weight: bold;
+.order_description_vertical_border1 {
+  border-left: 1px solid rgb(220, 220, 220);
+
+  height: 70px;
+  float: right;
+}
+.order_description_vertical_border2 {
+  border-left: 1px solid rgb(220, 220, 220);
+
+  height: 30px;
+  float: right;
+}
+.bold-text-orders {
+  font-weight: 500;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 }
