@@ -28,6 +28,7 @@ export default {
     '@/assets/scss/faq.scss',
     '@/assets/scss/reviews.scss',
     '@/assets/scss/buyinstagramlikes.scss',
+    '@/assets/scss/contact.scss',
     
   
 
