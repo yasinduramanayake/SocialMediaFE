@@ -148,11 +148,14 @@
 <script>
 /* eslint-disable camelcase */
 /* eslint-disable no-lonely-if */
+import orderApi from '@/Api/Modules/order'
 import serviceApi from '@/Api/Modules/services'
 export default {
   name: 'SocailMedia',
   data() {
     return {
+      form: {},
+      arrayData: [],
       modalTitle: '',
       checkoutStatus: false,
       selected: null,
@@ -184,6 +187,14 @@ export default {
         return selectedOption.name
       }
       return 'Folowers'
+    },
+
+    getSelectedQualityVariables() {
+      const selectedOption = this.arrayData.find(
+        (option) => option.id === this.selected2
+      )
+
+      return selectedOption
     },
 
     getSelectedSubCategoryImage() {
@@ -221,9 +232,31 @@ export default {
   },
 
   methods: {
-    addOrder() {
-      this.checkoutStatus = true
-      this.modalTitle = 'Items added to cart'
+    async addOrder() {
+      console.log(this.quality);
+      if (this.quality === 'High Quality') {
+        this.form.order_details = {
+          category: this.getSelectedCategory,
+          subcategory: this.getSelectedSubCategory,
+          quality: this.quality,
+          price: this.getSelectedQualityVariables.high_quality.price,
+          quantity: this.getSelectedQualityVariables.high_quality.quantity,
+        }
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      } else if (this.quality === 'Real') {
+        this.form.order_details = {
+          category: this.getSelectedCategory,
+          subcategory: this.getSelectedSubCategory,
+          quality: this.quality,
+          price: this.getSelectedQualityVariables.real_quality.price,
+          quantity: this.getSelectedQualityVariables.real_quality.quantity,
+        }
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      }
     },
     openModal() {
       this.checkoutStatus = false
@@ -242,7 +275,6 @@ export default {
       this.$vs.loading.close()
     },
 
-
     async loadSubcategories() {
       this.options2 = []
       if (this.selected) {
@@ -256,12 +288,15 @@ export default {
         this.options1 = res.data.data
         if (this.options1.length !== 0) {
           this.selected1 = this.options1[0].id
-          await this.loadServices()
+          if (this.quality === 'High Quality') {
+            await this.loadServices(true, false)
+          } else if (this.quality === 'Real') {
+            await this.loadServices(false, true)
+          }
         }
         this.$vs.loading.close()
       }
     },
-
 
     async loadServices(high_quality, real_quality) {
       if (high_quality === true) {
@@ -270,14 +305,15 @@ export default {
             subcategory_id: this.selected1,
           }
           const res = await serviceApi.serrvicesById(payload)
-          const arrayData = res.data.data
+          this.arrayData = res.data.data
           this.options2 = []
 
-          if (arrayData.length !== 0) {
-            arrayData.forEach((element) => {
+          if (this.arrayData.length !== 0) {
+            this.arrayData.forEach((element) => {
               this.options2.push({
                 text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
                 value: element.id,
+                quality: 'High Quality',
               })
             })
 
@@ -290,14 +326,15 @@ export default {
             subcategory_id: this.selected1,
           }
           const res = await serviceApi.serrvicesById(payload)
-          const arrayData = res.data.data
+          this.arrayData = res.data.data
           this.options2 = []
 
-          if (arrayData.length !== 0) {
-            arrayData.forEach((element) => {
+          if (this.arrayData.length !== 0) {
+            this.arrayData.forEach((element) => {
               this.options2.push({
                 text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
                 value: element.id,
+                quality: 'Real Quality',
               })
             })
 
@@ -310,14 +347,15 @@ export default {
             subcategory_id: this.selected1,
           }
           const res = await serviceApi.serrvicesById(payload)
-          const arrayData = res.data.data
+          this.arrayData = res.data.data
           this.options2 = []
 
-          if (arrayData.length !== 0) {
-            arrayData.forEach((element) => {
+          if (this.arrayData.length !== 0) {
+            this.arrayData.forEach((element) => {
               this.options2.push({
                 text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
                 value: element.id,
+                quality: 'High Quality',
               })
             })
 
@@ -326,8 +364,6 @@ export default {
         }
       }
     },
-
-
 
     async loadQualities() {
       await this.$vs.loading({
