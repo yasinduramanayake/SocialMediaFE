@@ -6,14 +6,14 @@
       <span class="contact_sub_paragraph">Please fill the form and we will get back to you in 24 hours.</span>
       <div class="small_break"></div>
       <b-row>
-        <b-col lg="8">
+        <b-col lg="8" md="6" sm="12" cols="12">
           <b-card style="border: none">
             <div class="">
               <br />
               <div class="contact">
                 <b-form @submit.prevent="onSubmit" class="contact-f">
                   <b-row>
-                    <b-col md="6">
+                    <b-col lg="6" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="firstName" class="lable-form"
                           ><p class="pf">First Name</p></label
@@ -28,7 +28,7 @@
                         />
                       </div>
                     </b-col>
-                    <b-col md="6">
+                    <b-col lg="6" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="lastName"
                           ><p class="pf">Last Name</p></label
@@ -44,7 +44,7 @@
                       </div>
                     </b-col>
                     <br />
-                    <b-col md="12">
+                    <b-col lg="12" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="email"><p class="pf">Email</p></label>
                         <b-form-input
@@ -56,7 +56,7 @@
                           v-model="form.email"
                         /></div
                     ></b-col>
-                    <b-col lg="12">
+                    <b-col lg="12" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="subject"><p class="pf">Subject</p></label>
                         <b-form-input
@@ -74,7 +74,7 @@
                         </template>
                         </b-form-input></div
                     ></b-col>
-                    <b-col lg="12">
+                    <b-col lg="12" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="message"><p class="pf">Message</p></label>
                         <b-form-textarea
@@ -86,11 +86,11 @@
                           
                         /></div
                     ></b-col>
-                    <b-col md="12">
+                    <b-col lg="12"  md="12" sm="12">
                       <label for="message"><p class="pf">File</p></label>
                       <b-form-file></b-form-file>
                     </b-col>
-                    <b-col lg="12">
+                    <b-col lg="12"  md="12" sm="12" cols="12">
                 <br>
                       <center>
                         <b-button
@@ -109,7 +109,7 @@
           </b-card>
         </b-col>
 
-        <b-col lg="4">
+        <b-col lg="4" md="6" sm="12" cols="12">
           <b-card style="border: none; text-align: left">
             <P class="form-right-text">Contact info</P>
             <br />
