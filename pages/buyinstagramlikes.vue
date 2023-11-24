@@ -4,241 +4,231 @@
     <center>
       <div class="head">
         <b-container>
-        <b-row no-gutters>
-          <b-col md="6">
-            <b-card-body title="">
-              <b-card-text >
-                <div class="main_text" style="text-align: left;">
-                  <h2>
-                    Buy
-                    <span class="title-border title-border--primary"
-                      >Instagram</span
-                    ><br />
-                    Like
-                  </h2>
-                </div>
+          <b-row no-gutters>
+            <b-col md="6">
+              <b-card-body title="">
+                <b-card-text>
+                  <div class="main_text" style="text-align: left">
+                    <h2>
+                      Buy
+                      <span class="title-border title-border--primary"
+                        >Instagram</span
+                      ><br />
+                      Like
+                    </h2>
+                  </div>
 
-                <p style="text-align: left;">
-                  Start getting Instagram likes without any hassle! Enter your
-                  username and select posts to start start receiving likes
-                  today!
-                </p>
-              </b-card-text>
-            </b-card-body>
-          </b-col>
-          <b-col md="6">
-            <b-card-img
-              src="https://buysocialmediamarketing.com/img/product-group-image-instagram.webp"
-              alt="Image"
-              class="pict11"
-            ></b-card-img>
-          </b-col>
-        </b-row>
-      </b-container>
+                  <p style="text-align: left">
+                    Start getting Instagram likes without any hassle! Enter your
+                    username and select posts to start start receiving likes
+                    today!
+                  </p>
+                </b-card-text>
+              </b-card-body>
+            </b-col>
+            <b-col md="6">
+              <b-card-img
+                src="https://buysocialmediamarketing.com/img/product-group-image-instagram.webp"
+                alt="Image"
+                class="pict11"
+              ></b-card-img>
+            </b-col>
+          </b-row>
+        </b-container>
       </div>
       <br />
       <!-- <socialmediacomponentChild/>  -->
       <br /><br /><br />
-      <BuyServices/>
+      <BuyServices />
       <br /><br />
 
       <b-container>
         <div class="instantreallike">
-         
-           
-                <br />
-                <b-container>
-                  <b-row>
-                    <b-col md="3">
-                      <b-card
-                        class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+          <br />
+          <b-container>
+            <b-row>
+              <b-col md="3">
+                <b-card
+                  class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                >
+                  <div class="card-icon">
+                    <img
+                      loading="lazy"
+                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                      alt=""
+                      width="36"
+                      height="36"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <div
+                        class="servising-title d-flex flex-column align-items-center mb-20"
                       >
-                        <div class="card-icon">
-                          <img
-                            loading="lazy"
-                            src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
-                            alt=""
-                            width="36"
-                            height="36"
-                          />
-                        </div>
-                        <div class="card-body">
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <div
-                              class="servising-title d-flex flex-column align-items-center mb-20"
-                            >
-                              <div class="promo-services-units">50</div>
-                              <span>Instagram Likes</span>
-                            </div>
-                            <div
-                              class="counter promo-services-triggers services-texts-cards"
-                            >
-                            
+                        <div class="promo-services-units">50</div>
+                        <span>Instagram Likes</span>
+                      </div>
+                      <div
+                        class="counter promo-services-triggers services-texts-cards"
+                      ></div>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <span class="card-price promo-services-price">
+                        $1.59
+                      </span>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <a
+                        href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
+                        class="btn btn--md btn--primary promo-services-link"
+                      >
+                        <span>Order now</span>
+                      </a>
+                    </div>
+                  </div>
+                </b-card>
+              </b-col>
 
-                            </div>
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <span class="card-price promo-services-price">
-                              $1.59
-                            </span>
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <a
-                              href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
-                              class="btn btn--md btn--primary promo-services-link"
-                            >
-                              <span>Order now</span>
-                            </a>
-                          </div>
-                        </div>
-                      </b-card>
-                    </b-col>
-
-                    <b-col md="3">
-                      <b-card
-                        class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+              <b-col md="3">
+                <b-card
+                  class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                >
+                  <div class="card-icon">
+                    <img
+                      loading="lazy"
+                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                      alt=""
+                      width="36"
+                      height="36"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <div
+                        class="servising-title d-flex flex-column align-items-center mb-20"
                       >
-                        <div class="card-icon">
-                          <img
-                            loading="lazy"
-                            src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
-                            alt=""
-                            width="36"
-                            height="36"
-                          />
-                        </div>
-                        <div class="card-body">
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <div
-                              class="servising-title d-flex flex-column align-items-center mb-20"
-                            >
-                              <div class="promo-services-units">100</div>
-                              <span>Instagram Likes</span>
-                            </div>
-                           
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <span class="card-price promo-services-price">
-                              $2.99
-                            </span>
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <a
-                              href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
-                              class="btn btn--md btn--primary promo-services-link"
-                            >
-                              <span>Order now</span>
-                            </a>
-                          </div>
-                        </div>
-                      </b-card>
-                    </b-col>
-                    <b-col md="3">
-                      <b-card
-                        class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                        <div class="promo-services-units">100</div>
+                        <span>Instagram Likes</span>
+                      </div>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <span class="card-price promo-services-price">
+                        $2.99
+                      </span>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <a
+                        href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
+                        class="btn btn--md btn--primary promo-services-link"
                       >
-                        <div class="card-icon">
-                          <img
-                            loading="lazy"
-                            src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
-                            alt=""
-                            width="36"
-                            height="36"
-                          />
-                        </div>
-                        <div class="card-body">
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <div
-                              class="servising-title d-flex flex-column align-items-center mb-20"
-                            >
-                              <div class="promo-services-units">500</div>
-                              <span>Instagram Likes</span>
-                            </div>
-                          
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <span class="card-price promo-services-price">
-                              $5.99
-                            </span>
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <a
-                              href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
-                              class="btn btn--md btn--primary promo-services-link"
-                            >
-                              <span>Order now</span>
-                            </a>
-                          </div>
-                        </div>
-                      </b-card>
-                    </b-col>
-                    <b-col md="3">
-                      <b-card
-                        class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                        <span>Order now</span>
+                      </a>
+                    </div>
+                  </div>
+                </b-card>
+              </b-col>
+              <b-col md="3">
+                <b-card
+                  class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                >
+                  <div class="card-icon">
+                    <img
+                      loading="lazy"
+                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                      alt=""
+                      width="36"
+                      height="36"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <div
+                        class="servising-title d-flex flex-column align-items-center mb-20"
                       >
-                        <div class="card-icon">
-                          <img
-                            loading="lazy"
-                            src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
-                            alt=""
-                            width="36"
-                            height="36"
-                          />
-                        </div>
-                        <div class="card-body">
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <div
-                              class="servising-title d-flex flex-column align-items-center mb-20"
-                            >
-                              <div class="promo-services-units">1000</div>
-                              <span>Instagram Likes</span>
-                            </div>
-                            
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <span class="card-price promo-services-price">
-                              $9.99
-                            </span>
-                          </div>
-                          <div
-                            class="card-body__item d-flex flex-column align-items-center"
-                          >
-                            <a
-                              href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
-                              class="btn btn--md btn--primary promo-services-link"
-                            >
-                              <span>Order now</span>
-                            </a>
-                          </div>
-                        </div>
-                      </b-card>
-                    </b-col>
-                  </b-row>
-                </b-container>           
-            
-         
+                        <div class="promo-services-units">500</div>
+                        <span>Instagram Likes</span>
+                      </div>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <span class="card-price promo-services-price">
+                        $5.99
+                      </span>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <a
+                        href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
+                        class="btn btn--md btn--primary promo-services-link"
+                      >
+                        <span>Order now</span>
+                      </a>
+                    </div>
+                  </div>
+                </b-card>
+              </b-col>
+              <b-col md="3">
+                <b-card
+                  class="services_card_styles shadow-lg p-3 mb-5 bg-white"
+                >
+                  <div class="card-icon">
+                    <img
+                      loading="lazy"
+                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                      alt=""
+                      width="36"
+                      height="36"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <div
+                        class="servising-title d-flex flex-column align-items-center mb-20"
+                      >
+                        <div class="promo-services-units">1000</div>
+                        <span>Instagram Likes</span>
+                      </div>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <span class="card-price promo-services-price">
+                        $9.99
+                      </span>
+                    </div>
+                    <div
+                      class="card-body__item d-flex flex-column align-items-center"
+                    >
+                      <a
+                        href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
+                        class="btn btn--md btn--primary promo-services-link"
+                      >
+                        <span>Order now</span>
+                      </a>
+                    </div>
+                  </div>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-container>
         </div>
         <br />
         <div class="when-content-loaded active">
@@ -295,86 +285,101 @@
         </b-card-text>
         <br />
         <div>
-          <b-card-group deck>
-            <b-card no-body class="overflow-hidden" style="max-width: 540px">
-              <b-row no-gutters>
-                <b-col md="6">
-                  <b-card-img
-                    src="https://buysocialmediamarketing.com/img/cup.svg"
-                    alt="Image"
-                    class="pict"
-                  ></b-card-img>
-                </b-col>
-                <b-col md="6">
-                  <b-card-body>
-                    <b-card-text
-                      >Lots of likes can increase your social status on
-                      Instagram
-                    </b-card-text>
-                  </b-card-body>
-                </b-col>
-              </b-row>
-            </b-card>
-            <b-card no-body class="overflow-hidden" style="max-width: 540px">
-              <b-row no-gutters>
-                <b-col md="6">
-                  <b-card-img
-                    src="https://buysocialmediamarketing.com/img/people.svg"
-                    alt="Image"
-                    class="pict"
-                  ></b-card-img>
-                </b-col>
-                <b-col md="6">
-                  <b-card-body>
-                    <b-card-text
-                      >Fast delivery of quality likes will help your posts
-                      appear on users feed
-                    </b-card-text>
-                  </b-card-body>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-card-group>
-          <b-card-group deck>
-            <b-card no-body class="overflow-hidden" style="max-width: 540px">
-              <b-row no-gutters>
-                <b-col md="6">
-                  <b-card-img
-                    src="https://buysocialmediamarketing.com/img/ranking.svg"
-                    alt="Image"
-                    class="pict"
-                  ></b-card-img>
-                </b-col>
-                <b-col md="6">
-                  <b-card-body>
-                    <b-card-text
-                      >Likes can build a better looking and admired image for
-                      your profile
-                    </b-card-text>
-                  </b-card-body>
-                </b-col>
-              </b-row>
-            </b-card>
-            <b-card no-body class="overflow-hidden" style="max-width: 540px">
-              <b-row no-gutters>
-                <b-col md="6">
-                  <b-card-img
-                    src="https://buysocialmediamarketing.com/img/status-up.svg"
-                    alt="Image"
-                    class="pict"
-                  ></b-card-img>
-                </b-col>
-                <b-col md="6">
-                  <b-card-body>
-                    <b-card-text
-                      >Buying real likes is quick and easy process with
-                      guaranteed results
-                    </b-card-text>
-                  </b-card-body>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-card-group>
+          <b-row>
+            <b-col lg="6">
+              <b-card no-body class="overflow-hidden border-0"  style="max-width: 540px;height: 100%;">
+                <b-row no-gutters>
+                  <b-col md="6">
+                    <b-card-img
+                      src="https://buysocialmediamarketing.com/img/cup.svg"
+                      alt="Image"
+                      class="pict"
+                    ></b-card-img>
+                  </b-col>
+                  <b-col md="6">
+                    <b-card-body>
+                      <b-card-text
+                      style="text-align: left;"
+                        >Lots of likes can increase your social status on
+                        Instagram
+                      </b-card-text>
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-col>
+            <b-col lg="6">
+              <b-card no-body class="overflow-hidden border-0" style="max-width: 540px;height: 100%;">
+                <b-row no-gutters>
+                  <b-col md="6">
+                    <b-card-img
+                      src="https://buysocialmediamarketing.com/img/people.svg"
+                      alt="Image"
+                      class="pict"
+                    ></b-card-img>
+                  </b-col>
+                  <b-col md="6">
+                    <b-card-body>
+                      <b-card-text
+                      style="text-align: left;"
+                        >Fast delivery of quality likes will help your posts
+                        appear on users feed
+                      </b-card-text>
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-col>
+          </b-row>
+
+          <br>
+          <b-row>
+            <b-col lg="6">
+              <b-card no-body class="overflow-hidden border-0"  style="max-width: 540px;height: 100%;">
+                <b-row no-gutters>
+                  <b-col md="6">
+                    <b-card-img
+                      src="https://buysocialmediamarketing.com/img/ranking.svg"
+                      alt="Image"
+                      class="pict"
+                    ></b-card-img>
+                  </b-col>
+                  <b-col md="6">
+                    <b-card-body>
+                      <b-card-text
+                      style="text-align: left;"
+                        >Likes can build a better looking and admired image for
+                        your profile
+                      </b-card-text>
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-col>
+
+            <b-col lg="6">
+              <b-card no-body class="overflow-hidden border-0" style="max-width: 540px;height: 100%;">
+                <b-row no-gutters>
+                  <b-col md="6">
+                    <b-card-img
+                      src="https://buysocialmediamarketing.com/img/status-up.svg"
+                      alt="Image"
+                      class="pict"
+                    ></b-card-img>
+                  </b-col>
+                  <b-col md="6">
+                    <b-card-body>
+                      <b-card-text
+                      style="text-align: left;"
+                        >Buying real likes is quick and easy process with
+                        guaranteed results
+                      </b-card-text>
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-col>
+          </b-row>
         </div>
       </b-container>
       <br /><br />
@@ -551,11 +556,7 @@
 </template>
 
 <script>
-
-
-
 export default {
   name: 'BuyInstagramLikes',
-  
 }
 </script>
