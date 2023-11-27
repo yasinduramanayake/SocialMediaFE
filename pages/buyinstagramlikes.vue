@@ -241,6 +241,7 @@
           </b-card>
         </div>
         <br />
+        <br/>
         <div class="when-content-loaded active">
           <b-card bg-variant="primary">
             <b-row>
@@ -282,6 +283,7 @@
               Instagram Likes?
             </h2>
           </div>
+          <br/>
         </b-card-text>
         <br />
         <div>
@@ -332,7 +334,7 @@
             </b-col>
           </b-row>
 
-          <br>
+          <br/><br/>
           <b-row>
             <b-col lg="6">
               <b-card no-body class="overflow-hidden border-0"  style="max-width: 540px;height: 100%;">
@@ -427,6 +429,7 @@
               </b-card-body>
             </b-collapse>
           </b-card>
+          <br/>
 
           <b-card no-body class="mb-1">
             <b-card-header header-tag="header" class="p-1" role="tab">
@@ -460,6 +463,7 @@
               </b-card-body>
             </b-collapse>
           </b-card>
+          <br/>
 
           <b-card no-body class="mb-1">
             <b-card-header header-tag="header" class="p-1" role="tab">
@@ -489,6 +493,7 @@
               </b-card-body>
             </b-collapse>
           </b-card>
+          <br/>
 
           <b-card no-body class="mb-1">
             <b-card-header header-tag="header" class="p-1" role="tab">
@@ -520,6 +525,7 @@
               </b-card-body>
             </b-collapse>
           </b-card>
+          <br/>
 
           <b-card no-body class="mb-1">
             <b-card-header header-tag="header" class="p-1" role="tab">
