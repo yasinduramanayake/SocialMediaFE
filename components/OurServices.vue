@@ -11,7 +11,7 @@
       <b-tabs content-class="mt-3 color-white" align="center">
         <!--instgram-->
         <b-container>
-          <b-card class="border-0">
+          <b-card style="border: none;">
             <b-tab
               class="border-0"
               v-for="category in categories"
@@ -46,6 +46,7 @@
                 >
                   <div v-if="subcat.type === 'main'">
                     <b-card
+                    class="border-0"
                       no-body
                       style="max-width: 20rem"
                       :img-src="subcat.image"
@@ -74,6 +75,7 @@
                 >
                   <div>
                     <b-card
+                    class="border-0"
                       no-body
                       style="max-width: 20rem"
                       :img-src="subcat.image"

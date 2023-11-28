@@ -1,31 +1,28 @@
 <template>
   <div>
-    <b-card class="card_social_media">
-      <b-row>
-        <b-col md="6">
-          <b-form-group>
-            <b-input-group>
-              <b-input-group-prepend>
-                <b-img
-                  width="50px"
-                  :src="`http://localhost/SocialMediaBE/storage/app/public/${getSelectedCategoryIcon}`"
-                ></b-img>
-              </b-input-group-prepend>
+    <b-container>
+      <b-card class="card_social_media">
+        <b-row>
+          <b-col md="6" class="mt-3">
+            <b-form-group>
+              <b-input-group>
+                <b-input-group-prepend>
+                  <b-img
+                    width="30px"
+                    :src="`http://localhost/SocialMediaBE/storage/app/public/${getSelectedCategoryIcon}`"
+                  ></b-img>
+                </b-input-group-prepend>
+                &nbsp;
+                <b-input
+                  class="selection-fontsize username_label"
+                  v-model="username"
+                  :placeholder="`Your ${getSelectedCategory} name`"
+                ></b-input>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
 
-              <b-form-select
-                v-model="selected"
-                :options="options"
-                @input="loadSubcategories()"
-                text-field="name"
-                value-field="id"
-                size="lg"
-                class="mt-1 selection-fontsize flowers_button"
-              />
-            </b-input-group>
-          </b-form-group>
-        </b-col>
-
-        <b-col md="3">
+          <!-- <b-col md="3">
           <b-form-group>
             <b-form-select
               v-model="selected1"
@@ -48,41 +45,30 @@
             >
             </b-form-select>
           </b-form-group>
-        </b-col>
-      </b-row>
+        </b-col> -->
 
-      <b-row>
-        <b-col md="5" class="mt-2">
-          <b-input
-            class="selection-fontsize username_label"
-            v-model="username"
-            :placeholder="`Your ${getSelectedCategory} name`"
-          ></b-input
-        ></b-col>
-        <b-col md="3" class="mt-1">
-          <b-form-select
-            v-model="quality"
-            :options="qualities"
-            @input="loadQualities()"
-            size="lg"
-            class="mt-1 selection-fontsize flowers_button"
-          />
-        </b-col>
-        <div class="small_break"></div>
-        <b-col md="4">
-          <div class="extra_small_break"></div>
-          <b-button
-            class="selection-fontsize flowers_button"
-            size="lg"
-            variant="danger"
-            @click="openModal()"
-            block
-            >Buy {{ getSelectedSubCategory }}</b-button
-          ></b-col
-        >
-      </b-row>
-    </b-card>
-
+          <b-col md="3" class="mt-1">
+            <b-form-select
+              v-model="quality"
+              :options="qualities"
+              @input="loadQualities()"
+              size="lg"
+              class="mt-1 selection-fontsize flowers_button"
+            />
+          </b-col>
+          <b-col md="3" class="mt-1">
+            <b-form-select
+              v-model="selected2"
+              :options="options2"
+              size="lg"
+              class="mt-1 selection-fontsize flowers_button"
+            >
+            </b-form-select>
+            <div class="small_break"></div>
+          </b-col>
+        </b-row>
+      </b-card>
+    </b-container>
     <b-modal
       ref="orderDescriptionModal"
       size="lg"
@@ -137,7 +123,6 @@
       <OrderDescription
         :subcategory="getSelectedSubCategory"
         :Quality="quality"
-        :propData="propData"
         :checkout_status="checkoutStatus"
         :Icon="getSelectedSubCategoryImage"
         :UserName="username"
@@ -158,7 +143,6 @@ export default {
     return {
       form: {},
       arrayData: [],
-      propData: {},
       modalTitle: '',
       checkoutStatus: false,
       selected: null,
@@ -229,24 +213,11 @@ export default {
       }
       return ''
     },
-    getSelectedService() {
-      const selectedOption = this.options2.find(
-        (option) => option.value === this.selected2
-      )
-      if (selectedOption) {
-        return selectedOption.text
-      }
-      return ''
-    },
   },
   async created() {
     await this.allCategories()
   },
 
-  updated() {
-    this.propData.price = this.getSelectedService.split('|')[0]
-    this.propData.quantity = this.getSelectedService.split('|')[1]
-  },
   methods: {
     async addOrder() {
       const res = await paymentApi.AddPayment()
@@ -326,6 +297,7 @@ export default {
           const res = await serviceApi.serrvicesById(payload)
           this.arrayData = res.data.data
           this.options2 = []
+
           if (this.arrayData.length !== 0) {
             this.arrayData.forEach((element) => {
               this.options2.push({

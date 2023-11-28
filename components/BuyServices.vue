@@ -7,12 +7,13 @@
       </h2>
     </div>
     <p class="service_p">It's easy in 3 simple steps:</p>
-    <b-card-group deck>
+   
       <b-row>
         <b-col md="4">
           <b-card
+          class="border-0"
             no-body
-            style="max-width: 20rem"
+            style="max-width: 20rem;height: 100%;"
             img-src="https://buysocialmediamarketing.com/img/how-to-1.svg"
             img-alt="Image"
             img-top
@@ -26,8 +27,9 @@
         </b-col>
         <b-col md="4">
           <b-card
+          class="border-0"
             no-body
-            style="max-width: 20rem"
+            style="max-width: 20rem;height: 100%;"
             img-src="https://buysocialmediamarketing.com/img/how-to-2.svg"
             img-alt="Image"
             img-top
@@ -41,12 +43,15 @@
           </b-card>
         </b-col>
         <b-col md="4">
-          <b-card
+          <b-card  
+          class="border-0"
             no-body
-            style="max-width: 20rem"
+            style="max-width: 20rem;height: 100%;"
             img-src="https://buysocialmediamarketing.com/img/how-to-3.svg"
             img-alt="Image"
             img-top
+            img-height="68%"
+            img-width="80%"
           >
             <center>
               <b-card-title class="bcard_text"
@@ -57,7 +62,7 @@
           </b-card>
         </b-col>
       </b-row>
-    </b-card-group>
+  
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <div v-if="!checkout_status">
       <b-card>
         <div class="pt-3 order_description_vertical_border1">
-          <span class="ml-2 font-weight-bold"> $12.99</span>
+          <span class="ml-2 font-weight-bold"> ${{ propData.price }}</span>
         </div>
 
         <b-container class="order_services_paddings">
@@ -21,7 +21,9 @@
                 :src="Icon"
               ></b-avatar>
               &nbsp;
-              <div class="font-weight-bold">1000 {{ subcategory }}</div>
+              <div class="font-weight-bold">
+                {{ propData.quantity }}&nbsp;{{ subcategory }}
+              </div>
             </b-col>
 
             <b-col sm="3" lg="3" md="7" cols="6">
@@ -160,7 +162,9 @@
             >
           </b-col>
           <b-col class="pt-2" sm="3" lg="7" md="7" cols="6">
-            <span class="ml-1 font-weight-bold" style="float: right;"> $12.99</span>
+            <span class="ml-1 font-weight-bold" style="float: right">
+              $12.99</span
+            >
           </b-col>
         </b-row>
       </b-container>
@@ -203,6 +207,7 @@ export default {
     Icon: String,
     UserName: String,
     checkout_status: Boolean,
+    propData: Object,
   },
   methods: {
     qualityChange1() {
