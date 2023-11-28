@@ -25,7 +25,7 @@
             </center>
           </b-card>
         </b-col>
-        <b-col md="4">
+        <b-col md="4" class="bcard123">
           <b-card
           class="border-0"
             no-body
