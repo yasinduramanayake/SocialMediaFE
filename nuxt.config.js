@@ -36,6 +36,7 @@ export default {
     { src: '~/plugins/vue-select', mode: 'client' },
     '@/plugins/vuesax.js',
     '@/plugins/mixins.js',
+    '@/plugins/router.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

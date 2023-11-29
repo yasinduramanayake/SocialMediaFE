@@ -11,7 +11,7 @@
       <b-tabs content-class="mt-3 color-white" align="center">
         <!--instgram-->
         <b-container>
-          <b-card style="border: none;">
+          <b-card style="border: none">
             <b-tab
               class="border-0"
               v-for="category in categories"
@@ -45,18 +45,23 @@
                   :key="subcat.id"
                 >
                   <div v-if="subcat.type === 'main'">
-                    <b-card
-                    class="border-0"
-                      no-body
-                      style="max-width: 20rem"
-                      :img-src="subcat.image"
-                      img-alt="Image"
-                      img-top
+                    <b-button
+                      variant="outline-light"
+                      @click="sendparams(category.name, subcat.name)"
                     >
-                      <center>
-                        <b-card-title class="">{{ subcat.name }}</b-card-title>
-                      </center>
-                    </b-card>
+                      <b-card
+                        class="border-0 button"
+                        no-body
+                        style="max-width: 20rem"
+                        :img-src="subcat.image"
+                        img-alt="Image"
+                        img-top
+                      >
+                      </b-card>
+                    </b-button>
+                    <center>
+                      <b-card-title class="">{{ subcat.name }}</b-card-title>
+                    </center>
                   </div>
                 </b-col>
               </b-row>
@@ -75,7 +80,7 @@
                 >
                   <div>
                     <b-card
-                    class="border-0"
+                      class="border-0"
                       no-body
                       style="max-width: 20rem"
                       :img-src="subcat.image"
@@ -637,6 +642,9 @@ export default {
     await this.loadCategories()
   },
   methods: {
+    sendparams(data1, data2) {
+      this.$router.push(`/services/${data1}${data2}`)
+    },
     async loadCategories() {
       await this.$vs.loading({
         scale: 0.8,
