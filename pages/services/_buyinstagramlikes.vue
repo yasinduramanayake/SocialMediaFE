@@ -11,33 +11,58 @@
                   <div class="main_text" style="text-align: left">
                     <h2>
                       Buy
-                      <span class="title-border title-border--primary"
-                        >Instagram</span
+                      <span class="title-border title-border--primary">{{
+                        category
+                      }}</span
                       ><br />
-                      Like
+                      {{ subcategory }}
                     </h2>
                   </div>
 
                   <p style="text-align: left">
-                    Start getting Instagram likes without any hassle! Enter your
-                    username and select posts to start start receiving likes
+                    Start getting {{ category }} {{ subcategory }} without any
+                    hassle! Enter your username and select posts to start start
+                    receiving {{ subcategory }}
                     today!
                   </p>
                 </b-card-text>
               </b-card-body>
             </b-col>
             <b-col md="6">
-              <b-card-img
-                src="https://buysocialmediamarketing.com/img/product-group-image-instagram.webp"
-                alt="Image"
-                class="pict11"
-              ></b-card-img>
+              <div v-if="category === 'Instergram'">
+                <b-card-img
+                  src="https://buysocialmediamarketing.com/img/product-group-image-instagram.webp"
+                  alt="Image"
+                  class="pict11"
+                ></b-card-img>
+              </div>
+              <div v-if="category === 'Facebook'">
+                <b-card-img
+                  src="https://buysocialmediamarketing.com/img/product-group-image-facebook.webp"
+                  alt="Image"
+                  class="pict11"
+                ></b-card-img>
+              </div>
+              <div v-if="category === 'Twitter'">
+                <b-card-img
+                  src="https://buysocialmediamarketing.com/img/product-group-image-twitter.webp"
+                  alt="Image"
+                  class="pict11"
+                ></b-card-img>
+              </div>
+
             </b-col>
           </b-row>
         </b-container>
       </div>
       <br />
-      <!-- <socialmediacomponentChild/>  -->
+      <socialmediacomponentChild
+        :category="category"
+        :subcategoryid="subcategoryid"
+        :categoryicon="categoryicon"
+        :subcategoryname="subcategoryname"
+        :subcategoryimage="subcategoryimage"
+      />
       <br /><br /><br />
       <BuyServices />
       <br /><br />
@@ -54,7 +79,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -68,7 +93,7 @@
                         class="servising-title d-flex flex-column align-items-center mb-20"
                       >
                         <div class="promo-services-units">50</div>
-                        <span>Instagram Likes</span>
+                        <span>{{ category }} {{ subcategory }}</span>
                       </div>
                       <div
                         class="counter promo-services-triggers services-texts-cards"
@@ -102,7 +127,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -116,7 +141,7 @@
                         class="servising-title d-flex flex-column align-items-center mb-20"
                       >
                         <div class="promo-services-units">100</div>
-                        <span>Instagram Likes</span>
+                        <span>{{ category }} {{ subcategory }}</span>
                       </div>
                     </div>
                     <div
@@ -146,7 +171,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -160,7 +185,7 @@
                         class="servising-title d-flex flex-column align-items-center mb-20"
                       >
                         <div class="promo-services-units">500</div>
-                        <span>Instagram Likes</span>
+                        <span>{{ category }} {{ subcategory }}</span>
                       </div>
                     </div>
                     <div
@@ -190,7 +215,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                      src="../assets/modern-badge-logo-instagram-icon_578229-124.avif"
+                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -204,7 +229,7 @@
                         class="servising-title d-flex flex-column align-items-center mb-20"
                       >
                         <div class="promo-services-units">1000</div>
-                        <span>Instagram Likes</span>
+                        <span>{{ category }} {{ subcategory }}</span>
                       </div>
                     </div>
                     <div
@@ -234,14 +259,14 @@
         <div class="when-content-loaded active">
           <b-card bg-color="#fff">
             <p>
-              Instant and affordable likes service from high quality Instagram
-              users,<br />
+              Instant and affordable {{ subcategory }} service from high quality
+              Instagram users,<br />
               who have profile pictures and posts, but are not active.
             </p>
           </b-card>
         </div>
         <br />
-        <br/>
+        <br />
         <div class="when-content-loaded active">
           <b-card bg-variant="primary">
             <b-row>
@@ -280,16 +305,20 @@
           <div class="main_text">
             <h2>
               <span class="title-border title-border--primary">Why buy</span>
-              Instagram Likes?
+              {{ category }} {{ subcategory }}?
             </h2>
           </div>
-          <br/>
+          <br />
         </b-card-text>
         <br />
         <div>
           <b-row>
             <b-col lg="6">
-              <b-card no-body class="overflow-hidden border-0"  style="max-width: 540px;height: 100%;">
+              <b-card
+                no-body
+                class="overflow-hidden border-0"
+                style="max-width: 540px; height: 100%"
+              >
                 <b-row no-gutters>
                   <b-col md="6">
                     <b-card-img
@@ -300,10 +329,9 @@
                   </b-col>
                   <b-col md="6">
                     <b-card-body>
-                      <b-card-text
-                      style="text-align: left;"
-                        >Lots of likes can increase your social status on
-                        Instagram
+                      <b-card-text style="text-align: left"
+                        >Lots of {{ subcategory }} can increase your social
+                        status on Instagram
                       </b-card-text>
                     </b-card-body>
                   </b-col>
@@ -311,7 +339,11 @@
               </b-card>
             </b-col>
             <b-col lg="6">
-              <b-card no-body class="overflow-hidden border-0" style="max-width: 540px;height: 100%;">
+              <b-card
+                no-body
+                class="overflow-hidden border-0"
+                style="max-width: 540px; height: 100%"
+              >
                 <b-row no-gutters>
                   <b-col md="6">
                     <b-card-img
@@ -322,10 +354,9 @@
                   </b-col>
                   <b-col md="6">
                     <b-card-body>
-                      <b-card-text
-                      style="text-align: left;"
-                        >Fast delivery of quality likes will help your posts
-                        appear on users feed
+                      <b-card-text style="text-align: left"
+                        >Fast delivery of quality {{ subcategory }} will help
+                        your posts appear on users feed
                       </b-card-text>
                     </b-card-body>
                   </b-col>
@@ -334,10 +365,14 @@
             </b-col>
           </b-row>
 
-          <br/><br/>
+          <br /><br />
           <b-row>
             <b-col lg="6">
-              <b-card no-body class="overflow-hidden border-0"  style="max-width: 540px;height: 100%;">
+              <b-card
+                no-body
+                class="overflow-hidden border-0"
+                style="max-width: 540px; height: 100%"
+              >
                 <b-row no-gutters>
                   <b-col md="6">
                     <b-card-img
@@ -348,10 +383,9 @@
                   </b-col>
                   <b-col md="6">
                     <b-card-body>
-                      <b-card-text
-                      style="text-align: left;"
-                        >Likes can build a better looking and admired image for
-                        your profile
+                      <b-card-text style="text-align: left">
+                        {{ subcategory }} can build a better looking and admired
+                        image for your profile
                       </b-card-text>
                     </b-card-body>
                   </b-col>
@@ -360,7 +394,11 @@
             </b-col>
 
             <b-col lg="6">
-              <b-card no-body class="overflow-hidden border-0" style="max-width: 540px;height: 100%;">
+              <b-card
+                no-body
+                class="overflow-hidden border-0"
+                style="max-width: 540px; height: 100%"
+              >
                 <b-row no-gutters>
                   <b-col md="6">
                     <b-card-img
@@ -371,10 +409,9 @@
                   </b-col>
                   <b-col md="6">
                     <b-card-body>
-                      <b-card-text
-                      style="text-align: left;"
-                        >Buying real likes is quick and easy process with
-                        guaranteed results
+                      <b-card-text style="text-align: left"
+                        >Buying real {{ subcategory }} is quick and easy process
+                        with guaranteed results
                       </b-card-text>
                     </b-card-body>
                   </b-col>
@@ -386,177 +423,7 @@
       </b-container>
       <br /><br />
 
-      <b-container>
-        <div>
-          <b-card-body title="">
-            <b-card-text>
-              <div class="main_text">
-                <h2>Common questions</h2>
-              </div>
-            </b-card-text>
-          </b-card-body>
-        </div>
-
-        <div class="accordion" role="tablist">
-          <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <b-button
-                block
-                v-b-toggle.accordion-1
-                variant="info"
-                class="faqins"
-                ><p class="btntext">How do I get started?</p></b-button
-              >
-            </b-card-header>
-            <b-collapse
-              id="accordion-1"
-              visible
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text></b-card-text>
-                <b-card-text>
-                  <p>
-                    To get started simply select a suitable likes package and
-                    enter your Instagram username and click 'Continue' to select
-                    the posts you wish to get likes for. You can select multiple
-                    posts. After posts selection, click 'Continue' and add
-                    additional services, if you wish. Then confirm the order
-                    details by and click 'Add to cart'.
-                  </p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-          <br/>
-
-          <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <b-button
-                block
-                v-b-toggle.accordion-2
-                variant="info"
-                class="faqins"
-                ><p class="btntext">
-                  What is the difference between 'high quality' and 'real'
-                  likes?
-                </p>
-              </b-button>
-            </b-card-header>
-            <b-collapse
-              id="accordion-2"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text
-                  >We do offer two types of Instagram likes services - 'High
-                  quality' and 'Real'. High quality likes - this service meets
-                  the highest standards in the industry. The accounts have
-                  profile pictures, posts & followers. Service is covered with
-                  30-day retention guarantee. Real likes - this service is
-                  exclusively offered on BuySocialMediaMarketing only. You will
-                  receive likes from 100% real & active Instagram users who
-                  publish posts and stories regularly. No drops!</b-card-text
-                >
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-          <br/>
-
-          <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <b-button
-                block
-                v-b-toggle.accordion-3
-                variant="info"
-                class="faqins"
-                ><p class="btntext">
-                  How fast will I receive the likes?
-                </p></b-button
-              >
-            </b-card-header>
-            <b-collapse
-              id="accordion-3"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text
-                  >Generally our Instagram likes delivery starts immediately,
-                  however please note that in some cases it can take up to 30
-                  minutes. But you should not worry as 99% of the time the likes
-                  start comming as soon as your payment comes
-                  through.</b-card-text
-                >
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-          <br/>
-
-          <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <b-button
-                block
-                v-b-toggle.accordion-4
-                variant="info"
-                class="faqins"
-                ><p class="btntext">
-                  Can you actually buy real Instagram likes?
-                </p></b-button
-              >
-            </b-card-header>
-            <b-collapse
-              id="accordion-4"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text
-                  >Yes you can actually get real Instagram likes from
-                  BuySocialMediaMarketing. Real and active likes are offered
-                  exclusively on our website, you won't be able to find real
-                  guaranteed likes anywhere else! If you choose this service you
-                  will receive likes from users who publish posts and stories
-                  regularly and may as well engage with the content you
-                  post.</b-card-text
-                >
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-          <br/>
-
-          <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <b-button
-                block
-                v-b-toggle.accordion-5
-                variant="info"
-                class="faqins"
-                ><p class="btntext">Can I spread the likes between my posts?</p>
-              </b-button>
-            </b-card-header>
-            <b-collapse
-              id="accordion-5"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text
-                  >Yes, you will be allowed to select multiple posts after
-                  entering your Instagram username. Your likes package will be
-                  distributed evenly between all selected posts. The number of
-                  posts you can select depends on the package selected. The
-                  minimum likes per post is 20, so you can select as many posts
-                  as you like, with a condition that it comes to no less than 20
-                  likes per post.</b-card-text
-                >
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-        </div>
-      </b-container>
+   
     </center>
   </div>
 </template>
@@ -564,5 +431,15 @@
 <script>
 export default {
   name: 'BuyInstagramLikes',
+  data() {
+    return {
+      category: this.$route.params.param1,
+      subcategory: this.$route.params.param2,
+      subcategoryid: this.$route.params.param3,
+      categoryicon: this.$route.params.param4,
+      subcategoryname: this.$route.params.param5,
+      subcategoryimage: this.$route.params.param6,
+    }
+  },
 }
 </script>

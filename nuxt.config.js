@@ -29,6 +29,8 @@ export default {
     '@/assets/scss/reviews.scss',
     '@/assets/scss/buyinstagramlikes.scss',
     '@/assets/scss/contact.scss',
+    '@/assets/scss/loginform.scss',
+    '@/assets/scss/footer.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -36,7 +38,7 @@ export default {
     { src: '~/plugins/vue-select', mode: 'client' },
     '@/plugins/vuesax.js',
     '@/plugins/mixins.js',
-    '@/plugins/router.js'
+    "~/plugins/vee-validate.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,6 +50,16 @@ export default {
     '@nuxtjs/eslint-module',
   ],
 
+  router: {
+    middleware: "auth_controller",
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'viewservice',
+        path: '/service/:param1/:param2/:param3/:param4:/param5/:param6',
+        component: resolve(__dirname, 'pages/services/_buyinstagramlikes.vue'),
+      })
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
@@ -73,6 +85,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['lodash']
+    transpile: ['lodash' , 'vee-validate/dist/rules'],
+    
   },
 }

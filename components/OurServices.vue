@@ -47,7 +47,16 @@
                   <div v-if="subcat.type === 'main'">
                     <b-button
                       variant="outline-light"
-                      @click="sendparams(category.name, subcat.name)"
+                      @click="
+                        sendparams(
+                          category.name,
+                          subcat.name,
+                          subcat.id,
+                          category.icon,
+                          subcat.name,
+                          subcat.image
+                        )
+                      "
                     >
                       <b-card
                         class="border-0 button"
@@ -642,8 +651,18 @@ export default {
     await this.loadCategories()
   },
   methods: {
-    sendparams(data1, data2) {
-      this.$router.push(`/services/${data1}${data2}`)
+    sendparams(data1, data2, data3, data4 , data5 ,data6) {
+      this.$router.push({
+        name: 'viewservice',
+        params: {
+          param1: data1,
+          param2: data2,
+          param3: data3,
+          param4: data4,
+          param5: data5,
+          param6: data6,
+        },
+      })
     },
     async loadCategories() {
       await this.$vs.loading({

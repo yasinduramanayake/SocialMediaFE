@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-
+import viewservice from '@/pages/services/_buyinstagramlikes.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  // Define your routes here
-
+  
 ]
 
 const router = new VueRouter({

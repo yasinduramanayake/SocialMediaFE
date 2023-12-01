@@ -1,24 +1,20 @@
-.main{
-    padding-left: 20%;
-    padding-right: 20%;
-    background-color: azure;
+.main_text {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
 }
-.main_text{
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
+p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 20px;
 }
-p{
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 20px;
+.try_btn {
+ height: 50px;
 }
-.try_btn{
-    margin-top: 4rem;
-    width: 5cm;
-    height: 1.5cm;
-    text-align: center;
-    margin-left: 3.7cm;
-    font-size: large;
+.freetrail_button {
+  padding-left: 10px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 0px;
+  }
 }

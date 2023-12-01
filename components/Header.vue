@@ -126,12 +126,13 @@
               </a>
             </li>
             <li class="header-auth-btn">
-              <a href="#">
+              <a @click="openLoginModal()" class="btn-transparent">
                 <span>Log In</span>
               </a>
             </li>
+            &nbsp;
             <li class="header-auth-btn">
-              <a href="#" class="btn-transparent">
+              <a @click="openRegisterModal" class="btn-transparent">
                 <span>Sign Up</span>
               </a>
             </li>
@@ -162,6 +163,39 @@
     >
       <OurServices :show="show" />
     </b-modal>
+
+    <b-modal
+      body-bg-variant="light"
+      ref="modallogin"
+      scrollable
+      hide-backdrop
+      size="md"
+      hide-footer
+      dialog-class="modal-content"
+      hide-header
+      title="Our Services"
+      header-text-variant="light"
+      title-class="h4"
+    >
+      <LoginForm />
+    </b-modal>
+
+    <b-modal
+      body-bg-variant="light"
+      ref="modalregister"
+      
+      scrollable
+      dialog-class="modal-content"
+      hide-backdrop
+      size="md"
+      hide-footer
+      hide-header
+      title="Our Services"
+      header-text-variant="light"
+      title-class="h4"
+    >
+      <RegisterForm />
+    </b-modal>
   </body>
 </template>
 
@@ -178,6 +212,18 @@ export default {
       this.$refs.modalservices.show()
       this.show = true
     },
+    openLoginModal() {
+      this.$refs.modallogin.show()
+    },
+    openRegisterModal() {
+      this.$refs.modalregister.show()
+    },
   },
 }
 </script>
+<style lang="scss">
+.modal-content  {
+   border-radius: 10px;
+   border: white;
+}
+</style>

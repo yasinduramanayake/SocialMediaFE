@@ -9,13 +9,17 @@
     <SilkCarousel />
     <br /><br /><br />
     <Advantages />
-  
+
     <br /><br /><br />
     <BuyServices />
     <br /><br /><br />
     <OurServices />
     <br /><br /><br />
     <Freetrail />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <FooterComponent />
   </div>
 </template>
 

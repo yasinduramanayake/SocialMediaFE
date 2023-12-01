@@ -9,14 +9,14 @@
                 <b-input-group-prepend>
                   <b-img
                     width="30px"
-                    :src="`http://localhost/SocialMediaBE/storage/app/public/${getSelectedCategoryIcon}`"
+                    :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                   ></b-img>
                 </b-input-group-prepend>
                 &nbsp;
                 <b-input
                   class="selection-fontsize username_label"
                   v-model="username"
-                  :placeholder="`Your ${getSelectedCategory} name`"
+                  :placeholder="`Your ${category} name`"
                 ></b-input>
               </b-input-group>
             </b-form-group>
@@ -66,6 +66,19 @@
             </b-form-select>
             <div class="small_break"></div>
           </b-col>
+          <b-col md="4"></b-col>
+          <b-col md="4"></b-col>
+          <b-col md="4">
+            <div class="extra_small_break"></div>
+            <b-button
+              class="selection-fontsize flowers_button"
+              size="lg"
+              variant="danger"
+              @click="openModal()"
+              block
+              >continue</b-button
+            ></b-col
+          >
         </b-row>
       </b-card>
     </b-container>
@@ -121,11 +134,12 @@
       </template>
 
       <OrderDescription
-        :subcategory="getSelectedSubCategory"
+        :subcategory="subcategoryname"
         :Quality="quality"
         :checkout_status="checkoutStatus"
-        :Icon="getSelectedSubCategoryImage"
+        :Icon="subcategoryimage"
         :UserName="username"
+        :propData="propData"
       />
     </b-modal>
   </div>
@@ -143,6 +157,7 @@ export default {
     return {
       form: {},
       arrayData: [],
+      propData:{},
       modalTitle: '',
       checkoutStatus: false,
       selected: null,
@@ -165,59 +180,31 @@ export default {
       ],
     }
   },
-  computed: {
-    getSelectedSubCategory() {
-      const selectedOption = this.options1.find(
-        (option) => option.id === this.selected1
-      )
-      if (selectedOption) {
-        return selectedOption.name
-      }
-      return 'Folowers'
-    },
-
-    getSelectedQualityVariables() {
-      const selectedOption = this.arrayData.find(
-        (option) => option.id === this.selected2
-      )
-
-      return selectedOption
-    },
-
-    getSelectedSubCategoryImage() {
-      const selectedOption = this.options1.find(
-        (option) => option.id === this.selected1
-      )
-      if (selectedOption) {
-        return selectedOption.image
-      }
-      return ''
-    },
-
-    getSelectedCategory() {
-      const selectedOption = this.options.find(
-        (option) => option.id === this.selected
-      )
-      if (selectedOption) {
-        return selectedOption.name
-      }
-      return 'Instagram'
-    },
-
-    getSelectedCategoryIcon() {
-      const selectedOption = this.options.find(
-        (option) => option.id === this.selected
-      )
-      if (selectedOption) {
-        return selectedOption.icon
-      }
-      return ''
-    },
+  props: {
+    category: String,
+    subcategoryid: Number,
+    categoryicon: String,
+    subcategoryname:String,
+    subcategoryimage:String,
   },
   async created() {
-    await this.allCategories()
+    await this.loadQualities()
   },
-
+  computed: {
+    getSelectedService() {
+      const selectedOption = this.options2.find(
+        (option) => option.value === this.selected2
+      )
+      if (selectedOption) {
+        return selectedOption.text
+      }
+      return ''
+    },
+  },
+  updated() {
+    this.propData.price = this.getSelectedService.split('|')[0]
+    this.propData.quantity = this.getSelectedService.split('|')[1]
+  },
   methods: {
     async addOrder() {
       const res = await paymentApi.AddPayment()
@@ -253,104 +240,63 @@ export default {
       this.$refs.orderDescriptionModal.show()
     },
 
-    async allCategories() {
-      await this.$vs.loading({
-        scale: 0.8,
-      })
-      const res = await serviceApi.AllCategories()
-      this.options = res.data.data
-      this.selected = this.options[0].id
-
-      await this.loadSubcategories()
-      this.$vs.loading.close()
-    },
-
-    async loadSubcategories() {
-      this.options2 = []
-      if (this.selected) {
-        await this.$vs.loading({
-          scale: 0.8,
-        })
-        const payload = {
-          category_id: this.selected,
-        }
-        const res = await serviceApi.subCategoriesById(payload)
-        this.options1 = res.data.data
-        if (this.options1.length !== 0) {
-          this.selected1 = this.options1[0].id
-          if (this.quality === 'High Quality') {
-            await this.loadServices(true, false)
-          } else if (this.quality === 'Real') {
-            await this.loadServices(false, true)
-          }
-        }
-        this.$vs.loading.close()
-      }
-    },
-
     async loadServices(high_quality, real_quality) {
       if (high_quality === true) {
-        if (this.selected1) {
-          const payload = {
-            subcategory_id: this.selected1,
-          }
-          const res = await serviceApi.serrvicesById(payload)
-          this.arrayData = res.data.data
-          this.options2 = []
+        const payload = {
+          subcategory_id: this.subcategoryid,
+        }
+        const res = await serviceApi.serrvicesById(payload)
+        this.arrayData = res.data.data
+        this.options2 = []
 
-          if (this.arrayData.length !== 0) {
-            this.arrayData.forEach((element) => {
-              this.options2.push({
-                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
-                value: element.id,
-                quality: 'High Quality',
-              })
+        if (this.arrayData.length !== 0) {
+          this.arrayData.forEach((element) => {
+            this.options2.push({
+              text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+              value: element.id,
+              quality: 'High Quality',
             })
+          })
 
-            this.selected2 = this.options2[0].value
-          }
+          this.selected2 = this.options2[0].value
         }
       } else if (real_quality === true) {
-        if (this.selected1) {
-          const payload = {
-            subcategory_id: this.selected1,
-          }
-          const res = await serviceApi.serrvicesById(payload)
-          this.arrayData = res.data.data
-          this.options2 = []
+        const payload = {
+          subcategory_id: this.subcategoryid,
+        }
+        const res = await serviceApi.serrvicesById(payload)
+        this.arrayData = res.data.data
+        this.options2 = []
 
-          if (this.arrayData.length !== 0) {
-            this.arrayData.forEach((element) => {
-              this.options2.push({
-                text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
-                value: element.id,
-                quality: 'Real Quality',
-              })
+        if (this.arrayData.length !== 0) {
+          this.arrayData.forEach((element) => {
+            this.options2.push({
+              text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
+              value: element.id,
+              quality: 'Real Quality',
             })
+          })
 
-            this.selected2 = this.options2[0].value
-          }
+          this.selected2 = this.options2[0].value
         }
       } else {
-        if (this.selected1) {
-          const payload = {
-            subcategory_id: this.selected1,
-          }
-          const res = await serviceApi.serrvicesById(payload)
-          this.arrayData = res.data.data
-          this.options2 = []
+        const payload = {
+          subcategory_id: this.subcategoryid,
+        }
+        const res = await serviceApi.serrvicesById(payload)
+        this.arrayData = res.data.data
+        this.options2 = []
 
-          if (this.arrayData.length !== 0) {
-            this.arrayData.forEach((element) => {
-              this.options2.push({
-                text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
-                value: element.id,
-                quality: 'High Quality',
-              })
+        if (this.arrayData.length !== 0) {
+          this.arrayData.forEach((element) => {
+            this.options2.push({
+              text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+              value: element.id,
+              quality: 'High Quality',
             })
+          })
 
-            this.selected2 = this.options2[0].value
-          }
+          this.selected2 = this.options2[0].value
         }
       }
     },

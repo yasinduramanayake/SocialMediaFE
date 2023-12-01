@@ -326,6 +326,7 @@
       title-class="font-weight-bold"
       id="bv-modal-example"
       ref="modalreview"
+      hide-backdrop
       hide-footer
       centered
       size="lg"
