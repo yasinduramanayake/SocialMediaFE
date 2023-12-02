@@ -241,40 +241,85 @@ button {
   opacity: 1;
 }
 .footer-info-li {
-    opacity: .7;
-    margin-bottom: 11px;
+  opacity: 0.7;
+  margin-bottom: 11px;
 }
-@media (max-width: 559px){
-.footer-lable-bg-visa {
+@media (max-width: 559px) {
+  .footer-lable-bg-visa {
     margin-right: 3px;
     margin-left: 0;
-}
+  }
 }
 .footer-lable-bg-visa {
-    margin: 0 5px 10px 10px;
+  margin: 0 5px 10px 10px;
 }
 .footer-lable-bg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 80px;
-    min-height: 52px;
-    border-radius: 15px;
-    background-color: var(--white);
-    margin: 0 10px 10px 10px;
-    overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 80px;
+  min-height: 52px;
+  border-radius: 15px;
+  background-color: var(--white);
+  margin: 0 10px 10px 10px;
+  overflow: hidden;
 }
 .footer-lable-bg-maestro {
-    margin: 0 10px 10px 5px;
+  margin: 0 10px 10px 5px;
 }
 .footer-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media (max-width: 559px){
-.footer-lable-bg-maestro, .footer-lable-bg-visaElectro {
+@media (max-width: 559px) {
+  .footer-lable-bg-maestro,
+  .footer-lable-bg-visaElectro {
     margin-left: 3px;
     margin-right: 3px;
+  }
 }
+
+.banner {
+  position: relative;
+}
+.card-container {
+  position: absolute;
+  bottom: 85%; /* Pull the card below the banner */
+  width: 70%;
+  height: 50%;
+  display: flex;
+
+  left: 17%;
+
+  z-index: 1; /* Ensure card appears on top of content */
+  @media (max-width: 559px) {
+    width: 100%;
+    left: 0%;
+  }
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    display: none;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    display: none;
+  }
+}
+.br_tab_view {
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    display: none;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    display: none;
+  }
+}
+.bg-footer-image {
+  background-image: url(https://buysocialmediamarketing.com/img/getStartedNewBg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card_text {
+  text-align: left;
+  @media (max-width: 559px) {
+    text-align: left;
+  }
 }
