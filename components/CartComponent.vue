@@ -2,17 +2,17 @@
 	<div>
 		<b-container>
 			<b-col lg="12" md="12" sm="12" cols="12">
-				<b-card style="border: none">
+				<b-card class="pl-3 pr-3" style="border: none">
 					<div>
-						<b-row class="text-center text-muted">
-							<b-col cols="6">Product</b-col>
-    						<b-col cols="6">Total</b-col>
+						<b-row class="text-muted mb-4">
+							<b-col cols="6" style="left: 16%;">Product</b-col>
+    						<b-col cols="6" style="left: 26%;">Total</b-col>
 						</b-row>
-						<b-row class="mb-3">
+						<b-row class="mb-4">
 							<b-col>
 								<div class="border border-muted p-4" style="border-radius: 12px;">
-									<div class="d-flex">
-										<div class="border-right text-center" style="width: 10%;">
+									<div class="d-flex mb-4">
+										<div class="border-right text-center pr-3" style="width: 10%;">
 											Image
 										</div>
 										<div class="pl-5" style="display: flex; align-items: center; width: 25%;">
@@ -29,7 +29,7 @@
 											</div>
 										</div>
 										<div class="pl-5" style="display: flex; align-items: center; width: 40%;">
-											<div class="border border-muted p-3" style="border-radius: 12px; font-size: 15px;">
+											<div class="border border-muted p-3 text-info" style="border-radius: 12px; font-size: 15px;">
 												<b-form-checkbox
 											      	id="checkbox-1"
 											      	v-model="status"
@@ -52,17 +52,51 @@
 											</svg>
 										</div>
 									</div>
+									<div>
+										<div class="d-flex justify-content-between border pl-3 pt-2 pb-2" style="border-radius: 5px;">
+											<div>
+												<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+												  	<path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+												  	<path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
+												</svg>
+												URL: https://www.instagram.com/test
+											</div>
+											<div class="text-info">
+												+1000 High Quality Followers
+											</div>
+										</div>
+									</div>
 								</div>
 							</b-col>
 						</b-row>
-						<b-row>
+						<b-row class="mb-5">
 							<b-col>
-								<b-button variant="outline-info" class="">
+								<b-button variant="outline-info" class="border border-info p-2" style="border-radius: 8px;">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
 									  	<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
 									</svg>
 									Add item
 								</b-button>
+							</b-col>
+						</b-row>
+						<b-row class="mb-3">
+							<b-col sm="6">
+								<b-button variant="link" class="text-decoration-none text-info" style="font-size: 16px;">Have a coupon?</b-button>
+							</b-col>
+							<b-col sm="6">
+								<div class="d-flex">
+									<div class="w-50">
+										<div class="text-muted">
+											Total
+										</div>
+										<div style="font-size: 25px; font-weight: bold;">
+											12.99 $
+										</div>
+									</div>
+									<div class="w-50 text-end">
+										<b-button variant="primary" class="pt-3 pb-3 pl-4 pr-4" style="font-weight: bold;">Checkout</b-button>
+									</div>
+								</div>
 							</b-col>
 						</b-row>
 					</div>
