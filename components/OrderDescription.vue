@@ -143,7 +143,9 @@
               :src="Icon"
             ></b-avatar>
             &nbsp;
-            <div class="font-weight-bold">1000 {{ subcategory }}</div>
+            <div class="font-weight-bold">
+              {{ propData.quantity }} {{ subcategory }}
+            </div>
           </b-col>
 
           <b-col class="pt-2" sm="3" lg="2" md="7" cols="6">
@@ -163,7 +165,7 @@
           </b-col>
           <b-col class="pt-2" sm="3" lg="7" md="7" cols="6">
             <span class="ml-1 font-weight-bold" style="float: right">
-              $12.99</span
+              ${{ propData.price }}</span
             >
           </b-col>
         </b-row>

@@ -99,7 +99,7 @@
         <b-row class="row">
           <b-col lg="3" cols="4">
             Total: <br />
-            <span class="h4"> $12.99</span>
+            <span class="h4"> ${{ this.propData.price }}</span>
           </b-col>
 
           <b-col lg="9" cols="8">
@@ -116,12 +116,11 @@
       </template>
       <template slot="modal-ok" v-if="checkoutStatus">
         <b-row class="row">
-          <b-col lg="3" cols="4">
+          <b-col lg="4" cols="4">
             Total: <br />
-            <span class="h4"> $12.99</span>
+            <span class="h4"> ${{ propData.price }}</span>
           </b-col>
-
-          <b-col lg="9" cols="8">
+          <b-col lg="8" cols="8">
             <b-button
               size="lg"
               style="height: 40px"
@@ -249,6 +248,9 @@ export default {
     this.propData.quantity = this.getSelectedService.split('|')[1]
   },
   methods: {
+    checkout() {
+      this.$router.push('/cart')
+    },
     async addOrder() {
       // const res = await paymentApi.AddPayment()
       // window.open(res.data.data.original.data)
@@ -257,6 +259,7 @@ export default {
       if (this.quality === 'High Quality') {
         this.form.order_details = {
           category: this.getSelectedCategory,
+          categoryicon: this.getSelectedCategoryIcon,
           subcategory: this.getSelectedSubCategory,
           quality: this.quality,
           price: this.getSelectedQualityVariables.high_quality.price,

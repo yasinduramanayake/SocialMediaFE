@@ -8,7 +8,7 @@ export default {
       return _.get(response, key)
     },
     getPrice(price) {
-      return `AUD. ${parseFloat(price).toFixed(2)} `
+      return `USD. ${parseFloat(price).toFixed(2)} `
     },
     removeLeadingZeorsFromReferences(reference) {
       // eslint-disable-next-line no-undef
@@ -25,7 +25,7 @@ export default {
       // eslint-disable-next-line no-undef
       return _.startCase(_.toUpper(value))
     },
-    //For time format
+    // For time format
     momentFormat(value, arg) {
       return moment(new Date(value), arg).tz('Australia/Sydney').format(arg)
     },
@@ -45,6 +45,6 @@ export default {
       // eslint-disable-next-line no-undef
       return _.startCase(_.toLower(`${tr.first_name} ${tr.last_name}`))
     },
-    //For time format ends
+    // For time format ends
   },
 }
