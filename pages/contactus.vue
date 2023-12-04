@@ -2,8 +2,10 @@
   <div>
     <b-container>
       <div class="large_break"></div>
-      <h1 class="h2 header_style" >Contact Us</h1>
-      <span class="contact_sub_paragraph">Please fill the form and we will get back to you in 24 hours.</span>
+      <h1 class="h2 header_style">Contact Us</h1>
+      <span class="contact_sub_paragraph"
+        >Please fill the form and we will get back to you in 24 hours.</span
+      >
       <div class="small_break"></div>
       <b-row>
         <b-col lg="8" md="6" sm="12" cols="12">
@@ -65,15 +67,12 @@
                           id="subject"
                           name="subject"
                           placeholder="subject"
-                          
                           v-model="form.subject"
                         >
-
-                        <template slot="placeholder">
-                          input
-                        </template>
-                        </b-form-input></div
-                    ></b-col>
+                          <template slot="placeholder"> input </template>
+                        </b-form-input>
+                      </div></b-col
+                    >
                     <b-col lg="12" md="12" sm="12" cols="12">
                       <div class="form-group">
                         <label for="message"><p class="pf">Message</p></label>
@@ -83,15 +82,14 @@
                           name="message"
                           placeholder="message"
                           v-model="form.message"
-                          
                         /></div
                     ></b-col>
-                    <b-col lg="12"  md="12" sm="12">
+                    <b-col lg="12" md="12" sm="12">
                       <label for="message"><p class="pf">File</p></label>
                       <b-form-file></b-form-file>
                     </b-col>
-                    <b-col lg="12"  md="12" sm="12" cols="12">
-                <br>
+                    <b-col lg="12" md="12" sm="12" cols="12">
+                      <br />
                       <center>
                         <b-button
                           type="submit"
@@ -127,6 +125,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 export default {
   name: 'ContactForm',
   data() {
@@ -134,6 +133,18 @@ export default {
       form: {},
       attachment: null,
       errors: [],
+    }
+  },
+  head() {
+    return {
+      title: Vue.prototype.$appName  + ' - ' + 'Contact Us',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Home page description',
+        },
+      ],
     }
   },
   methods: {

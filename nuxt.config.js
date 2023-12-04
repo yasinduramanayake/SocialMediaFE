@@ -3,8 +3,9 @@ export default {
   ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
+
   head: {
-    title: 'SocialMediaFE',
+    title: process.env.APP_NAME,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -38,7 +39,8 @@ export default {
     { src: '~/plugins/vue-select', mode: 'client' },
     '@/plugins/vuesax.js',
     '@/plugins/mixins.js',
-    "~/plugins/vee-validate.js"
+    '~/plugins/vee-validate.js',
+    '@/plugins/variables.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,7 +53,7 @@ export default {
   ],
 
   router: {
-    middleware: "auth_controller",
+    middleware: 'auth_controller',
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'viewservice',
@@ -85,7 +87,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['lodash' , 'vee-validate/dist/rules'],
-    
+    transpile: ['lodash', 'vee-validate/dist/rules'],
   },
 }

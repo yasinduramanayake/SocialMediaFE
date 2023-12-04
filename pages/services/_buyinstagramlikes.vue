@@ -429,6 +429,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 export default {
   name: 'BuyInstagramLikes',
   data() {
@@ -441,5 +442,17 @@ export default {
       subcategoryimage: this.$route.params.param6,
     }
   },
+  head() {
+      return {
+        title: Vue.prototype.$appName  + ' - ' + this.$route.params.param1 + ' ' + this.$route.params.param2,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.$route.params.param1 + ' ' + this.$route.params.param2 + 'page description'
+          }
+        ]
+      }
+    }
 }
 </script>

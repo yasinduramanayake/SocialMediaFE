@@ -150,8 +150,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-lonely-if */
 // import orderApi from '@/Api/Modules/order'
-import paymentApi from '@/Api/Modules/payment'
+// import paymentApi from '@/Api/Modules/payment'
 import serviceApi from '@/Api/Modules/services'
+import orderApi from '@/Api/Modules/order'
 export default {
   name: 'SocailMedia',
   data() {
@@ -249,33 +250,33 @@ export default {
   },
   methods: {
     async addOrder() {
-      const res = await paymentApi.AddPayment()
-      window.open(res.data.data.original.data)
+      // const res = await paymentApi.AddPayment()
+      // window.open(res.data.data.original.data)
 
-      // console.log(this.quality);
-      // if (this.quality === 'High Quality') {
-      //   this.form.order_details = {
-      //     category: this.getSelectedCategory,
-      //     subcategory: this.getSelectedSubCategory,
-      //     quality: this.quality,
-      //     price: this.getSelectedQualityVariables.high_quality.price,
-      //     quantity: this.getSelectedQualityVariables.high_quality.quantity,
-      //   }
-      //   await orderApi.AddOrder(this.form)
-      //   this.checkoutStatus = true
-      //   this.modalTitle = 'Items added to cart'
-      // } else if (this.quality === 'Real') {
-      //   this.form.order_details = {
-      //     category: this.getSelectedCategory,
-      //     subcategory: this.getSelectedSubCategory,
-      //     quality: this.quality,
-      //     price: this.getSelectedQualityVariables.real_quality.price,
-      //     quantity: this.getSelectedQualityVariables.real_quality.quantity,
-      //   }
-      //   await orderApi.AddOrder(this.form)
-      //   this.checkoutStatus = true
-      //   this.modalTitle = 'Items added to cart'
-      // }
+      console.log(this.quality)
+      if (this.quality === 'High Quality') {
+        this.form.order_details = {
+          category: this.getSelectedCategory,
+          subcategory: this.getSelectedSubCategory,
+          quality: this.quality,
+          price: this.getSelectedQualityVariables.high_quality.price,
+          quantity: this.getSelectedQualityVariables.high_quality.quantity,
+        }
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      } else if (this.quality === 'Real') {
+        this.form.order_details = {
+          category: this.getSelectedCategory,
+          subcategory: this.getSelectedSubCategory,
+          quality: this.quality,
+          price: this.getSelectedQualityVariables.real_quality.price,
+          quantity: this.getSelectedQualityVariables.real_quality.quantity,
+        }
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      }
     },
     openModal() {
       this.checkoutStatus = false

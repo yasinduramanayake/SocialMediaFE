@@ -44,14 +44,28 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Advantages from '~/components/Advantages.vue'
 import BuyServices from '~/components/BuyServices.vue'
 import Freetrail from '~/components/Freetrail.vue'
 import OurServices from '~/components/OurServices.vue'
 
+
 export default {
   name: 'IndexPage',
   components: { BuyServices, Advantages, Freetrail, OurServices },
+  head() {
+    return { 
+      title: Vue.prototype.$appName  + ' - ' + 'Home',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Home page description',
+        },
+      ],
+    }
+  },
 }
 </script>
 <style></style>
