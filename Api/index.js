@@ -2,7 +2,8 @@ import axios from 'axios'
 import notification from '@/ApiConstance/toast'
 
 export const api = axios.create({
-  baseURL: 'http://localhost/SocialMediaBE/public/api',
+  baseURL: 'http://socialmediabe.raj/api',
+  // baseURL: 'http://localhost/SocialMediaBE/public/api',
 })
 
 api.interceptors.request.use(
