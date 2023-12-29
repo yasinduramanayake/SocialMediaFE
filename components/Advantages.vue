@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mobile_advantage">
     <b-container>
       <b-row>
         <b-col md="12" cols="12" sm="12" lg="4">
@@ -42,6 +42,16 @@
           </div>
         </b-col>
 
+        <div class="display_mobile_advantage_break">
+          <br /><br /><br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br /><br /><br />
+          <br /><br /><br /><br />
+        </div>
+
         <b-col md="12" cols="12" sm="12" lg="4">
           <b-card
             class="services_card_styles shadow-md p-3 mb-5 bg-white text-left border-0"
@@ -73,6 +83,18 @@
           </b-card>
         </b-col>
 
+
+        <div class="display_mobile_advantage_break">
+          <br /><br /><br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br />
+          <br /><br /><br /><br />
+          <br /><br /><br /><br />
+        </div>
+
+        
         <b-col md="12" cols="12" sm="12" lg="4">
           <b-card
             class="services_card_styles shadow-md p-3 mb-5 bg-white text-left border-0"
@@ -114,4 +136,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.display_mobile_advantage_break {
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (min-width: 480px) {
+    display: none;
+  }
+}
+</style>

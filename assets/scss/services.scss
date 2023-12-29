@@ -65,10 +65,15 @@ element.style {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  overflow: hidden;
+
   list-style: none;
   padding: 0;
   z-index: 1;
+
+ 
+  @media (max-width: 768px) {
+    overflow: hidden;
+  }
 }
 
 .swiper-pointer-events {
@@ -78,10 +83,13 @@ element.style {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  overflow: hidden;
+
   list-style: none;
   padding: 0;
   z-index: 1;
+  @media (max-width: 768px) {
+    overflow: hidden;
+  }
 }
 a,
 abbr,
@@ -254,7 +262,6 @@ body {
   background-color: #e1d9d9;
   border-width: 2px;
   border-color: #f4e7e7;
-  
 }
 .services-texts-cards {
   text-align: center;
@@ -267,7 +274,7 @@ body {
 }
 .home-page .discount-card {
   text-align: center;
- background-color: #05a6db;
+  background-color: #05a6db;
 }
 .discount-card {
   color: var(--white);

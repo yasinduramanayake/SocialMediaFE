@@ -3,8 +3,8 @@
     <br /><br /><br />
     <div class="tab_iew_faq">
       <b-container>
-        <b-row>
-          <b-col md="7">
+        <b-row no-gutters class="d-flex justify-content-between">
+          <b-col lg="7">
             <b-container>
               <h2 class="h2 faq_header">FAQ</h2>
               <br />
@@ -23,8 +23,8 @@
                           v-b-toggle.accordion-1
                         >
                           <b-row>
-                            <b-col cols="4" md="6">Acormendation</b-col>
-                            <b-col cols="8" md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="genaralAcormendation1 === 1">
                                   <b-button
@@ -76,8 +76,8 @@
                           v-b-toggle.accordion-2
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="genaralAcormendation2 === 1">
                                   <b-button
@@ -129,8 +129,8 @@
                           v-b-toggle.accordion-3
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="genaralAcormendation3 === 1">
                                   <b-button
@@ -182,8 +182,8 @@
                           v-b-toggle.accordion-4
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="genaralAcormendation4 === 1">
                                   <b-button
@@ -245,8 +245,8 @@
                           v-b-toggle.accordion-af1
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="affiliateAcormendation1 === 1">
                                   <b-button
@@ -298,8 +298,8 @@
                           v-b-toggle.accordion-af2
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="affiliateAcormendation2 === 1">
                                   <b-button
@@ -403,8 +403,8 @@
                           v-b-toggle.accordion-af4
                         >
                           <b-row>
-                            <b-col md="6">Acormendation</b-col>
-                            <b-col md="6">
+                            <b-col cols="11" md="6">Acormendation</b-col>
+                            <b-col cols="1" md="6">
                               <div class="acormendationpaddingbutton">
                                 <div v-if="affiliateAcormendation4 === 1">
                                   <b-button
@@ -451,7 +451,7 @@
               </b-card>
             </b-container>
           </b-col>
-          <b-col md="5">
+          <b-col lg="4">
             <div class="categories_faq">
               <b-card class="card_categories_styles">
                 <div class="col-md-4 d-none d-md-block">

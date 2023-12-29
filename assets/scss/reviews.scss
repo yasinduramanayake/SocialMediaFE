@@ -203,31 +203,32 @@
   float: right;
   padding-top: 1px;
   @media (max-width: 768px) {
-   float: none;
-   padding-top:0px;
+    float: none;
+    padding-top: 0px;
     text-align: center;
   }
 }
 .card_modal_createreview {
-    border: none;
+  border: none;
 }
 .input_review {
-    height: 50px;
-    border-radius: 10px;
-    @media (max-width: 768px) {
-        height: 30px;
-       }
+  height: 50px;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    height: 30px;
+  }
 }
 .input_review_rating {
-    border: none;
+  border: none;
+  background: none;
 }
 .input_review_textarea {
-    height: 150px;
-    @media (max-width: 768px) {
-        height: 30px;
-       }
+  height: 150px;
+  @media (max-width: 768px) {
+    height: 30px;
+  }
 }
 .input_review_rating_blankinput {
   border: none;
-color: #fff;
+  color: #fff;
 }

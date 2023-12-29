@@ -1,6 +1,13 @@
 .buyservices {
-  padding-left: 25%;
-  padding-right: 25%;
+  @media (max-width: 768px) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+.mobile_buyservice_padding {
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
 }
 .service_p {
   margin-bottom: 0.7cm;
@@ -38,5 +45,27 @@
   font-weight: 500;
   @media (max-width: 600px) {
     font-size: 12px;
+  }
+}
+.web_only_design {
+  @media (max-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 480px) {
+    display: block;
+  }
+  @media (min-width: 768px) and  (max-width: 1024px) {
+    display: none;
+  }
+}
+.mobile_only_design {
+  @media (min-width: 480px) {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (min-width: 768px) and  (max-width: 1024px) {
+    display: block;
   }
 }

@@ -8,7 +8,7 @@
               <b-input-group-prepend>
                 <b-img
                   width="50px"
-                  :src="`http://localhost/SocialMediaBE/storage/app/public/${getSelectedCategoryIcon}`"
+                  :src="`${getBaseUrl}/storage/app/public/${getSelectedCategoryIcon}`"
                 ></b-img>
               </b-input-group-prepend>
 
@@ -54,11 +54,32 @@
       <b-row>
         <b-col md="5" class="mt-2">
           <b-input
+            v-if="
+              getSelectedSubCategory === 'Post Views' ||
+              getSelectedSubCategory === 'Post Likes' ||
+              getSelectedSubCategory === 'Comments'
+            "
             class="selection-fontsize username_label"
             v-model="username"
-            :placeholder="`Your ${getSelectedCategory} name`"
-          ></b-input
-        ></b-col>
+            :placeholder="`Your ${getSelectedCategory} post link`"
+          ></b-input>
+
+          <b-input
+            v-else-if="
+              getSelectedSubCategory === 'Vedio Views' ||
+              getSelectedSubCategory === 'Vedio Likes'
+            "
+            class="selection-fontsize username_label"
+            v-model="username"
+            :placeholder="`Your ${getSelectedCategory} vedio link`"
+          ></b-input>
+          <b-input
+            v-else
+            class="selection-fontsize username_label"
+            v-model="username"
+            :placeholder="`Your ${getSelectedCategory} link`"
+          ></b-input>
+        </b-col>
         <b-col md="3" class="mt-1">
           <b-form-select
             v-model="quality"
@@ -95,14 +116,8 @@
       ok-variant="none"
       ok-only
     >
-      <template slot="modal-ok" v-if="!checkoutStatus">
-        <b-row class="row">
-          <b-col lg="3" cols="4">
-            Total: <br />
-            <span class="h4"> ${{ this.propData.price }}</span>
-          </b-col>
-
-          <b-col lg="9" cols="8">
+  
+      <template slot="modal-ok" v-if="!checkoutStatus"> 
             <b-button
               size="lg"
               style="height: 40px"
@@ -111,14 +126,15 @@
               class="text-white"
               >Add Item To Cart</b-button
             >
-          </b-col>
-        </b-row>
+       
+        
       </template>
       <template slot="modal-ok" v-if="checkoutStatus">
         <b-row class="row">
           <b-col lg="4" cols="4">
             Total: <br />
             <span class="h4"> ${{ propData.price }}</span>
+            &nbsp; &nbsp; &nbsp;
           </b-col>
           <b-col lg="8" cols="8">
             <b-button
@@ -133,10 +149,14 @@
         </b-row>
       </template>
 
+  
+
+    
       <OrderDescription
         :subcategory="getSelectedSubCategory"
         :Quality="quality"
         :propData="propData"
+        :category="getSelectedCategory"
         :checkout_status="checkoutStatus"
         :Icon="getSelectedSubCategoryImage"
         :UserName="username"
@@ -150,6 +170,9 @@
 /* eslint-disable no-lonely-if */
 // import orderApi from '@/Api/Modules/order'
 // import paymentApi from '@/Api/Modules/payment'
+import Vue from 'vue'
+import notification from '@/ApiConstance/toast'
+
 import serviceApi from '@/Api/Modules/services'
 import orderApi from '@/Api/Modules/order'
 export default {
@@ -182,6 +205,9 @@ export default {
     }
   },
   computed: {
+    getBaseUrl() {
+      return Vue.prototype.$app_url
+    },
     getSelectedSubCategory() {
       const selectedOption = this.options1.find(
         (option) => option.id === this.selected1
@@ -252,38 +278,89 @@ export default {
       this.$router.push('/cart')
     },
     async addOrder() {
-      // const res = await paymentApi.AddPayment()
-      // window.open(res.data.data.original.data)
-
-      console.log(this.quality)
       if (this.quality === 'High Quality') {
-        this.form.order_details = {
-          category: this.getSelectedCategory,
-          categoryicon: this.getSelectedCategoryIcon,
-          subcategory: this.getSelectedSubCategory,
-          quality: this.quality,
-          price: this.getSelectedQualityVariables.high_quality.price,
-          quantity: this.getSelectedQualityVariables.high_quality.quantity,
+        if (!localStorage.token) {
+          if (localStorage.getItem('randomcart')) {
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          } else {
+            localStorage.setItem(
+              'randomcart',
+              Math.floor(Math.random() * 100000000000) + 1
+            )
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          }
+          this.form.order_details = {
+            category: this.getSelectedCategory,
+            categoryicon: this.getSelectedCategoryIcon,
+            subcategory: this.getSelectedSubCategory,
+            quality: this.quality,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+            link: this.username,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        } else {
+          this.form.order_details = {
+            category: this.getSelectedCategory,
+            categoryicon: this.getSelectedCategoryIcon,
+            subcategory: this.getSelectedSubCategory,
+            quality: this.quality,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+            link: this.username,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
         }
-        await orderApi.AddOrder(this.form)
-        this.checkoutStatus = true
-        this.modalTitle = 'Items added to cart'
       } else if (this.quality === 'Real') {
-        this.form.order_details = {
-          category: this.getSelectedCategory,
-          subcategory: this.getSelectedSubCategory,
-          quality: this.quality,
-          price: this.getSelectedQualityVariables.real_quality.price,
-          quantity: this.getSelectedQualityVariables.real_quality.quantity,
+        if (!localStorage.token) {
+          if (localStorage.getItem('randomcart')) {
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          } else {
+            localStorage.setItem(
+              'randomcart',
+              Math.floor(Math.random() * 100000000000) + 1
+            )
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          }
+          this.form.order_details = {
+            category: this.getSelectedCategory,
+            categoryicon: this.getSelectedCategoryIcon,
+            subcategory: this.getSelectedSubCategory,
+            quality: this.quality,
+            link: this.username,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        } else {
+          this.form.order_details = {
+            category: this.getSelectedCategory,
+            categoryicon: this.getSelectedCategoryIcon,
+            subcategory: this.getSelectedSubCategory,
+            quality: this.quality,
+            link: this.username,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
         }
-        await orderApi.AddOrder(this.form)
-        this.checkoutStatus = true
-        this.modalTitle = 'Items added to cart'
       }
     },
     openModal() {
-      this.checkoutStatus = false
-      this.$refs.orderDescriptionModal.show()
+      if (this.username === '') {
+        notification.toast('Please Enter a Valid Social Link', 'error')
+      } else {
+        this.checkoutStatus = false
+        this.$refs.orderDescriptionModal.show()
+      }
     },
 
     async allCategories() {
@@ -301,9 +378,6 @@ export default {
     async loadSubcategories() {
       this.options2 = []
       if (this.selected) {
-        await this.$vs.loading({
-          scale: 0.8,
-        })
         const payload = {
           category_id: this.selected,
         }
@@ -317,7 +391,6 @@ export default {
             await this.loadServices(false, true)
           }
         }
-        this.$vs.loading.close()
       }
     },
 
@@ -388,15 +461,11 @@ export default {
     },
 
     async loadQualities() {
-      await this.$vs.loading({
-        scale: 0.8,
-      })
       if (this.quality === 'High Quality') {
         await this.loadServices(true, false)
       } else if (this.quality === 'Real') {
         await this.loadServices(false, true)
       }
-      this.$vs.loading.close()
     },
   },
 }

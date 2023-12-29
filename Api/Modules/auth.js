@@ -8,7 +8,7 @@ export default {
       window.location.href = '/'
     })
   },
-  async login(payload) {
+  async login(payload , cartProp) {
     return await api.post('/login', payload).then((res) => {
       notification.toast('SuccessFully Logged In', 'success')
       const token = res.data.data.token
@@ -16,6 +16,16 @@ export default {
 
       localStorage.setItem('role', role)
       localStorage.setItem('token', token)
+      if (cartProp === 'fromCart') {
+        window.location.href = '/cart'
+      } else {
+        window.location.href = '/'
+      }
+    })
+  },
+  async logout() {
+    return await api.get('/logout').then((res) => {
+      notification.toast('SuccessFully Log Out', 'success')
       window.location.href = '/'
     })
   },

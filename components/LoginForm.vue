@@ -60,7 +60,12 @@
             </b-col>
 
             <b-col lg="12" class="pt-1">
-              <b-button block size="lg" class="login_button" type="" @click="login()"
+              <b-button
+                block
+                size="lg"
+                class="login_button"
+                type=""
+                @click="login()"
                 >Sign In</b-button
               >
             </b-col>
@@ -94,6 +99,10 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
+ 
+  props: {
+    cartProp: String,
+  },
   methods: {
     async login() {
       if (await this.$refs.loginValidation.validate()) {
@@ -101,7 +110,7 @@ export default {
           scale: 0.8,
         })
         await authApi
-          .login(this.form)
+          .login(this.form, this.cartProp)
           .then(({ res }) => {
             this.$vs.loading.close()
           })

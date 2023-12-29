@@ -57,9 +57,17 @@ export default {
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'viewservice',
-        path: '/service/:param1/:param2/:param3/:param4:/param5/:param6',
+        path: '/service/:param1/:param2/:param3/:param4/:param5/:param6',
         component: resolve(__dirname, 'pages/services/_buyinstagramlikes.vue'),
-      })
+      }),
+        routes.push({
+          name: 'viewadditionalservice',
+          path: '/additionalservices/:param1/:param2/:param3/:param4/:param5/:param6',
+          component: resolve(
+            __dirname,
+            'pages/services/_viewaditionalservice.vue'
+          ),
+        })
     },
   },
   // Modules: https://go.nuxtjs.dev/config-modules

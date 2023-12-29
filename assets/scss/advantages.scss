@@ -2,13 +2,21 @@
   font-size: 0.8cm;
   font-weight: bold;
   margin-bottom: 1cm;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 .card_styles_advantages {
   height: 100%;
 }
 .advantages-texts {
-    color: rgb(136, 151, 151);
-    padding-top: 10px;
-    line-height: 1.5;
-    
+  color: rgb(136, 151, 151);
+  padding-top: 10px;
+  line-height: 1.5;
+}
+.mobile_advantage {
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

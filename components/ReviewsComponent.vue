@@ -5,13 +5,13 @@
 
       <div>
         <b-container>
-          <b-row>
-            <b-col md="6">
+          <b-row no-gutters>
+            <b-col lg="6" md="8" sm="8" >
               <h1 class="h1 title_reviews">
                 Customers <span class="text-primary"> reviews</span>
               </h1>
             </b-col>
-            <b-col md="6">
+            <b-col lg="6" md="4" sm="4">
               <div class="button_create_reviews">
                 <b-button
                   @click="openReviewModal()"
@@ -23,26 +23,28 @@
             </b-col>
           </b-row>
 
-          <b-row>
-            <b-col md="7">
+          <b-row no-gutters class="d-flex justify-content-between" >
+            <b-col lg="7" cols="12" md="8" sm="12">
               <div class="reviews_break_small"></div>
 
-              <div class="padding_reiews">
+              <div
+                class="padding_reiews"
+                v-for="review in reviews"
+                :key="review.id"
+              >
                 <b-card class="rating-cards-reviews">
                   <div class="review-item">
                     <div class="review-headline">
                       <div class="author-info">
                         <div class="author-avatar">
-                          <img
-                            loading="lazy"
-                            src="https://yt3.ggpht.com/vBIlFwuX3PWh_xU2DhNjhMrDEZOwbtOGq3zL9eEmG-zmrW5vlfOiaDrd02s6FsSbmNmifd4P0g=s88-c-k-c0x00ffffff-no-rj"
-                            alt=""
-                          />
+                          <img loading="lazy" alt="" />
                         </div>
                         <div class="author-creds">
-                          <div class="author-name">@Flips With Jeremy</div>
+                          <div class="author-name">
+                            @{{ review.first_name }} {{ review.last_name }}
+                          </div>
                           <div class="author-bought">
-                            Ordered Youtube Free 100 Views
+                            Ordered {{ review.service }} 100 Folowers
                             <span class="text-primary"
                               >• Verified Purchase</span
                             >
@@ -51,100 +53,25 @@
                       </div>
                     </div>
                     <ul class="rating-list review-rating">
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star" style="opacity: 0.3"></li>
+                      <li class="review-star">
+                        <b-form-rating
+                          class="input_review_rating"
+                          ref="ratingInput"
+                          v-model="review.rate"
+                          variant="warning"
+                        ></b-form-rating>
+                      </li>
                     </ul>
 
                     <br />
-                    <span class="sub-title-ratings"
-                      >"Very good, helped me get views."</span
-                    >
+                    <span class="sub-title-ratings">"{{ review.review }}"</span>
                   </div>
                 </b-card>
               </div>
               <br />
-              <div class="padding_reiews">
-                <b-card class="rating-cards-reviews">
-                  <div class="review-item">
-                    <div class="review-headline">
-                      <div class="author-info">
-                        <div class="author-avatar">
-                          <img
-                            loading="lazy"
-                            src="https://yt3.ggpht.com/vBIlFwuX3PWh_xU2DhNjhMrDEZOwbtOGq3zL9eEmG-zmrW5vlfOiaDrd02s6FsSbmNmifd4P0g=s88-c-k-c0x00ffffff-no-rj"
-                            alt=""
-                          />
-                        </div>
-                        <div class="author-creds">
-                          <div class="author-name">@Flips With Jeremy</div>
-                          <div class="author-bought">
-                            Ordered Youtube Free 100 Views
-                            <span class="text-primary"
-                              >• Verified Purchase</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <ul class="rating-list review-rating">
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star" style="opacity: 0.3"></li>
-                    </ul>
-
-                    <br />
-                    <span class="sub-title-ratings"
-                      >"Very good, helped me get views."</span
-                    >
-                  </div>
-                </b-card>
-              </div>
-              <br />
-              <div class="padding_reiews1">
-                <b-card class="rating-cards-reviews">
-                  <div class="review-item">
-                    <div class="review-headline">
-                      <div class="author-info">
-                        <div class="author-avatar">
-                          <img
-                            loading="lazy"
-                            src="https://yt3.ggpht.com/vBIlFwuX3PWh_xU2DhNjhMrDEZOwbtOGq3zL9eEmG-zmrW5vlfOiaDrd02s6FsSbmNmifd4P0g=s88-c-k-c0x00ffffff-no-rj"
-                            alt=""
-                          />
-                        </div>
-                        <div class="author-creds">
-                          <div class="author-name">@Flips With Jeremy</div>
-                          <div class="author-bought">
-                            Ordered Youtube Free 100 Views
-                            <span class="text-primary"
-                              >• Verified Purchase</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <ul class="rating-list review-rating">
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star"></li>
-                      <li class="review-star" style="opacity: 0.3"></li>
-                    </ul>
-
-                    <br />
-                    <span class="sub-title-ratings"
-                      >"Very good, helped me get views."</span
-                    >
-                  </div>
-                </b-card>
-              </div>
             </b-col>
-            <b-col md="5">
+            
+            <b-col lg="4" cols="12" md="4" sm="12">
               <div>
                 <div class="reviews_break_small"></div>
                 <div class="reviews_break_extrasmall"></div>
@@ -156,7 +83,10 @@
                           ><span>4.89</span> out of 5 stars
                         </span>
                         <span class="star-text-normal"
-                          ><span class="coll_reviews">2455</span> reviews
+                          ><span class="coll_reviews">{{
+                            reviews.length
+                          }}</span>
+                          reviews
                         </span>
                       </div>
                       <div class="block-right-body">
@@ -183,11 +113,13 @@
                             <div class="progress">
                               <div
                                 class="progress-line"
-                                style="width: 91.73%"
+                                :style="{
+                                  width: reviewCount.fivestarcount,
+                                }"
                               ></div>
                             </div>
                             <span class="progress-percent star-text-normal">
-                              91.73<span>%</span></span
+                              {{ reviewCount.fivestarcount }}</span
                             >
                           </div>
                           <div class="progress-block">
@@ -212,11 +144,13 @@
                             <div class="progress">
                               <div
                                 class="progress-line"
-                                style="width: 5.42%"
+                                :style="{
+                                  width: reviewCount.fourstarcount,
+                                }"
                               ></div>
                             </div>
                             <span class="progress-percent star-text-normal">
-                              5.42<span>%</span></span
+                              {{ reviewCount.fourstarcount }}</span
                             >
                           </div>
                           <div class="progress-block">
@@ -241,11 +175,13 @@
                             <div class="progress">
                               <div
                                 class="progress-line"
-                                style="width: 2.65%"
+                                :style="{
+                                  width: reviewCount.threestarcount,
+                                }"
                               ></div>
                             </div>
                             <span class="progress-percent star-text-normal">
-                              2.65<span>%</span></span
+                              {{ reviewCount.threestarcount }}</span
                             >
                           </div>
                           <div class="progress-block">
@@ -270,11 +206,13 @@
                             <div class="progress">
                               <div
                                 class="progress-line"
-                                style="width: 0.2%"
+                                :style="{
+                                  width: reviewCount.twostarcount,
+                                }"
                               ></div>
                             </div>
                             <span class="progress-percent star-text-normal">
-                              0.2<span>%</span></span
+                              {{ reviewCount.twostarcount }}</span
                             >
                           </div>
                           <div class="progress-block">
@@ -299,11 +237,13 @@
                             <div class="progress">
                               <div
                                 class="progress-line"
-                                style="width: 0%"
+                                :style="{
+                                  width: reviewCount.onestarcount,
+                                }"
                               ></div>
                             </div>
                             <span class="progress-percent star-text-normal">
-                              0<span>%</span></span
+                              {{ reviewCount.onestarcount }}</span
                             >
                           </div>
                         </div>
@@ -317,7 +257,6 @@
         </b-container>
       </div>
       <br /><br /><br />
-      
     </div>
     <b-modal
       header-bg-variant="dark"
@@ -342,13 +281,81 @@
 </template>
 
 <script>
+import reviewApi from '@/Api/Modules/reviews'
 export default {
-  // directives: {
-  //   'b-modal': VBModal,
-  // },
+  data() {
+    return {
+      reviews: [],
+    }
+  },
+  async created() {
+    await this.addReview()
+  },
+  computed: {
+    reviewCount() {
+      const countobject = {}
+      let fivestarcount = 0
+      let fourstarcount = 0
+      let threestarcount = 0
+      let twostarcount = 0
+      let onestarcount = 0
+      let final_fivestarcount = 0
+      let final_fourstarcount = 0
+      let final_threestarcount = 0
+      let final_twostarcount = 0
+      let final_onestarcount = 0
+      this.reviews.forEach((value) => {
+        if (parseInt(value.rate) === 5) {
+          fivestarcount = fivestarcount + 1
+        } else if (parseInt(value.rate) === 4) {
+          fourstarcount = fourstarcount + 1
+        } else if (parseInt(value.rate) === 3) {
+          threestarcount = threestarcount + 1
+        } else if (parseInt(value.rate) === 2) {
+          twostarcount = twostarcount + 1
+        } else if (parseInt(value.rate) === 1) {
+          onestarcount = onestarcount + 1
+        }
+      })
+
+      final_fivestarcount = Math.round(
+        (fivestarcount / this.reviews.length) * 100
+      )
+
+      final_fourstarcount = Math.round(
+        (fourstarcount / this.reviews.length) * 100
+      )
+
+      final_threestarcount = Math.round(
+        (threestarcount / this.reviews.length) * 100
+      )
+      final_twostarcount = Math.round(
+        (twostarcount / this.reviews.length) * 100
+      )
+      final_onestarcount = Math.round(
+        (onestarcount / this.reviews.length) * 100
+      )
+
+      countobject.fivestarcount = final_fivestarcount + '%'
+      countobject.fourstarcount = final_fourstarcount + '%'
+      countobject.threestarcount = final_threestarcount + '%'
+      countobject.twostarcount = final_twostarcount + '%'
+      countobject.onestarcount = final_onestarcount + '%'
+
+      return countobject
+    },
+  },
   methods: {
     openReviewModal() {
       this.$refs.modalreview.show()
+    },
+    async addReview() {
+      await this.$vs.loading({
+        scale: 0.8,
+      })
+      const res = await reviewApi.AllReviews()
+      this.reviews = res.data.data
+      this.$vs.loading.close()
     },
   },
 }

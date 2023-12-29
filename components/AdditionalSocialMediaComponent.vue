@@ -1,0 +1,358 @@
+<template>
+  <div>
+    <b-container>
+      <b-card class="card_social_media">
+        <b-row>
+          <b-col md="6" class="mt-3">
+            <b-form-group>
+              <b-input-group>
+                <b-input-group-prepend>
+                  <b-img
+                    width="30px"
+                    :src="`${getBaseUrl}/storage/app/public/caegoryicons/${categoryimage}`"
+                  ></b-img>
+                </b-input-group-prepend>
+                &nbsp;
+                <b-input
+                  v-if="category === 'Facebook'"
+                  class="selection-fontsize username_label"
+                  v-model="username"
+                  :placeholder="`Your ${category} post link`"
+                ></b-input>
+                <b-input
+                  v-else-if="category === 'Instagram'"
+                  class="selection-fontsize username_label"
+                  v-model="username"
+                  :placeholder="`Your ${category} post link`"
+                ></b-input>
+                <b-input
+                  v-else-if="category === 'TikTok'"
+                  class="selection-fontsize username_label"
+                  v-model="username"
+                  :placeholder="`Your ${category} vedio link`"
+                ></b-input>
+                <b-input
+                  v-else-if="category === 'Youtube'"
+                  class="selection-fontsize username_label"
+                  v-model="username"
+                  :placeholder="`Your ${category} vedio link`"
+                ></b-input>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+
+          <!-- <b-col md="3">
+            <b-form-group>
+              <b-form-select
+                v-model="selected1"
+                :options="options1"
+                @input="loadServices()"
+                text-field="name"
+                value-field="id"
+                size="lg"
+                class="mt-1 selection-fontsize flowers_button"
+              />
+            </b-form-group>
+          </b-col>
+          <b-col md="3">
+            <b-form-group>
+              <b-form-select
+                v-model="selected2"
+                :options="options2"
+                size="lg"
+                class="mt-1 selection-fontsize flowers_button"
+              >
+              </b-form-select>
+            </b-form-group>
+          </b-col> -->
+
+          <b-col md="3" class="mt-1"> </b-col>
+          <b-col md="3" class="pt-3"
+            ><span
+              style="
+                border: 1px solid rgb(212, 212, 212);
+                padding: 10px 10px 10px 10px;
+                border-radius: 10px;
+                background-color: rgb(255, 255, 255);
+              "
+              >{{ quantity }} {{ subcategoryname }} |
+              {{ getPrice(price) }}</span
+            >
+          </b-col>
+          <b-col md="4"></b-col>
+          <b-col md="4"></b-col>
+          <b-col md="4">
+            <div class="extra_small_break pt-3 pt-5"></div>
+            <b-button
+              class="selection-fontsize flowers_button"
+              size="lg"
+              variant="danger"
+              @click="openModal()"
+              block
+              >continue</b-button
+            ></b-col
+          >
+        </b-row>
+      </b-card>
+    </b-container>
+    <b-modal
+      ref="orderDescriptionModal"
+      size="lg"
+      title-class="h3 "
+      hide-backdrop
+      :title="modalTitle"
+      ok-disabled
+      header-bg-variant="dark"
+      header-text-variant="light"
+      ok-variant="none"
+      ok-only
+    >
+      <template slot="modal-ok" v-if="!checkoutStatus">
+        
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="addOrder()"
+              variant="primary"
+              class="text-white"
+              >Add Item To Cart</b-button
+            >
+          
+      </template>
+      <template slot="modal-ok" v-if="checkoutStatus">
+        <b-row class="row">
+          <b-col lg="3" cols="4">
+            Total: <br />
+            <span class="h5"> ${{ propData.price }}</span>
+            &nbsp; &nbsp; &nbsp;
+          </b-col>
+
+          <b-col lg="9" cols="8">
+            <b-button
+              size="lg"
+              style="height: 40px"
+              @click="checkout()"
+              variant="primary"
+              class="text-white"
+              >Checkout</b-button
+            >
+          </b-col>
+        </b-row>
+      </template>
+
+      <OrderDescription
+        :subcategory="subcategoryname"
+        Quality="Instant"
+        :category="category"
+        :checkout_status="checkoutStatus"
+        :Icon="subcategoryimage"
+        :UserName="username"
+        :propData="propData"
+        @updateprop="updatevalue"
+      />
+    </b-modal>
+  </div>
+</template>
+
+<script>
+/* eslint-disable camelcase */
+/* eslint-disable no-lonely-if */
+// import orderApi from '@/Api/Modules/order'
+import Vue from 'vue'
+import { integer } from 'vee-validate/dist/rules'
+import notification from '@/ApiConstance/toast'
+
+import orderApi from '@/Api/Modules/order'
+
+export default {
+  name: 'AdditionalSocailMediaComponent',
+  data() {
+    return {
+      form: {},
+      arrayData: [],
+      propData: {},
+      modalTitle: '',
+      checkoutStatus: false,
+      selected: null,
+      options: [],
+      selected1: null,
+      username: '',
+      options1: [],
+      selected2: null,
+      options2: [],
+      quality: 'High Quality',
+      qualities: [
+        {
+          text: 'High Quality',
+          value: 'High Quality',
+        },
+        {
+          text: 'Real',
+          value: 'Real',
+        },
+      ],
+    }
+  },
+  props: {
+    category: String,
+    subcategoryname: String,
+    quantity: integer,
+    price: integer,
+    categoryimage: String,
+    subcategoryimage: String,
+  },
+  created() {
+    this.propData.price = this.price
+    this.propData.quantity = this.quantity
+  },
+  computed: {
+    getBaseUrl() {
+      return Vue.prototype.$app_url
+    },
+    getSelectedService() {
+      const selectedOption = this.options2.find(
+        (option) => option.value === this.selected2
+      )
+      if (selectedOption) {
+        return selectedOption.text
+      }
+      return ''
+    },
+  },
+  updated() {
+    this.propData.price = this.price
+    this.propData.quantity = this.quantity
+  },
+  methods: {
+    updatevalue(value) {
+      this.propData.price = value
+    },
+    checkout() {
+      this.$router.push('/cart')
+    },
+    async addOrder() {
+      if (!localStorage.token) {
+        if (localStorage.getItem('randomcart')) {
+          this.form.randomnumber = localStorage.getItem('randomcart')
+        } else {
+          localStorage.setItem(
+            'randomcart',
+            Math.floor(Math.random() * 100000000000) + 1
+          )
+        }
+
+        this.form.randomnumber = localStorage.getItem('randomcart')
+        this.form.order_details = {
+          category: this.category,
+          categoryicon: this.categoryimage,
+          subcategory: this.subcategoryname,
+          quality: 'Instant',
+          price: this.propData.price,
+          post_link: this.username,
+          quantity: this.propData.quantity,
+        }
+
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      } else {
+        this.form.order_details = {
+          category: this.category,
+          categoryicon: this.categoryimage,
+          subcategory: this.subcategoryname,
+          quality: 'Instant',
+          price: this.propData.price,
+          post_link: this.username,
+          quantity: this.propData.quantity,
+        }
+        await orderApi.AddOrder(this.form)
+        this.checkoutStatus = true
+        this.modalTitle = 'Items added to cart'
+      }
+    },
+    openModal() {
+      if (this.username === '') {
+        notification.toast('Please Enter a Valid Social Link', 'error')
+      } else {
+        this.checkoutStatus = false
+        this.$refs.orderDescriptionModal.show()
+      }
+    },
+
+    // async loadServices(high_quality, real_quality) {
+    //   if (high_quality === true) {
+    //     const payload = {
+    //       subcategory_id: this.subcategoryid,
+    //     }
+    //     const res = await serviceApi.serrvicesById(payload)
+    //     this.arrayData = res.data.data
+    //     this.options2 = []
+
+    //     if (this.arrayData.length !== 0) {
+    //       this.arrayData.forEach((element) => {
+    //         this.options2.push({
+    //           text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+    //           value: element.id,
+    //           quality: 'High Quality',
+    //         })
+    //       })
+
+    //       this.selected2 = this.options2[0].value
+    //     }
+    //   } else if (real_quality === true) {
+    //     const payload = {
+    //       subcategory_id: this.subcategoryid,
+    //     }
+    //     const res = await serviceApi.serrvicesById(payload)
+    //     this.arrayData = res.data.data
+    //     this.options2 = []
+
+    //     if (this.arrayData.length !== 0) {
+    //       this.arrayData.forEach((element) => {
+    //         this.options2.push({
+    //           text: `${element.real_quality.price} | ${element.real_quality.quantity}`,
+    //           value: element.id,
+    //           quality: 'Real Quality',
+    //         })
+    //       })
+
+    //       this.selected2 = this.options2[0].value
+    //     }
+    //   } else {
+    //     const payload = {
+    //       subcategory_id: this.subcategoryid,
+    //     }
+    //     const res = await serviceApi.serrvicesById(payload)
+    //     this.arrayData = res.data.data
+    //     this.options2 = []
+
+    //     if (this.arrayData.length !== 0) {
+    //       this.arrayData.forEach((element) => {
+    //         this.options2.push({
+    //           text: `${element.high_quality.price} | ${element.high_quality.quantity}`,
+    //           value: element.id,
+    //           quality: 'High Quality',
+    //         })
+    //       })
+
+    //       this.selected2 = this.options2[0].value
+    //     }
+    //   }
+    // },
+
+    // async loadQualities() {
+    //   await this.$vs.loading({
+    //     scale: 0.8,
+    //   })
+    //   if (this.quality === 'High Quality') {
+    //     await this.loadServices(true, false)
+    //   } else if (this.quality === 'Real') {
+    //     await this.loadServices(false, true)
+    //   }
+    //   this.$vs.loading.close()
+    // },
+  },
+}
+</script>
+
+<style></style>

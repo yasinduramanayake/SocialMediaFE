@@ -15,6 +15,9 @@ body {
 .header_style {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 800;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .large_break {
   padding-top: 100px;
@@ -24,6 +27,12 @@ body {
 }
 .contact_sub_paragraph {
   color: #959799;
+  text-align: left;
+  @media (max-width: 768px) {
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+  }
 }
 
 .form_input_styles {
@@ -31,7 +40,7 @@ body {
   border-radius: 7px;
   height: 50px;
 }
-.form_input_styles::placeholder{
+.form_input_styles::placeholder {
   color: #cdc4c4;
 }
 

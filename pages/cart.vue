@@ -1,9 +1,25 @@
 <template>
-	<div>
-		<Header/>
+  <div>
+    <Header />
 
-		<br /><br /><br />
+    <br /><br /><br />
 
-		<CartComponent/>
-	</div>
+    <CartComponent />
+
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_atab_view"
+    />
+    <div>
+      <FooterComponent />
+    </div>
+  </div>
 </template>

@@ -86,39 +86,12 @@
               </b-form-group>
             </b-col>
 
-            <b-col lg="12">
-              <b-form-group label="Address" label-for="vi-address">
-                <validation-provider
-                  #default="{ errors }"
-                  name="Address"
-                  rules="required"
-                >
-                  <b-input-group class="input-group">
-                    <b-form-input
-                      id="vi-address"
-                      type="text"
-                      v-model="form.address"
-                      placeholder="Enter Address"
-                      class="form_input_styles"
-                    />
-                    <b-input-group-append is-text>
-                      <b-img
-                        style="background-color: transparent"
-                        width="18px"
-                        src="@/assets/images/logo/map-pin-svgrepo-com.svg"
-                      ></b-img>
-                    </b-input-group-append>
-                  </b-input-group>
-                  <small class="text-danger">{{ errors[0] }}</small>
-                </validation-provider>
-              </b-form-group>
-            </b-col>
             <b-col lg="12" class="pt-1">
               <b-form-group label="Password" label-for="vi-first-name">
                 <validation-provider
                   #default="{ errors }"
                   name="password"
-                  rules="required|min:6|alpha_dash"
+                  rules="required|min:6"
                 >
                   <b-input-group class="input-group">
                     <b-form-input
@@ -207,23 +180,23 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
-  methods:{
+  methods: {
     async register() {
-    if (await this.$refs.registerValidation.validate()) {
-      await this.$vs.loading({
-        scale: 0.8,
-      })
-      this.form.view = 'Front'
-      await authApi
-        .register(this.form)
-        .then(({ res }) => {
-          this.$vs.loading.close()
+      if (await this.$refs.registerValidation.validate()) {
+        await this.$vs.loading({
+          scale: 0.8,
         })
-        .catch(({ res }) => {
-          this.$vs.loading.close()
-        })
-    }
-  },
+        this.form.view = 'Front'
+        await authApi
+          .register(this.form)
+          .then(({ res }) => {
+            this.$vs.loading.close()
+          })
+          .catch(({ res }) => {
+            this.$vs.loading.close()
+          })
+      }
+    },
 
     // setTimeout(() => {
     //   this.form = ''

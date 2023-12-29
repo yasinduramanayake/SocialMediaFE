@@ -9,7 +9,7 @@
                 <b-input-group-prepend>
                   <b-img
                     width="30px"
-                    :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
+                    :src="`${getBaseUrl}/storage/app/public/${categoryicon}`"
                   ></b-img>
                 </b-input-group-prepend>
                 &nbsp;
@@ -95,32 +95,24 @@
       ok-only
     >
       <template slot="modal-ok" v-if="!checkoutStatus">
-        <b-row class="row">
-          <b-col lg="3" cols="4">
-            Total: <br />
-            <span class="h4"> $12.99</span>
-          </b-col>
-
-          <b-col lg="9" cols="8">
-            <b-button
-              size="lg"
-              style="height: 40px"
-              @click="addOrder()"
-              variant="primary"
-              class="text-white"
-              >Add Item To Cart</b-button
-            >
-          </b-col>
-        </b-row>
+        <b-button
+          size="lg"
+          style="height: 40px"
+          @click="addOrder()"
+          variant="primary"
+          class="text-white"
+          >Add Item To Cart</b-button
+        >
       </template>
       <template slot="modal-ok" v-if="checkoutStatus">
         <b-row class="row">
-          <b-col lg="3" cols="4">
+          <b-col lg="4" cols="4">
             Total: <br />
-            <span class="h4"> $12.99</span>
+            <span class="h4"> ${{ propData.price }}</span>
+            &nbsp; &nbsp; &nbsp;
           </b-col>
 
-          <b-col lg="9" cols="8">
+          <b-col lg="8" cols="8">
             <b-button
               size="lg"
               style="height: 40px"
@@ -136,6 +128,7 @@
       <OrderDescription
         :subcategory="subcategoryname"
         :Quality="quality"
+        :category="category"
         :checkout_status="checkoutStatus"
         :Icon="subcategoryimage"
         :UserName="username"
@@ -149,7 +142,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-lonely-if */
 // import orderApi from '@/Api/Modules/order'
-import paymentApi from '@/Api/Modules/payment'
+import Vue from 'vue'
+import notification from '@/ApiConstance/toast'
+import orderApi from '@/Api/Modules/order'
 import serviceApi from '@/Api/Modules/services'
 export default {
   name: 'SocailMedia',
@@ -157,7 +152,7 @@ export default {
     return {
       form: {},
       arrayData: [],
-      propData:{},
+      propData: {},
       modalTitle: '',
       checkoutStatus: false,
       selected: null,
@@ -184,13 +179,16 @@ export default {
     category: String,
     subcategoryid: Number,
     categoryicon: String,
-    subcategoryname:String,
-    subcategoryimage:String,
+    subcategoryname: String,
+    subcategoryimage: String,
   },
   async created() {
     await this.loadQualities()
   },
   computed: {
+    getBaseUrl() {
+      return Vue.prototype.$app_url
+    },
     getSelectedService() {
       const selectedOption = this.options2.find(
         (option) => option.value === this.selected2
@@ -206,38 +204,96 @@ export default {
     this.propData.quantity = this.getSelectedService.split('|')[1]
   },
   methods: {
-    async addOrder() {
-      const res = await paymentApi.AddPayment()
-      window.open(res.data.data.original.data)
-
-      // console.log(this.quality);
-      // if (this.quality === 'High Quality') {
-      //   this.form.order_details = {
-      //     category: this.getSelectedCategory,
-      //     subcategory: this.getSelectedSubCategory,
-      //     quality: this.quality,
-      //     price: this.getSelectedQualityVariables.high_quality.price,
-      //     quantity: this.getSelectedQualityVariables.high_quality.quantity,
-      //   }
-      //   await orderApi.AddOrder(this.form)
-      //   this.checkoutStatus = true
-      //   this.modalTitle = 'Items added to cart'
-      // } else if (this.quality === 'Real') {
-      //   this.form.order_details = {
-      //     category: this.getSelectedCategory,
-      //     subcategory: this.getSelectedSubCategory,
-      //     quality: this.quality,
-      //     price: this.getSelectedQualityVariables.real_quality.price,
-      //     quantity: this.getSelectedQualityVariables.real_quality.quantity,
-      //   }
-      //   await orderApi.AddOrder(this.form)
-      //   this.checkoutStatus = true
-      //   this.modalTitle = 'Items added to cart'
-      // }
+    checkout() {
+      this.$router.push('/cart')
     },
+    async addOrder() {
+      if (this.quality === 'High Quality') {
+        if (!localStorage.token) {
+          if (localStorage.getItem('randomcart')) {
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          } else {
+            localStorage.setItem(
+              'randomcart',
+              Math.floor(Math.random() * 100000000000) + 1
+            )
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          }
+          this.form.order_details = {
+            category: this.category,
+            categoryicon: this.categoryicon,
+            subcategory: this.subcategoryname,
+            quality: this.quality,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+            link: this.username,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        } else {
+          this.form.order_details = {
+            category: this.category,
+            categoryicon: this.categoryicon,
+            subcategory: this.subcategoryname,
+            quality: this.quality,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+            link: this.username,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        }
+      } else if (this.quality === 'Real') {
+        if (!localStorage.token) {
+          if (localStorage.getItem('randomcart')) {
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          } else {
+            localStorage.setItem(
+              'randomcart',
+              Math.floor(Math.random() * 100000000000) + 1
+            )
+            this.form.randomnumber = localStorage.getItem('randomcart')
+          }
+
+          this.form.order_details = {
+            category: this.category,
+            categoryicon: this.categoryicon,
+            subcategory: this.subcategoryname,
+            quality: this.quality,
+            link: this.username,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        } else {
+         
+          this.form.order_details = {
+            category: this.category,
+            categoryicon: this.categoryicon,
+            subcategory: this.subcategoryname,
+            quality: this.quality,
+            price: this.propData.price,
+            quantity: this.propData.quantity,
+            link: this.username,
+          }
+          await orderApi.AddOrder(this.form)
+          this.checkoutStatus = true
+          this.modalTitle = 'Items added to cart'
+        }
+      }
+    },
+
     openModal() {
-      this.checkoutStatus = false
-      this.$refs.orderDescriptionModal.show()
+      if (this.username === '') {
+        notification.toast('Please Enter a Valid Social Link', 'error')
+      } else {
+        this.checkoutStatus = false
+        this.$refs.orderDescriptionModal.show()
+      }
     },
 
     async loadServices(high_quality, real_quality) {

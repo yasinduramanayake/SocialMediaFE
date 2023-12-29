@@ -2,7 +2,8 @@ import axios from 'axios'
 import notification from '@/ApiConstance/toast'
 
 export const api = axios.create({
-  baseURL: 'http://localhost/SocialMediaBE/public/api',
+  baseURL: 'https://www.ifolo.co/backendapi/public/api',
+  //  baseURL: 'https://followsta.com/backendapi/public/api',
   // baseURL: 'http://localhost/SocialMediaBE/public/api',
 })
 
@@ -33,6 +34,7 @@ api.interceptors.response.use(
       if (error.response.config.url !== '/tokenexdate') {
         if (error.response.status === 401) {
           notification.toast(error.response.data.message, 'error')
+          notification.toast('Please Login', 'error')
         }
       }
 
@@ -50,7 +52,7 @@ api.interceptors.response.use(
         notification.toast(error.response.data.message, 'error')
       }
       if (error.response.status === 500) {
-        notification.toast(error.response.statusText, 'error')
+        notification.toast('Internal Server Error', 'error')
       }
     }
     return Promise.reject(error)

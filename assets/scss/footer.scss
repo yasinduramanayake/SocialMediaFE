@@ -73,6 +73,9 @@
   max-width: 187px;
   font-family: 'Bebas Neue', cursive;
   text-transform: uppercase;
+  @media (max-width: 768px) {
+    padding-left: 100px;
+  }
 }
 @media (max-width: 992px) {
   .footer-drop {
@@ -173,6 +176,11 @@ button {
     bottom: 20px;
   }
 }
+@media (max-width: 768px) {
+  .footer-copyright {
+   padding-left: 100px;
+  }
+}
 .footer-copyright {
   color: var(--white);
   opacity: 0.7;
@@ -182,6 +190,7 @@ button {
 @media (max-width: 768px) {
   .footer-services {
     width: 100%;
+    padding-left: 100px;
   }
 }
 .footer-services {
@@ -192,6 +201,7 @@ button {
 @media (max-width: 768px) {
   .footer-about {
     width: 50%;
+    padding-left: 100px;
   }
 }
 .footer-about {
@@ -203,11 +213,16 @@ button {
   color: var(--white);
   font-family: var(--poppins);
   font-size: 14px;
+  @media (max-width: 768px) {
+    padding-right: 50px;
+  }
 }
 @media (max-width: 768px) {
   .footer-lable-wrap {
     display: inline-flex;
+    padding-left: 100px;
   }
+
 }
 .footer-lable-wrap {
   display: flex;
@@ -283,19 +298,19 @@ button {
 .banner {
   position: relative;
 }
+
 .card-container {
   position: absolute;
   bottom: 85%; /* Pull the card below the banner */
-  width: 70%;
+  width: 67.5%;
   height: 50%;
   display: flex;
 
-  left: 17%;
+  left: 16.5%;
 
   z-index: 1; /* Ensure card appears on top of content */
   @media (max-width: 559px) {
-    width: 100%;
-    left: 0%;
+    display: none;
   }
   @media (min-width: 1024px) and (max-width: 1366px) {
     display: none;
@@ -305,6 +320,9 @@ button {
   }
 }
 .br_tab_view {
+  @media (max-width: 559px) {
+    display: none;
+  }
   @media (min-width: 1024px) and (max-width: 1366px) {
     display: none;
   }

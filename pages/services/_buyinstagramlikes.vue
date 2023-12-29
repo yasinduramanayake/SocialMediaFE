@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <br /><br /><br />
     <center>
       <div class="head">
@@ -29,7 +30,7 @@
               </b-card-body>
             </b-col>
             <b-col md="6">
-              <div v-if="category === 'Instergram'">
+              <div v-if="category === 'Instagram'">
                 <b-card-img
                   src="https://buysocialmediamarketing.com/img/product-group-image-instagram.webp"
                   alt="Image"
@@ -50,7 +51,6 @@
                   class="pict11"
                 ></b-card-img>
               </div>
-
             </b-col>
           </b-row>
         </b-container>
@@ -67,7 +67,7 @@
       <BuyServices />
       <br /><br />
 
-      <b-container>
+      <!-- <b-container>
         <div class="instantreallike">
           <br />
           <b-container>
@@ -79,7 +79,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
+                      :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -127,7 +127,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
+                      :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -171,7 +171,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
+                      :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -215,7 +215,7 @@
                   <div class="card-icon">
                     <img
                       loading="lazy"
-                         :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
+                      :src="`http://localhost/SocialMediaBE/storage/app/public/${categoryicon}`"
                       alt=""
                       width="36"
                       height="36"
@@ -298,7 +298,7 @@
             </b-row>
           </b-card>
         </div>
-      </b-container>
+      </b-container> -->
       <br /><br />
       <b-container>
         <b-card-text>
@@ -422,14 +422,28 @@
         </div>
       </b-container>
       <br /><br />
-
-   
     </center>
+
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <div>
+      <FooterComponent />
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
 export default {
   name: 'BuyInstagramLikes',
   data() {
@@ -443,16 +457,25 @@ export default {
     }
   },
   head() {
-      return {
-        title: Vue.prototype.$appName  + ' - ' + this.$route.params.param1 + ' ' + this.$route.params.param2,
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: this.$route.params.param1 + ' ' + this.$route.params.param2 + 'page description'
-          }
-        ]
-      }
+    return {
+      title:
+        Vue.prototype.$appName +
+        ' - ' +
+        this.$route.params.param1 +
+        ' ' +
+        this.$route.params.param2,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            this.$route.params.param1 +
+            ' ' +
+            this.$route.params.param2 +
+            'page description',
+        },
+      ],
     }
+  },
 }
 </script>

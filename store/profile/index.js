@@ -33,11 +33,11 @@ export default {
       commit("SET_CURRENT_USER", payload);
     },
     // eslint-disable-next-line no-unused-vars
-    async afterLogin({ commit }, fromLogin) {
-      if (!fromLogin) {
-        router.replace("/");
-      }
-    },
+    // async afterLogin({ commit }, fromLogin) {
+    //   if (!fromLogin) {
+    //     router.replace("/");
+    //   }
+    // },
     async autoLogin({ commit }) {
       try {
         const cacheUserToken = localStorage.getItem("token");
@@ -71,10 +71,10 @@ export default {
       await commit("CLEAR_CURRENT_USER");
       window.location.href = "/login";
     },
-    async updateCurrentUserPhotoUrl({ commit }, newUrl) {
-      commit("UPDATE_USER_INFO", {
-        photoURL: newUrl,
-      });
-    },
+    // async updateCurrentUserPhotoUrl({ commit }, newUrl) {
+    //   commit("UPDATE_USER_INFO", {
+    //     photoURL: newUrl,
+    //   });
+    // },
   },
 };

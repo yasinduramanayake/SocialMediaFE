@@ -22,7 +22,7 @@
                   <img
                     width="25"
                     height="25"
-                    :src="`http://localhost/SocialMediaBE/storage/app/public/${category.icon}`"
+                    :src="`${getBaseUrl}/storage/app/public/${category.icon}`"
                     alt="instagram-new"
                   />
 
@@ -61,7 +61,7 @@
                       <b-card
                         class="border-0 button"
                         no-body
-                        style="max-width: 20rem"
+                        style="width: 30%;"
                         :img-src="subcat.image"
                         img-alt="Image"
                         img-top
@@ -87,19 +87,33 @@
                   v-for="subcat in category.subcategorynew"
                   :key="subcat.id"
                 >
-                  <div>
-                    <b-card
-                      class="border-0"
-                      no-body
-                      style="max-width: 20rem"
-                      :img-src="subcat.image"
-                      img-alt="Image"
-                      img-top
+                <div v-if="subcat.type === 'other'">
+                    <b-button
+                      variant="outline-light"
+                      @click="
+                        sendparams(
+                          category.name,
+                          subcat.name,
+                          subcat.id,
+                          category.icon,
+                          subcat.name,
+                          subcat.image
+                        )
+                      "
                     >
-                      <center>
-                        <b-card-title class="">{{ subcat.name }}</b-card-title>
-                      </center>
-                    </b-card>
+                      <b-card
+                        class="border-0 button"
+                        no-body
+                        style="width: 30%"
+                        :img-src="subcat.image"
+                        img-alt="Image"
+                        img-top
+                      >
+                      </b-card>
+                    </b-button>
+                    <center>
+                      <b-card-title class="">{{ subcat.name }}</b-card-title>
+                    </center>
                   </div>
                 </b-col>
               </b-row>
@@ -636,6 +650,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import serviceApi from '@/Api/Modules/services'
 export default {
   name: 'OurServices',
@@ -647,11 +662,16 @@ export default {
   props: {
     show: Object,
   },
+  computed: {
+    getBaseUrl() {
+      return Vue.prototype.$app_url
+    },
+  },
   async created() {
     await this.loadCategories()
   },
   methods: {
-    sendparams(data1, data2, data3, data4 , data5 ,data6) {
+    sendparams(data1, data2, data3, data4, data5, data6) {
       this.$router.push({
         name: 'viewservice',
         params: {
@@ -677,4 +697,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.imgwidth {
+  width: 10%;
+}
+</style>

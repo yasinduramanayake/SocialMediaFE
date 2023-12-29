@@ -39,13 +39,19 @@
                         <div
                           class="servising-title d-flex flex-column align-items-center mb-20"
                         >
-                          <div class="promo-services-units">1000</div>
+                          <div class="promo-services-units">
+                            {{ facebooklikes }}
+                          </div>
                           <span>Facebook Post Likes</span>
                         </div>
                         <div
                           class="counter promo-services-triggers services-texts-cards"
                         >
-                          <button type="button" class="counter__btn minus">
+                          <button
+                            type="button"
+                            class="counter__btn minus"
+                            @click="facebookLikesMinus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-minuc.svg"
@@ -56,11 +62,15 @@
                           <input
                             type="text"
                             class="counter__input promo-services-current services-texts-cards"
-                            value="50"
+                            v-model="facebooklikes"
                             readonly=""
                           />
                           <br /><br />
-                          <button type="button" class="counter__btn plus">
+                          <button
+                            type="button"
+                            class="counter__btn plus"
+                            @click="facebookLikesPlus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-pluse.svg"
@@ -73,18 +83,28 @@
                         class="card-body__item d-flex flex-column align-items-center"
                       >
                         <span class="card-price promo-services-price"
-                          >$8.99</span
+                          >${{ facebooklikesprice }}</span
                         >
                       </div>
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <a
-                          href="https://buysocialmediamarketing.com/buy-1000-facebook-post-likes"
+                        <b-button
+                          variant="light"
+                          @click="
+                            directtochild(
+                              'Facebook',
+                              'Likes',
+                              facebooklikes,
+                              facebooklikesprice,
+                              'facebook.png',
+                              'images.jpeg'
+                            )
+                          "
                           class="btn btn--md btn--primary promo-services-link"
                         >
                           <span>Buy now</span>
-                        </a>
+                        </b-button>
                       </div>
                     </div>
                   </b-card>
@@ -109,13 +129,19 @@
                         <div
                           class="servising-title d-flex flex-column align-items-center mb-20"
                         >
-                          <div class="promo-services-units">50</div>
-                          <span>Instagram Likes</span>
+                          <div class="promo-services-units">
+                            {{ instagramlikes }}
+                          </div>
+                          <span>Instagram Post Likes</span>
                         </div>
                         <div
                           class="counter promo-services-triggers services-texts-cards"
                         >
-                          <button type="button" class="counter__btn minus">
+                          <button
+                            type="button"
+                            class="counter__btn minus"
+                            @click="instagramLikesMinus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-minuc.svg"
@@ -126,11 +152,15 @@
                           <input
                             type="text"
                             class="counter__input promo-services-current services-texts-cards"
-                            value="50"
+                            v-model="instagramlikes"
                             readonly=""
                           />
                           <br /><br />
-                          <button type="button" class="counter__btn plus">
+                          <button
+                            type="button"
+                            class="counter__btn plus"
+                            @click="instagramLikesPlus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-pluse.svg"
@@ -142,19 +172,29 @@
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <span class="card-price promo-services-price">
-                          $1.59
-                        </span>
+                        <span class="card-price promo-services-price"
+                          >${{ instagramlikesprice }}</span
+                        >
                       </div>
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <a
-                          href="https://buysocialmediamarketing.com/buy-50-instagram-likes"
+                        <b-button
+                          variant="light"
+                          @click="
+                            directtochild(
+                              'Instagram',
+                              'Likes',
+                              instagramlikes,
+                              instagramlikesprice,
+                              'instagram.svg',
+                              'images.jpeg'
+                            )
+                          "
                           class="btn btn--md btn--primary promo-services-link"
                         >
                           <span>Buy now</span>
-                        </a>
+                        </b-button>
                       </div>
                     </div>
                   </b-card>
@@ -179,7 +219,9 @@
                         <div
                           class="servising-title d-flex flex-column align-items-center mb-20"
                         >
-                          <div class="promo-services-units">1000</div>
+                          <div class="promo-services-units">
+                            {{ tiktokviews }}
+                          </div>
                           <span>TikTok Views</span>
                         </div>
                         <div
@@ -189,6 +231,7 @@
                             type="button"
                             class="counter__btn minus"
                             variant="light"
+                            @click="tiktokviewsMinus()"
                           >
                             <img
                               loading="lazy"
@@ -197,12 +240,13 @@
                             />
                           </b-button>
                           <br /><br />
-                          <span class="text-light">50</span>
+                          <span class="text-light">{{ tiktokviews }}</span>
                           <br /><br />
                           <b-button
                             type="button"
                             class="counter__btn plus"
                             variant="light"
+                            @click="tiktokviewsPlus()"
                           >
                             <img
                               loading="lazy"
@@ -216,18 +260,28 @@
                         class="card-body__item d-flex flex-column align-items-center"
                       >
                         <span class="card-price promo-services-price">
-                          $1.99
+                          ${{ tiktokviewsprice }}
                         </span>
                       </div>
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <a
-                          href="https://buysocialmediamarketing.com/buy-1000-tiktok-views"
-                          class="btn btn--md bg-white promo-services-link"
+                        <b-button
+                          variant="light"
+                          @click="
+                            directtochild(
+                              'TikTok',
+                              'Views',
+                              tiktokviews,
+                              tiktokviewsprice,
+                              'tiktok.png',
+                              'ico-videotype.svg'
+                            )
+                          "
+                          class="btn btn--md btn--primary promo-services-link"
                         >
                           <span>Buy now</span>
-                        </a>
+                        </b-button>
                       </div>
                     </div>
                   </b-card>
@@ -252,13 +306,19 @@
                         <div
                           class="servising-title d-flex flex-column align-items-center mb-20"
                         >
-                          <div class="promo-services-units">1000</div>
+                          <div class="promo-services-units">
+                            {{ youtubeviews }}
+                          </div>
                           <span>Youtube Views</span>
                         </div>
                         <div
                           class="counter promo-services-triggers services-texts-cards"
                         >
-                          <button type="button" class="counter__btn minus">
+                          <button
+                            type="button"
+                            class="counter__btn minus"
+                            @click="youtubeviewsMinus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-minuc.svg"
@@ -269,11 +329,15 @@
                           <input
                             type="text"
                             class="counter__input promo-services-current services-texts-cards"
-                            value="50"
+                            v-model="youtubeviews"
                             readonly=""
                           />
                           <br /><br />
-                          <button type="button" class="counter__btn plus">
+                          <button
+                            type="button"
+                            class="counter__btn plus"
+                            @click="youtubeviewsPlus()"
+                          >
                             <img
                               loading="lazy"
                               src="https://buysocialmediamarketing.com/img/icon-pluse.svg"
@@ -285,19 +349,29 @@
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <span class="card-price promo-services-price">
-                          $6.99
-                        </span>
+                        <span class="card-price promo-services-price"
+                          >${{ youtubeviewsprice }}</span
+                        >
                       </div>
                       <div
                         class="card-body__item d-flex flex-column align-items-center"
                       >
-                        <a
-                          href="https://buysocialmediamarketing.com/buy-1000-youtube-views"
+                        <b-button
+                          variant="light"
+                          @click="
+                            directtochild(
+                              'Youtube',
+                              'Views',
+                              youtubeviews,
+                              youtubeviewsprice,
+                              'youtube.png',
+                              'ico-videotype.svg'
+                            )
+                          "
                           class="btn btn--md btn--primary promo-services-link"
                         >
                           <span>Buy now</span>
-                        </a>
+                        </b-button>
                       </div>
                     </div>
                   </b-card>
@@ -335,8 +409,8 @@
               </div>
             </b-col>
             <b-col>
-              <div style="float: right;padding-top: 50px;">
-                <b-button size="lg"  variant="light">Learn More</b-button>
+              <div style="float: right; padding-top: 50px">
+                <b-button size="lg" variant="light">Learn More</b-button>
               </div>
             </b-col>
           </b-row>
@@ -350,7 +424,73 @@
 export default {
   name: 'ServicesPage',
   data() {
-    return {}
+    return {
+      facebooklikes: 50,
+      facebooklikesprice: 1,
+
+      instagramlikes: 50,
+      instagramlikesprice: 1,
+
+      tiktokviews: 50,
+      tiktokviewsprice: 1,
+
+      youtubeviews: 50,
+      youtubeviewsprice: 1,
+    }
+  },
+  methods: {
+    facebookLikesPlus() {
+      this.facebooklikes = this.facebooklikes + 50
+      this.facebooklikesprice = this.facebooklikes * 0.01
+    },
+    facebookLikesMinus() {
+      this.facebooklikes = this.facebooklikes - 50
+      this.facebooklikesprice = this.facebooklikes * 0.01
+    },
+
+    instagramLikesMinus() {
+      this.instagramlikes = this.instagramlikes - 50
+      this.instagramlikesprice = this.instagramlikes * 0.01
+    },
+
+    instagramLikesPlus() {
+      this.instagramlikes = this.instagramlikes + 50
+      this.instagramlikesprice = this.instagramlikes * 0.01
+    },
+
+    tiktokviewsMinus() {
+      this.tiktokviews = this.tiktokviews - 50
+      this.tiktokviewsprice = this.tiktokviews * 0.01
+    },
+
+    tiktokviewsPlus() {
+      this.tiktokviews = this.tiktokviews + 50
+      this.tiktokviewsprice = this.tiktokviews * 0.01
+    },
+
+    youtubeviewsMinus() {
+      this.youtubeviews = this.youtubeviews - 50
+      this.youtubeviewsprice = this.youtubeviews * 0.01
+    },
+
+    youtubeviewsPlus() {
+      this.youtubeviews = this.youtubeviews + 50
+      this.youtubeviewsprice = this.youtubeviews * 0.01
+    },
+
+    directtochild(data1, data2, data3, data4, data5, data6) {
+      this.$router.push({
+        name: 'viewadditionalservice',
+        params: {
+          param1: data1,
+          param2: data2,
+          param3: data3,
+          param4: data4,
+          param5: data5,
+          param6: data6,
+        },
+      })
+    },
   },
 }
 </script>

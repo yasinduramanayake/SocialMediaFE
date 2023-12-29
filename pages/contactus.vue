@@ -1,14 +1,15 @@
 <template>
   <div>
+    <Header />
     <b-container>
       <div class="large_break"></div>
       <h1 class="h2 header_style">Contact Us</h1>
-      <span class="contact_sub_paragraph"
-        >Please fill the form and we will get back to you in 24 hours.</span
-      >
+      <p class="contact_sub_paragraph">
+        Please fill the form and we will get back to you in 24 hours.
+      </p>
       <div class="small_break"></div>
-      <b-row>
-        <b-col lg="8" md="6" sm="12" cols="12">
+      <b-row no-gutters class="d-flex justify-content-between">
+        <b-col lg="7" md="6" sm="12" cols="12">
           <b-card style="border: none">
             <div class="">
               <br />
@@ -26,7 +27,7 @@
                           id="firstName"
                           placeholder="firstname"
                           name="firstName"
-                          v-model="form.firstName"
+                          v-model="form.first_name"
                         />
                       </div>
                     </b-col>
@@ -41,7 +42,7 @@
                           id="lastName"
                           placeholder="lastname"
                           name="lastName"
-                          v-model="form.lastName"
+                          v-model="form.last_name"
                         />
                       </div>
                     </b-col>
@@ -86,15 +87,15 @@
                     ></b-col>
                     <b-col lg="12" md="12" sm="12">
                       <label for="message"><p class="pf">File</p></label>
-                      <b-form-file></b-form-file>
+                      <b-form-file v-model="form.file"></b-form-file>
                     </b-col>
                     <b-col lg="12" md="12" sm="12" cols="12">
                       <br />
                       <center>
                         <b-button
-                          type="submit"
                           style="height: 50px; width: 80px"
                           size="lg"
+                          @click="addContactForm()"
                           variant="primary"
                           >Send</b-button
                         >
@@ -111,21 +112,37 @@
           <b-card style="border: none; text-align: left">
             <P class="form-right-text">Contact info</P>
             <br />
-            <a href="buysocialmediamarketing.com" class="link-form"
-              >buysocialmediamarketing.com</a
+            <a href="httpteen@ifolo.co" class="link-form"
+              >httpteen@ifolo.co</a
             ><br />
-            <a href="buysocialmediamarketing.com" class="link-form"
-              >buysocialmediamarketing.com</a
+            <a href="httpteen@ifolo.co" class="link-form"
+              >httpteen@ifolo.co</a
             >
           </b-card>
         </b-col>
       </b-row>
     </b-container>
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <br class="br_tab_view" /><br class="br_tab_view" /><br
+      class="br_tab_view"
+    />
+    <div>
+      <FooterComponent />
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
+import contactApi from '@/Api/Modules/reviews'
 export default {
   name: 'ContactForm',
   data() {
@@ -137,7 +154,7 @@ export default {
   },
   head() {
     return {
-      title: Vue.prototype.$appName  + ' - ' + 'Contact Us',
+      title: Vue.prototype.$appName + ' - ' + 'Contact Us',
       meta: [
         {
           hid: 'description',
@@ -148,28 +165,25 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      this.errors = []
-
-      if (this.firstName === '') {
-        this.errors.push('First Name is required.')
-      }
-
-      if (this.errors.length === 0) {
-        const formData = {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          subject: this.subject,
-          message: this.message,
-          attachment: this.attachment,
-        }
-
-        console.log('Form Data:', formData)
-      }
-    },
-    handleFileUpload(event) {
-      this.attachment = event.target.files[0]
+    async addContactForm() {
+      await this.$vs.loading({
+        scale: 0.8,
+      })
+      const form = new FormData()
+      form.append('first_name', this.form.first_name)
+      form.append('last_name', this.form.last_name)
+      form.append('email', this.form.email)
+      form.append('subject', this.form.subject)
+      form.append('message', this.form.message)
+      form.append('file', this.form.file)
+      await contactApi
+        .AddContact(form)
+        .then(() => {
+          this.$vs.loading.close()
+        })
+        .catch(() => {
+          this.$vs.loading.close()
+        })
     },
   },
 }
