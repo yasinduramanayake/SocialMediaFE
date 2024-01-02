@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    
     <b-container>
       <div class="large_break"></div>
       <h1 class="h2 header_style">Contact Us</h1>

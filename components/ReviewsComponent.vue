@@ -44,7 +44,7 @@
                             @{{ review.first_name }} {{ review.last_name }}
                           </div>
                           <div class="author-bought">
-                            Ordered {{ review.service }} 100 Folowers
+                           
                             <span class="text-primary"
                               >• Verified Purchase</span
                             >
@@ -53,7 +53,7 @@
                       </div>
                     </div>
                     <ul class="rating-list review-rating">
-                      <li class="review-star">
+                      <li class="">
                         <b-form-rating
                           class="input_review_rating"
                           ref="ratingInput"

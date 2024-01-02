@@ -75,9 +75,20 @@
       <br />
       <center>
         <div>
-          <a href="#" class="color-primary">
-            <span class="forget-password">Forgot password?</span></a
-          >
+          <b-button variant="none" @click="foegetDirect()">
+            <a class="color-primary">
+              <span class="forget-password">Forgot password?</span></a
+            >
+          </b-button>
+        </div>
+
+        <div>
+          <b-button variant="none" @click="signDirect()">
+            <a class="color-primary">
+              Didn't You Registered Already?
+              <span class="forget-password font-weight-bold">Register</span></a
+            >
+          </b-button>
         </div>
       </center>
     </b-card>
@@ -93,13 +104,15 @@ export default {
   data() {
     return {
       form: {},
+      passwordFoegotton: false,
+      isSignup: false,
     }
   },
   components: {
     ValidationProvider,
     ValidationObserver,
   },
- 
+
   props: {
     cartProp: String,
   },
@@ -118,6 +131,14 @@ export default {
             this.$vs.loading.close()
           })
       }
+    },
+    signDirect() {
+      this.isSignup = true
+      this.$emit('signupStatus', this.isSignup)
+    },
+    foegetDirect() {
+      this.passwordFoegotton = true
+      this.$emit('forgetStatus', this.passwordFoegotton)
     },
   },
 }

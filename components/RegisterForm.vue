@@ -154,13 +154,6 @@
         </b-form>
       </validation-observer>
       <br />
-      <center>
-        <div>
-          <a href="#" class="color-primary">
-            <span class="forget-password">Forgot password?</span></a
-          >
-        </div>
-      </center>
     </b-card>
   </div>
 </template>
@@ -180,6 +173,9 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
+  props: {
+    cartProp: String,
+  },
   methods: {
     async register() {
       if (await this.$refs.registerValidation.validate()) {
@@ -188,7 +184,7 @@ export default {
         })
         this.form.view = 'Front'
         await authApi
-          .register(this.form)
+          .register(this.form, this.cartProp)
           .then(({ res }) => {
             this.$vs.loading.close()
           })

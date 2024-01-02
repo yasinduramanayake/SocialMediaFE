@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="sticky-header">
     <header
       class="header header-transparent bg-info"
       style="z-index: 301"
@@ -152,48 +152,69 @@
               </button>
             </li>
             &nbsp;
-            <li>
-              <a
-                href="/cart"
-                class="btn btn--md btn--primary btn-light relative"
+
+            <a
+              href="/cart"
+              class="btn btn--md btn--secondary btn-candlelight relative"
+            >
+              <div
+                style="
+                  position: absolute;
+                  right: 20px;
+                  top: 10px;
+                  font-weight: 600;
+                  font-size: 20px;
+                  line-height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-transform: uppercase;
+                  color: #5d52b5;
+                  height: 18px;
+                  width: 18px;
+                  background: linear-gradient(
+                    106.11deg,
+                    #20a7ee -5.94%,
+                    #0ed5e1 112.84%
+                  );
+                  border-radius: 50%;
+                "
               >
-                <div class="btn_circle_number" style="font-size: 20px">
-                  {{ returncaritems }}
-                </div>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.8126 4.88246C11.8126 3.23745 10.3993 1.91985 8.72445 2.08233L8.72241 2.08253C7.35632 2.21003 6.18763 3.59429 6.18763 5.02496V5.75246C6.18763 6.06312 5.93579 6.31496 5.62513 6.31496C5.31447 6.31496 5.06263 6.06312 5.06263 5.75246V5.02496C5.06263 3.08096 6.60843 1.15055 8.61684 0.962491C10.9616 0.73561 12.9376 2.58281 12.9376 4.88246V5.91746C12.9376 6.22812 12.6858 6.47996 12.3751 6.47996C12.0645 6.47996 11.8126 6.22812 11.8126 5.91746V4.88246Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M2.53029 6.61288C3.19434 5.82339 4.33285 5.43746 6.00013 5.43746H12.0001C13.6674 5.43746 14.8059 5.82339 15.47 6.61288C16.1287 7.39601 16.1903 8.42525 16.0842 9.38433L16.0833 9.39224L15.5214 13.8875C15.4385 14.6572 15.2443 15.5002 14.5573 16.1277C13.874 16.7521 12.8153 17.0625 11.2501 17.0625H6.75013C5.18499 17.0625 4.12628 16.7521 3.44292 16.1277C2.75596 15.5002 2.56179 14.6571 2.47887 13.8874L1.91599 9.38433C1.80986 8.42525 1.87158 7.39601 2.53029 6.61288ZM3.03379 9.25672L3.59702 13.7625C3.6719 14.4615 3.82704 14.9549 4.20172 15.2972C4.58149 15.6441 5.30027 15.9375 6.75013 15.9375H11.2501C12.7 15.9375 13.4188 15.6441 13.7985 15.2972C14.1732 14.9549 14.3284 14.4615 14.4033 13.7625L14.4044 13.7527L14.9665 9.25663C15.0621 8.38776 14.9623 7.75703 14.609 7.33704C14.2606 6.92278 13.5354 6.56246 12.0001 6.56246H6.00013C4.46491 6.56246 3.73967 6.92278 3.39123 7.33704C3.03796 7.75704 2.93814 8.3878 3.03379 9.25672Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M10.8717 8.99996C10.8717 8.58575 11.2075 8.24996 11.6217 8.24996H11.6285C12.0427 8.24996 12.3785 8.58575 12.3785 8.99996C12.3785 9.41418 12.0427 9.74996 11.6285 9.74996H11.6217C11.2075 9.74996 10.8717 9.41418 10.8717 8.99996Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M5.62101 8.99996C5.62101 8.58575 5.9568 8.24996 6.37101 8.24996H6.37775C6.79196 8.24996 7.12775 8.58575 7.12775 8.99996C7.12775 9.41418 6.79196 9.74996 6.37775 9.74996H6.37101C5.9568 9.74996 5.62101 9.41418 5.62101 8.99996Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </a>
-            </li>
+                {{ returncaritems }}
+              </div>
+              <svg
+                width="50"
+                height="35"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.8126 4.88246C11.8126 3.23745 10.3993 1.91985 8.72445 2.08233L8.72241 2.08253C7.35632 2.21003 6.18763 3.59429 6.18763 5.02496V5.75246C6.18763 6.06312 5.93579 6.31496 5.62513 6.31496C5.31447 6.31496 5.06263 6.06312 5.06263 5.75246V5.02496C5.06263 3.08096 6.60843 1.15055 8.61684 0.962491C10.9616 0.73561 12.9376 2.58281 12.9376 4.88246V5.91746C12.9376 6.22812 12.6858 6.47996 12.3751 6.47996C12.0645 6.47996 11.8126 6.22812 11.8126 5.91746V4.88246Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2.53029 6.61288C3.19434 5.82339 4.33285 5.43746 6.00013 5.43746H12.0001C13.6674 5.43746 14.8059 5.82339 15.47 6.61288C16.1287 7.39601 16.1903 8.42525 16.0842 9.38433L16.0833 9.39224L15.5214 13.8875C15.4385 14.6572 15.2443 15.5002 14.5573 16.1277C13.874 16.7521 12.8153 17.0625 11.2501 17.0625H6.75013C5.18499 17.0625 4.12628 16.7521 3.44292 16.1277C2.75596 15.5002 2.56179 14.6571 2.47887 13.8874L1.91599 9.38433C1.80986 8.42525 1.87158 7.39601 2.53029 6.61288ZM3.03379 9.25672L3.59702 13.7625C3.6719 14.4615 3.82704 14.9549 4.20172 15.2972C4.58149 15.6441 5.30027 15.9375 6.75013 15.9375H11.2501C12.7 15.9375 13.4188 15.6441 13.7985 15.2972C14.1732 14.9549 14.3284 14.4615 14.4033 13.7625L14.4044 13.7527L14.9665 9.25663C15.0621 8.38776 14.9623 7.75703 14.609 7.33704C14.2606 6.92278 13.5354 6.56246 12.0001 6.56246H6.00013C4.46491 6.56246 3.73967 6.92278 3.39123 7.33704C3.03796 7.75704 2.93814 8.3878 3.03379 9.25672Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.8717 8.99996C10.8717 8.58575 11.2075 8.24996 11.6217 8.24996H11.6285C12.0427 8.24996 12.3785 8.58575 12.3785 8.99996C12.3785 9.41418 12.0427 9.74996 11.6285 9.74996H11.6217C11.2075 9.74996 10.8717 9.41418 10.8717 8.99996Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.62101 8.99996C5.62101 8.58575 5.9568 8.24996 6.37101 8.24996H6.37775C6.79196 8.24996 7.12775 8.58575 7.12775 8.99996C7.12775 9.41418 6.79196 9.74996 6.37775 9.74996H6.37101C5.9568 9.74996 5.62101 9.41418 5.62101 8.99996Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </a>
           </ul>
         </div>
       </div>
@@ -222,14 +243,25 @@
       size="md"
       hide-footer
       dialog-class="modal-content"
-      hide-header
-      title="Our Services"
-      header-text-variant="light"
+      header-text-variant="dark"
       title-class="h4"
     >
-      <LoginForm />
-    </b-modal>
+      <LoginForm
+        v-if="!forgotPassword && !resetPassword"
+        @forgetStatus="forgetStatus"
+        @signupStatus="signupStatus"
+      />
 
+      <ForgetPassword
+        v-else-if="forgotPassword && !resetPassword"
+        @resetStatus="resetStatus"
+      />
+
+      <ResetPassword
+        v-else-if="forgotPassword && resetPassword"
+        @closeReset="closeReset"
+      />
+    </b-modal>
     <b-modal
       body-bg-variant="light"
       ref="modalregister"
@@ -238,9 +270,7 @@
       hide-backdrop
       size="md"
       hide-footer
-      hide-header
-      title="Our Services"
-      header-text-variant="light"
+      header-text-variant="dark"
       title-class="h4"
     >
       <RegisterForm />
@@ -272,6 +302,9 @@ export default {
       show: false,
       token: localStorage.token,
       cartOrders: [],
+      forgotPassword: false,
+      resetPassword: false,
+      isSignedup: false,
     }
   },
   async created() {
@@ -287,11 +320,31 @@ export default {
     },
   },
   methods: {
+    signupStatus(data) {
+      this.isSignedup = data
+      this.$refs.modallogin.hide()
+      this.openRegisterModal()
+    },
+    closeReset(data) {
+      if (data === 'resetted') {
+        this.$refs.modallogin.hide()
+      }
+    },
+    forgetStatus(data) {
+      this.forgotPassword = data
+    },
+    resetStatus(data) {
+      console.log(data)
+      this.resetPassword = data
+    },
+
     openModal() {
       this.$refs.modalservices.show()
       this.show = true
     },
     openLoginModal() {
+      this.forgotPassword = false
+      this.resetPassword = false
       this.$refs.modallogin.show()
     },
     openRegisterModal() {
@@ -332,5 +385,10 @@ export default {
 .modal-content {
   border-radius: 10px;
   border: white;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust as needed */
 }
 </style>

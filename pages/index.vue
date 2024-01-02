@@ -1,7 +1,5 @@
 <template>
   <div class="faq_background">
-    <Header />
-
     <Banner />
     <br /><br /><br />
     <Services />
@@ -24,7 +22,7 @@
         <b-row no-gutters>
           <b-col md="6" lg="10">
             <h1 class="h1 title_reviews">
-              Customers <span class="text-primary" > reviews</span>
+              Customers <span class="text-primary"> reviews</span>
             </h1>
           </b-col>
           <b-col md="6" lg="2">
@@ -59,9 +57,9 @@
                     <img loading="lazy" alt="" />
                   </div>
                   <div class="author-creds">
-                    <div class="author-name">@</div>
+                    <div class="author-name">@Yasindu Ramanayake</div>
                     <div class="author-bought">
-                      Ordered 100 Folowers
+                      
                       <span class="text-primary">• Verified Purchase</span>
                     </div>
                   </div>
@@ -79,7 +77,7 @@
               </ul>
 
               <br />
-              <span class="sub-title-ratings">"hgfd"</span>
+              <span class="sub-title-ratings">"This service is awesome!"</span>
             </div>
           </b-card>
         </div>
@@ -87,232 +85,495 @@
         <br />
         <br />
         <div class="d-flex justify-content-center">
-          <b-button size="lg" class="login_button" type=""   @click="$router.push('reviews')"
+          <b-button
+            size="lg"
+            class="login_button"
+            type=""
+            @click="$router.push('reviews')"
             >See More</b-button
           >
         </div>
       </b-container>
     </div>
     <br /><br /><br />
-    <Freetrail />
+    <!-- <Freetrail /> -->
     <br /><br /><br />
     <br /><br /><br />
 
-    <b-container >
+    <b-container>
       <h2 class="h2 faq_header text-center">Common Questions</h2>
       <br />
 
-      <b-card class="card_faq_styles shadow-lg" >
-        <div class="accordion" role="tablist" >
-          <div @click="genaralAcormendation1focus()">
-            <b-card no-body class="mb-1 acordian-border">
-              <b-card-header header-tag="header" class="p-1  bg-white" role="tab">
-                <b-container class="tabpane_allign" v-b-toggle.accordion-1>
-                  <b-row>
-                    <b-col cols="11" lg="8" 
-                      >What payment methods do you accept?</b-col
-                    >
-                    <b-col cols="1" lg="4" class="d-flex justify-content-end">
-                      <div class="acormendationpaddingbutton">
-                        <div v-if="genaralAcormendation1 === 1">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024889_plus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
+      <div class="web_only_design">
+        <b-card class="card_faq_styles shadow-lg">
+          <div class="accordion" role="tablist">
+            <div @click="genaralAcormendation1focus()">
+              <b-card no-body class="mb-1 acordian-border">
+                <b-card-header
+                  header-tag="header"
+                  class="p-1 bg-white"
+                  role="tab"
+                >
+                  <b-container class="tabpane_allign" v-b-toggle.accordion-1>
+                    <b-row>
+                      <b-col cols="11" lg="8"
+                        >What payment methods do you accept?</b-col
+                      >
+                      <b-col cols="1" lg="4" class="d-flex justify-content-end">
+                        <div class="acormendationpaddingbutton">
+                          <div v-if="genaralAcormendation1 === 1">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024889_plus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
+                          <div v-if="genaralAcormendation1 === 0">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024684_minus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
                         </div>
-                        <div v-if="genaralAcormendation1 === 0">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024684_minus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
-                        </div>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </b-container>
-              </b-card-header>
-              <b-collapse
-                id="accordion-1"
-                visible
-                accordion="my-accordion"
-                role="tabpanel"
-              >
-                <b-card-body>
-                  <b-card-text class="faq_answer">{{ text }}</b-card-text>
-                </b-card-body>
-              </b-collapse>
-            </b-card>
-          </div>
+                      </b-col>
+                    </b-row>
+                  </b-container>
+                </b-card-header>
+                <b-collapse
+                  id="accordion-1"
+                  visible
+                  accordion="my-accordion"
+                  role="tabpanel"
+                >
+                  <b-card-body>
+                    <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
 
-          <div @click="genaralAcormendation2focus()">
-            <b-card no-body class="mb-1 acordian-border">
-              <b-card-header header-tag="header" class="p-1  bg-white" role="tab">
-                <b-container class="tabpane_allign" v-b-toggle.accordion-2>
-                  <b-row>
-                    <b-col lg="8" cols="11"
-                      >Why should I choose BuySocialMediaMarketing?</b-col
-                    >
-                    <b-col lg="4" cols="1" class="d-flex justify-content-end"> 
-                      <div class="acormendationpaddingbutton">
-                        <div v-if="genaralAcormendation2 === 1">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024889_plus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
+            <div @click="genaralAcormendation2focus()">
+              <b-card no-body class="mb-1 acordian-border">
+                <b-card-header
+                  header-tag="header"
+                  class="p-1 bg-white"
+                  role="tab"
+                >
+                  <b-container class="tabpane_allign" v-b-toggle.accordion-2>
+                    <b-row>
+                      <b-col lg="8" cols="11"
+                        >Why should I choose BuySocialMediaMarketing?</b-col
+                      >
+                      <b-col lg="4" cols="1" class="d-flex justify-content-end">
+                        <div class="acormendationpaddingbutton">
+                          <div v-if="genaralAcormendation2 === 1">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024889_plus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
+                          <div v-if="genaralAcormendation2 === 0">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024684_minus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
                         </div>
-                        <div v-if="genaralAcormendation2 === 0">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024684_minus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
-                        </div>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </b-container>
-              </b-card-header>
-              <b-collapse
-                id="accordion-2"
-                visible
-                accordion="my-accordion"
-                role="tabpanel"
-              >
-                <b-card-body>
-                  <b-card-text class="faq_answer">{{ text }}</b-card-text>
-                </b-card-body>
-              </b-collapse>
-            </b-card>
-          </div>
+                      </b-col>
+                    </b-row>
+                  </b-container>
+                </b-card-header>
+                <b-collapse
+                  id="accordion-2"
+                  visible
+                  accordion="my-accordion"
+                  role="tabpanel"
+                >
+                  <b-card-body>
+                    <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
 
-          <div @click="genaralAcormendation3focus()">
-            <b-card no-body class="mb-1 acordian-border">
-              <b-card-header header-tag="header" class="p-1  bg-white" role="tab">
-                <b-container class="tabpane_allign" v-b-toggle.accordion-3>
-                  <b-row>
-                    <b-col lg="8" cols="11">How long does the delivery take?</b-col>
-                    <b-col lg="4" cols="1" class="d-flex justify-content-end">
-                      <div class="acormendationpaddingbutton">
-                        <div v-if="genaralAcormendation3 === 1">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024889_plus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
+            <div @click="genaralAcormendation3focus()">
+              <b-card no-body class="mb-1 acordian-border">
+                <b-card-header
+                  header-tag="header"
+                  class="p-1 bg-white"
+                  role="tab"
+                >
+                  <b-container class="tabpane_allign" v-b-toggle.accordion-3>
+                    <b-row>
+                      <b-col lg="8" cols="11"
+                        >How long does the delivery take?</b-col
+                      >
+                      <b-col lg="4" cols="1" class="d-flex justify-content-end">
+                        <div class="acormendationpaddingbutton">
+                          <div v-if="genaralAcormendation3 === 1">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024889_plus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
+                          <div v-if="genaralAcormendation3 === 0">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024684_minus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
                         </div>
-                        <div v-if="genaralAcormendation3 === 0">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024684_minus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
-                        </div>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </b-container>
-              </b-card-header>
-              <b-collapse
-                id="accordion-3"
-                visible
-                accordion="my-accordion"
-                role="tabpanel"
-              >
-                <b-card-body>
-                  <b-card-text class="faq_answer">{{ text }}</b-card-text>
-                </b-card-body>
-              </b-collapse>
-            </b-card>
-          </div>
+                      </b-col>
+                    </b-row>
+                  </b-container>
+                </b-card-header>
+                <b-collapse
+                  id="accordion-3"
+                  visible
+                  accordion="my-accordion"
+                  role="tabpanel"
+                >
+                  <b-card-body>
+                    <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
 
-          <div @click="genaralAcormendation4focus()">
-            <b-card no-body class="mb-1 acordian-border">
-              <b-card-header header-tag="header" class="p-1  bg-white" role="tab">
-                <b-container class="tabpane_allign" v-b-toggle.accordion-4>
-                  <b-row>
-                    <b-col lg="8" cols="11"
-                      >My order has not started. What should I do?</b-col
-                    >
-                    <b-col lg="4" cols="1" class="d-flex justify-content-end">
-                      <div class="acormendationpaddingbutton">
-                        <div v-if="genaralAcormendation4 === 1">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024889_plus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
+            <div @click="genaralAcormendation4focus()">
+              <b-card no-body class="mb-1 acordian-border">
+                <b-card-header
+                  header-tag="header"
+                  class="p-1 bg-white"
+                  role="tab"
+                >
+                  <b-container class="tabpane_allign" v-b-toggle.accordion-4>
+                    <b-row>
+                      <b-col lg="8" cols="11"
+                        >My order has not started. What should I do?</b-col
+                      >
+                      <b-col lg="4" cols="1" class="d-flex justify-content-end">
+                        <div class="acormendationpaddingbutton">
+                          <div v-if="genaralAcormendation4 === 1">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024889_plus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
+                          <div v-if="genaralAcormendation4 === 0">
+                            <b-button
+                              variant="outline-light"
+                              class="dropicons-faq"
+                              ><b-img
+                                style="opacity: 0.7"
+                                src="../assets/9024684_minus_light_icon.svg"
+                                width="30%"
+                              ></b-img
+                            ></b-button>
+                          </div>
                         </div>
-                        <div v-if="genaralAcormendation4 === 0">
-                          <b-button
-                            variant="outline-light"
-                            class="dropicons-faq"
-                            ><b-img
-                              style="opacity: 0.7"
-                              src="../assets/9024684_minus_light_icon.svg"
-                              width="30%"
-                            ></b-img
-                          ></b-button>
-                        </div>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </b-container>
-              </b-card-header>
-              <b-collapse
-                id="accordion-4"
-                visible
-                accordion="my-accordion"
-                role="tabpanel"
-              >
-                <b-card-body>
-                  <b-card-text class="faq_answer">{{ text }}</b-card-text>
-                </b-card-body>
-              </b-collapse>
-            </b-card>
+                      </b-col>
+                    </b-row>
+                  </b-container>
+                </b-card-header>
+                <b-collapse
+                  id="accordion-4"
+                  visible
+                  accordion="my-accordion"
+                  role="tabpanel"
+                >
+                  <b-card-body>
+                    <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
           </div>
+        </b-card>
+      </div>
+
+      <div class="mobile_only_design">
+        <div class="pl-3 pr-3 pt-5">
+          <b-card class="card_faq_styles shadow-lg">
+            <div class="accordion" role="tablist">
+              <div @click="genaralAcormendation1focus()">
+                <b-card no-body class="mb-1 acordian-border">
+                  <b-card-header
+                    header-tag="header"
+                    class="p-1 bg-white"
+                    role="tab"
+                  >
+                    <b-container class="tabpane_allign" v-b-toggle.accordion-1>
+                      <b-row>
+                        <b-col cols="11" lg="8"
+                          >What payment methods do you accept?</b-col
+                        >
+                        <b-col
+                          cols="1"
+                          lg="4"
+                          class="d-flex justify-content-end"
+                        >
+                          <div class="acormendationpaddingbutton">
+                            <div v-if="genaralAcormendation1 === 1">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024889_plus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                            <div v-if="genaralAcormendation1 === 0">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024684_minus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </b-container>
+                  </b-card-header>
+                  <b-collapse
+                    id="accordion-1"
+                    visible
+                    accordion="my-accordion"
+                    role="tabpanel"
+                  >
+                    <b-card-body>
+                      <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                    </b-card-body>
+                  </b-collapse>
+                </b-card>
+              </div>
+
+              <div @click="genaralAcormendation2focus()">
+                <b-card no-body class="mb-1 acordian-border">
+                  <b-card-header
+                    header-tag="header"
+                    class="p-1 bg-white"
+                    role="tab"
+                  >
+                    <b-container class="tabpane_allign" v-b-toggle.accordion-2>
+                      <b-row>
+                        <b-col lg="8" cols="11"
+                          >Why should I choose BuySocialMediaMarketing?</b-col
+                        >
+                        <b-col
+                          lg="4"
+                          cols="1"
+                          class="d-flex justify-content-end"
+                        >
+                          <div class="acormendationpaddingbutton">
+                            <div v-if="genaralAcormendation2 === 1">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024889_plus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                            <div v-if="genaralAcormendation2 === 0">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024684_minus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </b-container>
+                  </b-card-header>
+                  <b-collapse
+                    id="accordion-2"
+                    visible
+                    accordion="my-accordion"
+                    role="tabpanel"
+                  >
+                    <b-card-body>
+                      <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                    </b-card-body>
+                  </b-collapse>
+                </b-card>
+              </div>
+
+              <div @click="genaralAcormendation3focus()">
+                <b-card no-body class="mb-1 acordian-border">
+                  <b-card-header
+                    header-tag="header"
+                    class="p-1 bg-white"
+                    role="tab"
+                  >
+                    <b-container class="tabpane_allign" v-b-toggle.accordion-3>
+                      <b-row>
+                        <b-col lg="8" cols="11"
+                          >How long does the delivery take?</b-col
+                        >
+                        <b-col
+                          lg="4"
+                          cols="1"
+                          class="d-flex justify-content-end"
+                        >
+                          <div class="acormendationpaddingbutton">
+                            <div v-if="genaralAcormendation3 === 1">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024889_plus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                            <div v-if="genaralAcormendation3 === 0">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024684_minus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </b-container>
+                  </b-card-header>
+                  <b-collapse
+                    id="accordion-3"
+                    visible
+                    accordion="my-accordion"
+                    role="tabpanel"
+                  >
+                    <b-card-body>
+                      <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                    </b-card-body>
+                  </b-collapse>
+                </b-card>
+              </div>
+
+              <div @click="genaralAcormendation4focus()">
+                <b-card no-body class="mb-1 acordian-border">
+                  <b-card-header
+                    header-tag="header"
+                    class="p-1 bg-white"
+                    role="tab"
+                  >
+                    <b-container class="tabpane_allign" v-b-toggle.accordion-4>
+                      <b-row>
+                        <b-col lg="8" cols="11"
+                          >My order has not started. What should I do?</b-col
+                        >
+                        <b-col
+                          lg="4"
+                          cols="1"
+                          class="d-flex justify-content-end"
+                        >
+                          <div class="acormendationpaddingbutton">
+                            <div v-if="genaralAcormendation4 === 1">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024889_plus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                            <div v-if="genaralAcormendation4 === 0">
+                              <b-button
+                                variant="outline-light"
+                                class="dropicons-faq"
+                                ><b-img
+                                  style="opacity: 0.7"
+                                  src="../assets/9024684_minus_light_icon.svg"
+                                  width="30%"
+                                ></b-img
+                              ></b-button>
+                            </div>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </b-container>
+                  </b-card-header>
+                  <b-collapse
+                    id="accordion-4"
+                    visible
+                    accordion="my-accordion"
+                    role="tabpanel"
+                  >
+                    <b-card-body>
+                      <b-card-text class="faq_answer">{{ text }}</b-card-text>
+                    </b-card-body>
+                  </b-collapse>
+                </b-card>
+              </div>
+            </div>
+          </b-card>
         </div>
-      </b-card>
+      </div>
+
       <br />
       <div class="d-flex justify-content-center">
-          <b-button size="lg" class="login_button" @click="$router.push('faq')"
-            >See More</b-button
-          >
-        </div>
+        <b-button size="lg" class="login_button" @click="$router.push('faq')"
+          >See More</b-button
+        >
+      </div>
     </b-container>
-    <br /><br class="br_tab_view" /><br
-      class="br_tab_view"
-    />
+    <br /><br class="br_tab_view" /><br class="br_tab_view" />
     <br class="br_tab_view" /><br class="br_tab_view" /><br
       class="br_tab_view"
     />
@@ -350,7 +611,7 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      rating1: 4.89,
+      rating1: 5,
 
       genaralAcormendation1: 0,
       genaralAcormendation2: 1,

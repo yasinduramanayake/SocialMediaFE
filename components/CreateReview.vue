@@ -43,6 +43,28 @@
         <div v-if="clicked">
           <b-form @submit.prevent>
             <b-row>
+
+              <b-col md="6">
+                <b-form-group
+                  label="Enter your Order Id"
+                  label-for="mc-first-name"
+                >
+                  <validation-provider
+                    #default="{ errors }"
+                    name="Order Id"
+                    rules="required"
+                  >
+                    <b-form-input
+                      class="input_review"
+                      id="mc-first-name"
+                      v-model="form.order_id"
+                      placeholder="Order Id"
+                    />
+                    <small class="text-danger">{{ errors[0] }}</small>
+                  </validation-provider>
+                </b-form-group>
+              </b-col>
+
               <b-col md="6">
                 <b-form-group
                   label="Enter your Fist name"

@@ -375,12 +375,25 @@
       size="md"
       hide-footer
       dialog-class="modal-content"
-      hide-header
-      title="Our Services"
-      header-text-variant="light"
+      header-text-variant="dark"
       title-class="h4"
     >
-      <LoginForm :cartProp="fromCart" />
+      <LoginForm
+        v-if="!forgotPassword && !resetPassword"
+        @forgetStatus="forgetStatus"
+        @signupStatus="signupStatus"
+        :cartProp="fromCart"
+      />
+
+      <ForgetPassword
+        v-else-if="forgotPassword && !resetPassword"
+        @resetStatus="resetStatus"
+      />
+
+      <ResetPassword
+        v-else-if="forgotPassword && resetPassword"
+        @closeReset="closeReset"
+      />
     </b-modal>
 
     <b-modal
@@ -396,6 +409,20 @@
       title-class="h4"
     >
       <OurServices :show="show" />
+    </b-modal>
+
+    <b-modal
+      body-bg-variant="light"
+      ref="modalregister"
+      scrollable
+      dialog-class="modal-content"
+      hide-backdrop
+      size="md"
+      hide-footer
+      header-text-variant="dark"
+      title-class="h4"
+    >
+      <RegisterForm :cartProp="fromCart" />
     </b-modal>
 
     <b-modal
@@ -453,6 +480,9 @@ export default {
       cartOrders: [],
       fromCart: '',
       selectedorderid: '',
+      forgotPassword: false,
+      resetPassword: false,
+      isSignedup: false,
     }
   },
   async mounted() {
@@ -475,6 +505,24 @@ export default {
     },
   },
   methods: {
+    signupStatus(data) {
+      this.isSignedup = data
+      this.$refs.modallogin.hide()
+      this.$refs.modalregister.show()
+    },
+
+    forgetStatus(data) {
+      this.forgotPassword = data
+    },
+    resetStatus(data) {
+      console.log(data)
+      this.resetPassword = data
+    },
+    closeReset(data) {
+      if (data === 'resetted') {
+        this.$refs.modallogin.hide()
+      }
+    },
     openModal() {
       this.$refs.modalservices.show()
       this.show = true
@@ -510,6 +558,8 @@ export default {
       if (!localStorage.token) {
         notification.toast('Please Login Before Proceed!', 'error')
 
+        this.forgotPassword = false
+        this.resetPassword = false
         this.$refs.modallogin.show()
         this.fromCart = 'fromCart'
       } else {
